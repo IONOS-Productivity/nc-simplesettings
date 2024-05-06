@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>simplesettings</id>
+	<name>Simple Settings</name>
+	<summary>Simplified Nextcloud settings</summary>
+	<description>Simplified Nextcloud settings</description>
+	<version>1.0.0</version>
+	<licence>agpl</licence>
+	<author mail="t.lehmann@strato.de" homepage="">IONOS</author>
+	<namespace>SimpleSettings</namespace>
+	<category>tools</category>
+	<bugs>https://github.com/IONOS-Productivity/nc-simple-settings</bugs>
+	<dependencies>
+		<nextcloud min-version="29" max-version="29"/>
+	</dependencies>
+	<navigations>
+		<navigation>
+			<id>simplesettings</id>
+			<name>Simple Settings</name>
+			<route>simplesettings.page.index</route>
+			<icon>app.svg</icon>
+			<type>link</type>
+		</navigation>
+	</navigations>
+</info>
