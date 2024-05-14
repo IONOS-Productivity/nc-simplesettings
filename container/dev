@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+CONTAINER_NAME="nc-simplesettings-dev"
+CODE_DIR_IN_CONTAINER="/app"
+
+function main() {
+	local container_dir="$( readlink -f "$( dirname "${0}" )" )"
+	local image_name="localhost/${CONTAINER_NAME}:latest"
+	local repo_root_dir="$( pwd )"
+
+	podman image build \
+		-f ${container_dir}/Containerfile \
+		-t ${image_name} \
+			${container_dir}
+
+	if [ ${?} -ne 0 ]; then
+		echo "Error building the image."
+		exit 1
+	fi
+
+	echo "Run ${image_name} as ${CONTAINER_NAME} ..."
+
+	podman run \
+		--network=host \
+		--rm \
+		-it \
+		--name ${CONTAINER_NAME} \
+		--workdir "${CODE_DIR_IN_CONTAINER}" \
+		--mount "type=bind,source=${repo_root_dir},target=${CODE_DIR_IN_CONTAINER}" \
+			"${image_name}" \
+				"${@}"
+}
+
+main "${@}"

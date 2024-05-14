@@ -1,0 +1,17 @@
+FROM node:18.20.0-bookworm-slim
+
+RUN apt-get -qq update \
+		&& apt-get -y -qq install --no-install-recommends \
+			jq \
+			net-tools \
+			curl \
+			git \
+			patch \
+		&& apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/* \
+		&& rm -rf /var/cache/*
+
+RUN npm install -g webpack-cli
+
+WORKDIR /app
+
+ENTRYPOINT ["/usr/bin/bash"]
