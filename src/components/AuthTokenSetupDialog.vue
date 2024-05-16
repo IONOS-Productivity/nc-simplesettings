@@ -70,9 +70,13 @@ import { getRootUrl } from '@nextcloud/router'
 import { defineComponent, type PropType } from 'vue'
 
 import QR from '@chenfengyuan/vue-qrcode'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcDialog from '@nextcloud/vue/dist/Components/NcDialog.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcIconSvgWrapper from '@nextcloud/vue/dist/Components/NcIconSvgWrapper.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
 
 import logger from '../logger'
