@@ -1,18 +1,14 @@
 <template>
-	<NcAppContent>
-		<div id="simplesettings">
-			<h1>Hello world!</h1>
-		</div>
-	</NcAppContent>
+	<AuthTokenSection />
 </template>
 
 <script>
-import NcAppContent from '@nextcloud/vue/dist/Components/NcAppContent.js'
+import AuthTokenSection from './components/AuthTokenSection.vue'
 
 export default {
 	name: 'App',
 	components: {
-		NcAppContent,
+		AuthTokenSection,
 	},
 }
 </script>

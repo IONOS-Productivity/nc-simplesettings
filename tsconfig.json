@@ -8,7 +8,7 @@
 		"outDir": "./dist/",
 		"target": "ESNext",
 		"module": "esnext",
-		"moduleResolution": "Bundler",
+		"moduleResolution": "node",
 		// allowImportingTsExtensions and noEmit shall be false to prevent the error
 		// "Error: TypeScript emitted no output for /app/src/main.ts."
 		"allowImportingTsExtensions": false,
