@@ -1,4 +1,6 @@
 {
+	// Mostly based on Nextcloud's tsconfig.json with some modifications
+	// (includes, allowImportingTsExtensions, noEmit)
 	"extends": "@vue/tsconfig/tsconfig.json",
 	"include": ["./src/**/*.ts", "./src/**/*.vue"],
 	"compilerOptions": {
@@ -9,7 +11,9 @@
 		// Set module resolution to bundler and `noEmit` to be able to set `allowImportingTsExtensions`, so we can import Typescript with .ts extension
 		"moduleResolution": "Bundler",
 		"allowImportingTsExtensions": true,
-		"noEmit": true,
+		// noEmit shall be false to prevent the error
+		// "Error: TypeScript emitted no output for /app/src/main.ts."
+		"noEmit": false,
 		// Allow ts to import js files
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
