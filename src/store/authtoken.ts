@@ -29,6 +29,11 @@ import { defineStore } from 'pinia'
 import axios from '@nextcloud/axios'
 import logger from '../logger'
 
+declare global {
+	// TODO find matching typedef in the @nextcloud/dialogs package
+	interface Window { OC: any; }
+}
+
 const BASE_URL = generateUrl('/simplesettings/authtokens')
 
 const confirm = () => {

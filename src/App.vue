@@ -1,12 +1,17 @@
 <template>
-	<div>dummy</div>
+	<AuthTokenSection />
 </template>
 
 <script lang="ts">
+import AuthTokenSection from './components/AuthTokenSection.vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
 	name: 'App',
-}
+	components: {
+		AuthTokenSection,
+	},
+})
 </script>
 
 <style scoped lang="scss">

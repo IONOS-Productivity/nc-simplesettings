@@ -1,5 +1,6 @@
 {
-	"include": ["./src/**/*.ts", "./src/**/*.vue"],
+	"extends": "@vue/tsconfig/tsconfig.json",
+	"include": ["./src/**/*.ts", "./src/**/*.vue", "./src/**/*.d.ts"],
 	"compilerOptions": {
 		"types": ["node", "vue", "vue-router"],
 		"outDir": "./dist/",
@@ -17,5 +18,6 @@
 		"noImplicitAny": false,
 		"resolveJsonModule": true,
 		"strict": true,
+		"skipLibCheck": true,
 	}
 }
