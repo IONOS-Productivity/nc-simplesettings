@@ -24,6 +24,7 @@ function main() {
 		--network=host \
 		--rm \
 		-it \
+		--env "CONTAINER_NAME=${CONTAINER_NAME}" \
 		--name ${CONTAINER_NAME} \
 		--workdir "${CODE_DIR_IN_CONTAINER}" \
 		--mount "type=bind,source=${repo_root_dir},target=${CODE_DIR_IN_CONTAINER}" \

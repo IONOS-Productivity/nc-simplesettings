@@ -1,4 +1,4 @@
-FROM node:18.20.0-bookworm-slim
+FROM node:20.13.0-bookworm-slim
 
 RUN apt-get -qq update \
 		&& apt-get -y -qq install --no-install-recommends \
@@ -10,7 +10,9 @@ RUN apt-get -qq update \
 		&& apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/* \
 		&& rm -rf /var/cache/*
 
-RUN npm install -g webpack-cli
+RUN npm install -g webpack-cli \
+	&& cat /etc/skel/.bashrc | sed -r 's/^#alias l/alias l/' > ~/.bashrc \
+	&& echo "\nPS1='\[\033[01;32m\]\u@<\${CONTAINER_NAME} 🫙>\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ '" >> ~/.bashrc
 
 WORKDIR /app
 

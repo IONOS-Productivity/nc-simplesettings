@@ -4,12 +4,21 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 const path = require('path')
 
 webpackConfig.entry = {
-	main: { import: path.join(__dirname, 'src', 'main.js'), filename: 'main.js' },
+	main: path.join(__dirname, 'src', 'main.ts'),
 }
+
+// For debugging
+webpackConfig.stats = { errorDetails: true };
+
+// Fix wrong configuration in the @nextcloud/webpack-vue-config module.
+// It's defined as ['*', '.ts', '.js', '.vue'], but Webpack complains it should
+// use leading dots. "*" is not documented anyway.
+// See https://webpack.js.org/configuration/resolve/#resolveextensions
+webpackConfig.resolve.extensions = [".ts",".js",".vue"];
 
 webpackConfig.plugins.push(
 	new ESLintPlugin({
-		extensions: ['js', 'vue'],
+		extensions: ['.js', '.ts', '.vue'],
 		files: 'src',
 	}),
 )

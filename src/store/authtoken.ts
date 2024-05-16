@@ -29,6 +29,10 @@ import { defineStore } from 'pinia'
 import axios from '@nextcloud/axios'
 import logger from '../logger'
 
+declare global {
+	interface Window { OC: any; } // TODO find matching typedef in the @nextcloud/dialogs package
+}
+
 const BASE_URL = generateUrl('/simplesettings/authtokens')
 
 const confirm = () => {
@@ -213,3 +217,5 @@ export const useAuthTokenStore = defineStore('auth-token', {
 	},
 
 })
+
+export default { }
