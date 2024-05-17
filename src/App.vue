@@ -2,7 +2,7 @@
 	<AuthTokenSection />
 </template>
 
-<script>
+<script lang="ts">
 import AuthTokenSection from './components/AuthTokenSection.vue'
 
 export default {
