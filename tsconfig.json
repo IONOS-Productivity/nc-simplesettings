@@ -1,7 +1,4 @@
 {
-	// Mostly based on Nextcloud's tsconfig.json with some modifications
-	// (includes, allowImportingTsExtensions, noEmit)
-	"extends": "@vue/tsconfig/tsconfig.json",
 	"include": ["./src/**/*.ts", "./src/**/*.vue"],
 	"compilerOptions": {
 		"types": ["node", "vue", "vue-router"],
@@ -20,17 +17,5 @@
 		"noImplicitAny": false,
 		"resolveJsonModule": true,
 		"strict": true,
-	},
-	"vueCompilerOptions": {
-		"target": 2.7
-	},
-	"ts-node": {
-		// these options are overrides used only by ts-node
-		// same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
-		"compilerOptions": {
-			"moduleResolution": "node",
-			"module": "commonjs",
-			"verbatimModuleSyntax": false
-		}
 	}
 }

@@ -1,15 +1,11 @@
 <template>
-	<AuthTokenSection />
+	<div>dummy</div>
 </template>
 
 <script lang="ts">
-import AuthTokenSection from './components/AuthTokenSection.vue'
 
 export default {
 	name: 'App',
-	components: {
-		AuthTokenSection,
-	},
 }
 </script>
 
