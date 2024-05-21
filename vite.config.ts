@@ -21,6 +21,10 @@ export default defineConfig({
       input: {
         'main': path.resolve(__dirname, 'src/main.ts'),
       },
+      output: {
+        dir: 'js/',
+        entryFileNames: 'main.js',
+      }
     },
   },
 })
