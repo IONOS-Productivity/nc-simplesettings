@@ -67,13 +67,6 @@ export default defineComponent({
 		const authTokenStore = useAuthTokenStore()
 		return { authTokenStore }
 	},
-	data() {
-		return {
-			deviceName: '',
-			loading: false,
-			newToken: null as ITokenResponse|null,
-		}
-	},
 	methods: {
 		t,
 		reset() {
@@ -93,6 +86,13 @@ export default defineComponent({
 				this.loading = false
 			}
 		},
+	},
+	data() {
+		return {
+			deviceName: '',
+			loading: false,
+			newToken: null as ITokenResponse|null,
+		}
 	},
 })
 </script>
