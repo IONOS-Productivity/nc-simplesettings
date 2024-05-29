@@ -47,7 +47,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			canCreateToken: loadState('settings', 'can_create_app_token'),
+			canCreateToken: loadState('simplesettings', 'can_create_app_token'),
 		}
 	},
 	methods: {
