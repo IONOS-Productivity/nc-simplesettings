@@ -159,4 +159,5 @@ appstore:
 
 .PHONY: test
 test: composer
-	$(CURDIR)/vendor/bin/phpunit -c $(CURDIR)/tests/phpunit.xml
+	$(CURDIR)/vendor/phpunit/phpunit/phpunit --debug -c $(CURDIR)/tests/phpunit.xml
+	$(CURDIR)/vendor/phpunit/phpunit/phpunit -c $(CURDIR)/tests/phpunit.integration.xml
