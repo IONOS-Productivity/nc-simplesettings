@@ -34,7 +34,7 @@ declare global {
 	interface Window { OC: any; }
 }
 
-const BASE_URL = generateUrl('/simplesettings/authtokens')
+const BASE_URL = generateUrl('/apps/simplesettings/authtokens')
 
 const confirm = () => {
 	return new Promise(resolve => {
