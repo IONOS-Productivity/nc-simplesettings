@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import AuthTokenSection from './components/AuthTokenSection.vue'
+import AuthTokenSection from './components/security/AuthTokenSection.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

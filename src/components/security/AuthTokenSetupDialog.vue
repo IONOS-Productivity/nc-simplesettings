@@ -61,7 +61,7 @@
 </template>
 
 <script lang="ts">
-import type { ITokenResponse } from '../store/authtoken'
+import type { ITokenResponse } from '../../store/authtoken'
 
 import { mdiCheck, mdiContentCopy } from '@mdi/js'
 import { showError } from '@nextcloud/dialogs'
@@ -79,7 +79,7 @@ import NcIconSvgWrapper from '@nextcloud/vue/dist/Components/NcIconSvgWrapper.js
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
 
-import logger from '../logger'
+import logger from '../../logger'
 
 export default defineComponent({
 	name: 'AuthTokenSetupDialog',

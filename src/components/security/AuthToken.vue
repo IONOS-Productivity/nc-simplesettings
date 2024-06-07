@@ -95,12 +95,12 @@
 
 <script lang="ts">
 import type { PropType } from 'vue'
-import type { IToken } from '../store/authtoken'
+import type { IToken } from '../../store/authtoken'
 
 import { mdiCheck, mdiCellphone, mdiTablet, mdiMonitor, mdiWeb, mdiKey, mdiMicrosoftEdge, mdiFirefox, mdiGoogleChrome, mdiAppleSafari, mdiAndroid, mdiAppleIos } from '@mdi/js'
 import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
-import { TokenType, useAuthTokenStore } from '../store/authtoken'
+import { TokenType, useAuthTokenStore } from '../../store/authtoken'
 
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcActions from '@nextcloud/vue/dist/Components/NcActions.js'
