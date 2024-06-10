@@ -1,6 +1,6 @@
 <!--
-SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de> with IONOS/Strato
 SPDX-FileLicenseText: 2023 John Molakvoæ <skjnldsv@protonmail.com>
+SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de>
 SPDX-License-Identifier: AGPL-3.0-or-later
 
 This program is free software: you can redistribute it and/or modify
