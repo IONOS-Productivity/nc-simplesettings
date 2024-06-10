@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Language: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Phrase (phrase.com)\n"
+
+#. TRANSLATORS src/components/security/AuthTokenSetup.vue:38
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:74
+msgid "Create new app password"
+msgstr "Neues App-Passwort hinzufügen"
+
+#. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:24
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:78
+msgid "New app password"
+msgstr "Neues App-Passwort"
+
+#. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:27
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:80
+msgid "Use the credentials below to configure your app or device. For security reasons this password will only be shown once."
+msgstr "Verwenden sie die untenstehenden Zugangsdaten um Ihre App oder Ihr Gerät einzurichten. Aus Sicherheitsgründen wird das Passwort nur ein Mal an gezeigt."
