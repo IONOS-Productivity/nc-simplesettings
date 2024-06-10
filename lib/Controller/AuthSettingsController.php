@@ -13,6 +13,7 @@
  * @author Robin Appelman <robin@icewind.nl>
  * @author Roeland Jago Douma <roeland@famdouma.nl>
  * @author Sergej Nikolaev <kinolaev@gmail.com>
+ * @author Thomas Lehmann <t.lehmann@strato.de>
  *
  * @license AGPL-3.0
  *
