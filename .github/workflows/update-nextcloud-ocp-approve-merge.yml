@@ -11,6 +11,7 @@ on:
       - main
       - master
       - stable*
+      - tl/dev/webpack-vue-2-typescript
 
 permissions:
   contents: read

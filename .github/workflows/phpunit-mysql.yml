@@ -8,6 +8,7 @@ on:
     branches:
       - master
       - stable*
+      - tl/dev/webpack-vue-2-typescript
 
 env:
   # Location of the phpunit.xml and phpunit.integration.xml files
