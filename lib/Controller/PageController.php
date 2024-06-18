@@ -22,14 +22,12 @@ declare(strict_types=1);
 
 namespace OCA\SimpleSettings\Controller;
 
-use OC\Authentication\Token\IProvider as IAuthTokenProvider;
 use OC\Authentication\Token\INamedToken;
+use OC\Authentication\Token\IProvider as IAuthTokenProvider;
 // TODO what's the preferred way?
 use OC\Authentication\Token\IToken;
 use OCA\SimpleSettings\AppInfo\Application;
 use OCP\AppFramework\Controller;
-use OCP\ISession;
-use OCP\IUserSession;
 use OCP\AppFramework\Http\Attribute\FrontpageRoute;
 use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\Attribute\NoCSRFRequired;
@@ -37,6 +35,8 @@ use OCP\AppFramework\Http\Attribute\OpenAPI;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\Authentication\Exceptions\InvalidTokenException;
+use OCP\ISession;
+use OCP\IUserSession;
 use OCP\Session\Exceptions\SessionNotAvailableException;
 
 /**
