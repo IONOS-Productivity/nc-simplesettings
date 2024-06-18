@@ -34,7 +34,7 @@ class MainJsSourcemapController extends Controller {
 	 * @param IRequest $request
 	 */
 	public function __construct($appName,
-								IRequest $request) {
+		IRequest $request) {
 		parent::__construct($appName, $request);
 	}
 
