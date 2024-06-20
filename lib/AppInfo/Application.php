@@ -22,10 +22,12 @@ declare(strict_types=1);
 
 namespace OCA\SimpleSettings\AppInfo;
 
+use OCA\Viewer\Listener\LoadViewerScript;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\Util;
 
 class Application extends App implements IBootstrap {
 	public const APP_ID = 'simplesettings';
@@ -39,5 +41,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function boot(IBootContext $context): void {
+//        Util::addScript(self::APP_ID, 'foo-main', 'files');
+        Util::addScript(self::APP_ID, 'main', 'files');
 	}
 }

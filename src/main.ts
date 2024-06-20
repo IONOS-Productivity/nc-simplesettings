@@ -18,7 +18,7 @@
 
 import Vue from 'vue'
 import { PiniaVuePlugin, createPinia } from 'pinia'
-import App from './App.vue'
+import App from './AddFileAction.vue'
 
 declare function n(a: string): string;
 declare function t(a: string): string;
