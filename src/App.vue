@@ -21,12 +21,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<AuthTokenSection />
 		<hr>
 		<WebDavUrl />
+		<hr>
+		<Software />
 	</content>
 </template>
 
 <script lang="ts">
 import AuthTokenSection from './components/security/AuthTokenSection.vue'
 import WebDavUrl from './components/files/WebDavUrl.vue'
+import Software from './components/help/Software.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -34,6 +37,7 @@ export default defineComponent({
 	components: {
 		AuthTokenSection,
 		WebDavUrl,
+		Software,
 	},
 })
 </script>
