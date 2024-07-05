@@ -46,7 +46,7 @@
 import { showError } from '@nextcloud/dialogs'
 import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
-import { useAuthTokenStore, type ITokenResponse } from '../store/authtoken'
+import { useAuthTokenStore, type ITokenResponse } from '../../store/authtoken'
 
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
@@ -54,7 +54,7 @@ import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
 
 import AuthTokenSetupDialog from './AuthTokenSetupDialog.vue'
-import logger from '../logger'
+import logger from '../../logger'
 
 export default defineComponent({
 	name: 'AuthTokenSetup',
