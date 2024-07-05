@@ -192,8 +192,14 @@ export default defineComponent({
 			return this.token.type === TokenType.PERMANENT_TOKEN
 		},
 		/**
+		 * @typedef {object} ClientInfo
+		 * @property {string} id client type
+		 * @property {string} os the OS the client is running on
+		 * @property {string} version the client version
+		 */
+		/**
 		 * Object ob the current user agend used by the token
-		 * @return Either an object containing user agent information or null if unknown
+		 * @return {ClientInfo} Either an object containing user agent information or null if unknown
 		 */
 		client() {
 			// pretty format sync client user agent
