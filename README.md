@@ -1,25 +1,34 @@
 # Simple Settings
 
-A template to get started with Nextcloud app development.
+Minimal settings for Nextcloud.
 
-## Usage
 
-- To get started easily use the [Appstore App generator](https://apps.nextcloud.com/developer/apps/generate) to
-  dynamically generate an App based on this repository with all the constants prefilled.
-- Alternatively you can use the "Use this template" button on the top of this page to create a new repository based on
-  this repository. Afterwards adjust all the necessary constants like App ID, namespace, descriptions etc.
+## Build
 
-Once your app is ready follow the [instructions](https://nextcloudappstore.readthedocs.io/en/latest/developer.html) to
-upload it to the Appstore.
+```
+$ npm run build
+```
 
-## Resources
 
-### Documentation for developers:
+## Translation workflow
 
-- General documentation and tutorials: https://nextcloud.com/developer
-- Technical documentation: https://docs.nextcloud.com/server/latest/developer_manual
+1. Search for translations and create `.pot` file using `translationtool.phar create-pot-files`
 
-### Help for developers:
+   ```bash
+   simplesettings$ php /opt/translationtool/translationtool.phar create-pot-files
+   ```
 
-- Official community chat: https://cloud.nextcloud.com/call/xs25tz5y
-- Official community forum: https://help.nextcloud.com/c/dev/11
+2. Upload `.pot` in translation tool
+3. Translate missing or changed texts
+4. Download `.po` files as `translationfiles/<language code>/simplesettings.po`
+5. Generate `.json` and `.js` files from `.po` files
+
+   ```bash
+   simplesettings$ php /opt/translationtool/translationtool.phar convert-po-files
+   ```
+
+6. Rebuild the frontend application
+
+   ```bash
+   simplesettings$ npm run build
+   ```
