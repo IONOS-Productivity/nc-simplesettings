@@ -5,8 +5,7 @@
 	"authors": [
 		{
 			"name": "IONOS",
-			"email": "t.lehmann@strato.de",
-			"homepage": ""
+			"email": "t.lehmann@strato.de"
 		}
 	],
 	"autoload": {
