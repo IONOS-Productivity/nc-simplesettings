@@ -15,12 +15,9 @@
 		<nextcloud min-version="29" max-version="30"/>
 	</dependencies>
 	<navigations>
-		<navigation>
-			<id>simplesettings</id>
-			<name>Simple Settings</name>
-			<route>simplesettings.page.index</route>
-			<icon>app.svg</icon>
-			<type>link</type>
-		</navigation>
+		<!--
+		- no navigations configured, we'll redirect from the /app/settings path
+		- the navigation would be "simplesettings.page.index"
+		-->
 	</navigations>
 </info>
