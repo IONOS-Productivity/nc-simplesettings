@@ -29,7 +29,7 @@ import { defineStore } from 'pinia'
 import axios from '@nextcloud/axios'
 import logger from '../logger'
 
-const BASE_URL = generateUrl('/simplesettings/authtokens')
+const BASE_URL = generateUrl('/apps/simplesettings/authtokens')
 
 const confirm = () => {
 	return new Promise(resolve => {
