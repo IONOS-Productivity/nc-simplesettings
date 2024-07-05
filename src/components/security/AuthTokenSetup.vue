@@ -84,6 +84,7 @@ export default defineComponent({
 				this.reset()
 			} finally {
 				this.loading = false
+				this.deviceName = ''
 			}
 		},
 	},
