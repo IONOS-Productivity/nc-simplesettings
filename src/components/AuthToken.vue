@@ -334,7 +334,7 @@ export default defineComponent({
 			this.newName = this.token.name
 			this.renaming = true
 			this.$nextTick(() => {
-				this.$refs.input!.select()
+				(this.$refs.input as HTMLInputElement)!.select()
 			})
 		},
 		cancelRename() {
