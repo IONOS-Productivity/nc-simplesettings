@@ -100,15 +100,40 @@ import type { IToken } from '../store/authtoken'
 import { mdiCheck, mdiCellphone, mdiTablet, mdiMonitor, mdiWeb, mdiKey, mdiMicrosoftEdge, mdiFirefox, mdiGoogleChrome, mdiAppleSafari, mdiAndroid, mdiAppleIos } from '@mdi/js'
 import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
-import { TokenType, useAuthTokenStore } from '../store/authtoken.ts'
+import { TokenType, useAuthTokenStore } from '../store/authtoken'
 
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcActions from '@nextcloud/vue/dist/Components/NcActions.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcActionButton from '@nextcloud/vue/dist/Components/NcActionButton.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcActionCheckbox from '@nextcloud/vue/dist/Components/NcActionCheckbox.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcDateTime from '@nextcloud/vue/dist/Components/NcDateTime.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcIconSvgWrapper from '@nextcloud/vue/dist/Components/NcIconSvgWrapper.js'
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
+
+declare global {
+	interface Window {
+		oc_defaults: {
+			baseUrl: string;
+			docBaseUrl: string;
+			docPlaceholderUrl: string;
+			entity: string;
+			folder: string;
+			logoClaim: string;
+			name: string;
+			productName: string;
+			slogan: string;
+			syncClientUrl: string;
+			title: string;
+		};
+	}
+}
 
 // When using capture groups the following parts are extracted the first is used as the version number, the second as the OS
 const userAgentMap = {
