@@ -52,6 +52,7 @@
     "eslint-webpack-plugin": "^4.1.0",
     "stylelint": "^16.2.0",
     "stylelint-webpack-plugin": "^5.0.1",
-    "vue-eslint-parser": "^9.4.3"
+    "vue-eslint-parser": "^9.4.3",
+    "webpack": "^5.92.1"
   }
 }
