@@ -4,7 +4,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 const path = require('path')
 
 webpackConfig.entry = {
-	main: { import: path.join(__dirname, 'src', 'main.js'), filename: 'main.js' },
+	main: { import: path.join(__dirname, 'src', 'main.ts'), filename: 'main.js' },
 }
 
 webpackConfig.plugins.push(
@@ -18,6 +18,30 @@ webpackConfig.plugins.push(
 		files: 'src/**/*.{css,scss,vue}',
 	}),
 )
+
+// Modify Webpack config to patch .tsx? rule
+// The ts-loader option appendTsSuffixTo: [/\.vue$/] is required, otherwise
+// it would emit no transpiler result for <script lang="ts"> blocks in .vue
+// files
+webpackConfig.module.rules = webpackConfig.module.rules.map((module) => {
+	if (!Array.isArray(module.use) || !module.use.includes('ts-loader')) {
+		return module
+	}
+
+	return {
+		test: /\.tsx?$/,
+		use: [
+			'babel-loader',
+			{
+				loader: 'ts-loader',
+				options: {
+					appendTsSuffixTo: [/\.vue$/]
+				}
+			}
+		],
+		exclude: /node_modules/
+	}
+})
 
 webpackConfig.module.rules.push({
 	test: /\.svg$/i,
