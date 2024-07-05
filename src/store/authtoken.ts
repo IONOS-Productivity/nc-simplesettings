@@ -86,7 +86,7 @@ export interface ITokenResponse {
 export const useAuthTokenStore = defineStore('auth-token', {
 	state() {
 		return {
-			tokens: loadState<IToken[]>('settings', 'app_tokens', []),
+			tokens: loadState<IToken[]>('simplesettings', 'app_tokens', []),
 		}
 	},
 	actions: {
