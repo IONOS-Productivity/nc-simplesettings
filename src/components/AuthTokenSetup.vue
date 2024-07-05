@@ -30,12 +30,12 @@
 			:maxlength="120"
 			:disabled="loading"
 			class="app-name-text-field"
-			:label="t('settings', 'App name')"
-			:placeholder="t('settings', 'App name')" />
+			:label="t('simplesettings', 'App name')"
+			:placeholder="t('simplesettings', 'App name')" />
 		<NcButton type="primary"
 			:disabled="loading || deviceName.length === 0"
 			native-type="submit">
-			{{ t('settings', 'Create new app password') }}
+			{{ t('simplesettings', 'Create new app password') }}
 		</NcButton>
 
 		<AuthTokenSetupDialog :token="newToken" @close="newToken = null" />
@@ -85,7 +85,7 @@ export default defineComponent({
 				this.newToken = await this.authTokenStore.addToken(this.deviceName)
 			} catch (error) {
 				logger.error(error as Error)
-				showError(t('settings', 'Error while creating device token'))
+				showError(t('simplesettings', 'Error while creating device token'))
 				this.reset()
 			} finally {
 				this.loading = false
