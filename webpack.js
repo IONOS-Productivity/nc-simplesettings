@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const webpackConfig = require('@nextcloud/webpack-vue-config')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
@@ -47,5 +48,9 @@ webpackConfig.module.rules.push({
 	test: /\.svg$/i,
 	type: 'asset/source',
 })
+
+webpackConfig.plugins.push(new webpack.SourceMapDevToolPlugin({
+	filename: '[file].map',
+}))
 
 module.exports = webpackConfig
