@@ -29,12 +29,6 @@ import { defineStore } from 'pinia'
 import axios from '@nextcloud/axios'
 import logger from '../logger'
 
-declare global {
-	// TODO find matching typedef in the @nextcloud/dialogs package
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	interface Window { OC: any; }
-}
-
 const BASE_URL = generateUrl('/simplesettings/authtokens')
 
 const confirm = () => {
