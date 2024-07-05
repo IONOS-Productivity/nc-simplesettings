@@ -25,14 +25,14 @@
 		<thead>
 			<tr>
 				<th class="token-list__header-device">
-					{{ t('settings', 'Device') }}
+					{{ t('simplesettings', 'Device') }}
 				</th>
 				<th class="toke-list__header-activity">
-					{{ t('settings', 'Last activity') }}
+					{{ t('simplesettings', 'Last activity') }}
 				</th>
 				<th>
 					<span class="hidden-visually">
-						{{ t('settings', 'Actions') }}
+						{{ t('simplesettings', 'Actions') }}
 					</span>
 				</th>
 			</tr>

@@ -21,13 +21,13 @@
 -->
 <template>
 	<NcDialog :open.sync="open"
-		:name="t('settings', 'New app password')"
+		:name="t('simplesettings', 'New app password')"
 		content-classes="token-dialog">
 		<p>
-			{{ t('settings', 'Use the credentials below to configure your app or device. For security reasons this password will only be shown once.') }}
+			{{ t('simplesettings', 'Use the credentials below to configure your app or device. For security reasons this password will only be shown once.') }}
 		</p>
 		<div class="token-dialog__name">
-			<NcTextField :label="t('settings', 'Login')" :value="loginName" readonly />
+			<NcTextField :label="t('simplesettings', 'Login')" :value="loginName" readonly />
 			<NcButton type="tertiary"
 				:title="copyLoginNameLabel"
 				:aria-label="copyLoginNameLabel"
@@ -39,7 +39,7 @@
 		</div>
 		<div class="token-dialog__password">
 			<NcTextField ref="appPassword"
-				:label="t('settings', 'Password')"
+				:label="t('simplesettings', 'Password')"
 				:value="appPassword"
 				readonly />
 			<NcButton type="tertiary"
@@ -53,7 +53,7 @@
 		</div>
 		<div class="token-dialog__qrcode">
 			<NcButton v-if="!showQRCode" @click="showQRCode = true">
-				{{ t('settings', 'Show QR code for mobile apps') }}
+				{{ t('simplesettings', 'Show QR code for mobile apps') }}
 			</NcButton>
 			<QR v-else :value="qrUrl" />
 		</div>
@@ -129,15 +129,15 @@ export default defineComponent({
 		},
 		copyPasswordLabel() {
 			if (this.isPasswordCopied) {
-				return t('settings', 'App password copied!')
+				return t('simplesettings', 'App password copied!')
 			}
-			return t('settings', 'Copy app password')
+			return t('simplesettings', 'Copy app password')
 		},
 		copyLoginNameLabel() {
 			if (this.isNameCopied) {
-				return t('settings', 'Login name copied!')
+				return t('simplesettings', 'Login name copied!')
 			}
-			return t('settings', 'Copy login name')
+			return t('simplesettings', 'Copy login name')
 		},
 	},
 	watch: {
@@ -162,7 +162,7 @@ export default defineComponent({
 			} catch (e) {
 				this.isPasswordCopied = false
 				logger.error(e as Error)
-				showError(t('settings', 'Could not copy app password. Please copy it manually.'))
+				showError(t('simplesettings', 'Could not copy app password. Please copy it manually.'))
 			} finally {
 				setTimeout(() => {
 					this.isPasswordCopied = false
@@ -176,7 +176,7 @@ export default defineComponent({
 			} catch (e) {
 				this.isNameCopied = false
 				logger.error(e as Error)
-				showError(t('settings', 'Could not copy login name. Please copy it manually.'))
+				showError(t('simplesettings', 'Could not copy login name. Please copy it manually.'))
 			} finally {
 				setTimeout(() => {
 					this.isNameCopied = false

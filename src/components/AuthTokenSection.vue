@@ -22,9 +22,9 @@
 
 <template>
 	<div id="security" class="section">
-		<h2>{{ t('settings', 'Devices & sessions', {}, undefined, {sanitize: false}) }}</h2>
+		<h2>{{ t('simplesettings', 'Devices & sessions', {}, undefined, {sanitize: false}) }}</h2>
 		<p class="settings-hint hidden-when-empty">
-			{{ t('settings', 'Web, desktop and mobile clients currently logged in to your account.') }}
+			{{ t('simplesettings', 'Web, desktop and mobile clients currently logged in to your account.') }}
 		</p>
 		<AuthTokenList />
 		<AuthTokenSetup v-if="canCreateToken" />

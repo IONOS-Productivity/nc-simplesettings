@@ -29,13 +29,13 @@ import { defineStore } from 'pinia'
 import axios from '@nextcloud/axios'
 import logger from '../logger'
 
-const BASE_URL = generateUrl('/settings/personal/authtokens')
+const BASE_URL = generateUrl('/simplesettings/authtokens')
 
 const confirm = () => {
 	return new Promise(resolve => {
 		window.OC.dialogs.confirm(
-			t('settings', 'Do you really want to wipe your data from this device?'),
-			t('settings', 'Confirm wipe'),
+			t('simplesettings', 'Do you really want to wipe your data from this device?'),
+			t('simplesettings', 'Confirm wipe'),
 			resolve,
 			true,
 		)
@@ -127,7 +127,7 @@ export const useAuthTokenStore = defineStore('auth-token', {
 				return true
 			} catch (error) {
 				logger.error('Could not delete app token', { error })
-				showError(t('settings', 'Could not delete the app token'))
+				showError(t('simplesettings', 'Could not delete the app token'))
 				// Restore
 				this.tokens.push(token)
 			}
@@ -157,7 +157,7 @@ export const useAuthTokenStore = defineStore('auth-token', {
 				return true
 			} catch (error) {
 				logger.error('Could not wipe app token', { error })
-				showError(t('settings', 'Error while wiping the device with the token'))
+				showError(t('simplesettings', 'Error while wiping the device with the token'))
 			}
 			return false
 		},
@@ -179,7 +179,7 @@ export const useAuthTokenStore = defineStore('auth-token', {
 				return true
 			} catch (error) {
 				logger.error('Could not update app token name', { error })
-				showError(t('settings', 'Error while updating device token name'))
+				showError(t('simplesettings', 'Error while updating device token name'))
 				// Restore
 				token.name = oldName
 			}
@@ -204,7 +204,7 @@ export const useAuthTokenStore = defineStore('auth-token', {
 				return true
 			} catch (error) {
 				logger.error('could not update app token scope', { error })
-				showError(t('settings', 'Error while updating device token scope'))
+				showError(t('simplesettings', 'Error while updating device token scope'))
 				// Restore
 				token.scope[scope] = oldVal
 			}

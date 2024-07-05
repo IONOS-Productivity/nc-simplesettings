@@ -30,19 +30,19 @@
 					@submit.prevent.stop="rename">
 					<NcTextField ref="input"
 						:value.sync="newName"
-						:label="t('settings', 'Device name')"
+						:label="t('simplesettings', 'Device name')"
 						:show-trailing-button="true"
-						:trailing-button-label="t('settings', 'Cancel renaming')"
+						:trailing-button-label="t('simplesettings', 'Cancel renaming')"
 						@trailing-button-click="cancelRename"
 						@keyup.esc="cancelRename" />
-					<NcButton :aria-label="t('settings', 'Save new name')" type="tertiary" native-type="submit">
+					<NcButton :aria-label="t('simplesettings', 'Save new name')" type="tertiary" native-type="submit">
 						<template #icon>
 							<NcIconSvgWrapper :path="mdiCheck" />
 						</template>
 					</NcButton>
 				</form>
 				<span v-else>{{ tokenLabel }}</span>
-				<span v-if="wiping" class="wiping-warning">({{ t('settings', 'Marked for remote wipe') }})</span>
+				<span v-if="wiping" class="wiping-warning">({{ t('simplesettings', 'Marked for remote wipe') }})</span>
 			</div>
 		</td>
 		<td>
@@ -52,20 +52,20 @@
 		</td>
 		<td class="auth-token__actions">
 			<NcActions v-if="!token.current"
-				:title="t('settings', 'Device settings')"
-				:aria-label="t('settings', 'Device settings')"
+				:title="t('simplesettings', 'Device settings')"
+				:aria-label="t('simplesettings', 'Device settings')"
 				:open.sync="actionOpen">
 				<NcActionCheckbox v-if="canChangeScope"
 					:checked="token.scope.filesystem"
 					@update:checked="updateFileSystemScope">
 					<!-- TODO: add text/longtext with some description -->
-					{{ t('settings', 'Allow filesystem access') }}
+					{{ t('simplesettings', 'Allow filesystem access') }}
 				</NcActionCheckbox>
 				<NcActionButton v-if="token.canRename"
 					icon="icon-rename"
 					@click.stop.prevent="startRename">
 					<!-- TODO: add text/longtext with some description -->
-					{{ t('settings', 'Rename') }}
+					{{ t('simplesettings', 'Rename') }}
 				</NcActionButton>
 
 				<!-- revoke & wipe -->
@@ -74,18 +74,18 @@
 						<NcActionButton icon="icon-delete"
 							@click.stop.prevent="revoke">
 							<!-- TODO: add text/longtext with some description -->
-							{{ t('settings', 'Revoke') }}
+							{{ t('simplesettings', 'Revoke') }}
 						</NcActionButton>
 						<NcActionButton icon="icon-delete"
 							@click.stop.prevent="wipe">
-							{{ t('settings', 'Wipe device') }}
+							{{ t('simplesettings', 'Wipe device') }}
 						</NcActionButton>
 					</template>
 					<NcActionButton v-else-if="token.type === 2"
 						icon="icon-delete"
-						:name="t('settings', 'Revoke')"
+						:name="t('simplesettings', 'Revoke')"
 						@click.stop.prevent="revoke">
-						{{ t('settings', 'Revoking this token might prevent the wiping of your device if it has not started the wipe yet.') }}
+						{{ t('simplesettings', 'Revoking this token might prevent the wiping of your device if it has not started the wipe yet.') }}
 					</NcActionButton>
 				</template>
 			</NcActions>
@@ -143,14 +143,14 @@ const nameMap = {
 	firefox: 'Firefox',
 	chrome: 'Google Chrome',
 	safari: 'Safari',
-	androidChrome: t('settings', 'Google Chrome for Android'),
+	androidChrome: t('simplesettings', 'Google Chrome for Android'),
 	iphone: 'iPhone',
 	ipad: 'iPad',
-	iosClient: t('settings', '{productName} iOS app', { productName: window.oc_defaults.productName }),
-	androidClient: t('settings', '{productName} Android app', { productName: window.oc_defaults.productName }),
-	iosTalkClient: t('settings', '{productName} Talk for iOS', { productName: window.oc_defaults.productName }),
-	androidTalkClient: t('settings', '{productName} Talk for Android', { productName: window.oc_defaults.productName }),
-	syncClient: t('settings', 'Sync client'),
+	iosClient: t('simplesettings', '{productName} iOS app', { productName: window.oc_defaults.productName }),
+	androidClient: t('simplesettings', '{productName} Android app', { productName: window.oc_defaults.productName }),
+	iosTalkClient: t('simplesettings', '{productName} Talk for iOS', { productName: window.oc_defaults.productName }),
+	androidTalkClient: t('simplesettings', '{productName} Talk for Android', { productName: window.oc_defaults.productName }),
+	syncClient: t('simplesettings', 'Sync client'),
 	davx5: 'DAVx5',
 	webPirate: 'WebPirate',
 	sailfishBrowser: 'SailfishBrowser',
@@ -275,7 +275,7 @@ export default defineComponent({
 		 */
 		tokenLabel() {
 			if (this.token.current) {
-				return t('settings', 'This session')
+				return t('simplesettings', 'This session')
 			}
 			if (this.client === null) {
 				return this.token.name
@@ -283,9 +283,9 @@ export default defineComponent({
 
 			const name = nameMap[this.client.id]
 			if (this.client.os) {
-				return t('settings', '{client} - {version} ({system})', { client: name, system: this.client.os, version: this.client.version })
+				return t('simplesettings', '{client} - {version} ({system})', { client: name, system: this.client.os, version: this.client.version })
 			} else if (this.client.version) {
-				return t('settings', '{client} - {version}', { client: name, version: this.client.version })
+				return t('simplesettings', '{client} - {version}', { client: name, version: this.client.version })
 			}
 			return name
 		},
