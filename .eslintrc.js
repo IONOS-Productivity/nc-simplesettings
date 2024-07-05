@@ -10,5 +10,6 @@ module.exports = {
 		// does not exist", which is clearly present
 		// See https://github.com/vuejs/vue/issues/12628#issuecomment-1283730746
 		'vue/order-in-components': 'off',
+		'quotes': ['error', 'single'],
 	},
 }
