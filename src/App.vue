@@ -6,7 +6,8 @@
 	</NcAppContent>
 </template>
 
-<script>
+<script lang="ts">
+// @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcAppContent from '@nextcloud/vue/dist/Components/NcAppContent.js'
 
 export default {
