@@ -1,0 +1,25 @@
+{
+	// Mostly based on Nextcloud's tsconfig.json with some modifications
+	// (includes, allowImportingTsExtensions, noEmit)
+	"extends": "@vue/tsconfig/tsconfig.json",
+	"include": ["./src/**/*.ts", "./src/**/*.vue", "./src/**/*.d.ts"],
+	"compilerOptions": {
+		"types": ["vue"],
+		"outDir": "./dist/",
+		"target": "ESNext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		// Must be false because noEmit is false (reason see below)
+		"allowImportingTsExtensions": false,
+		// noEmit shall be false to prevent the error
+		// "Error: TypeScript emitted no output for /app/src/main.ts."
+		"noEmit": false,
+		// Allow ts to import js files
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"declaration": false,
+		"noImplicitAny": false,
+		"resolveJsonModule": true,
+		"strict": true,
+	}
+}
