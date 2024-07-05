@@ -152,7 +152,7 @@ export default defineComponent({
 		open() {
 			if (this.open) {
 				this.$nextTick(() => {
-					this.$refs.appPassword!.select()
+					(this.$refs.appPassword as HTMLInputElement)!.select()
 				})
 			}
 		},
