@@ -21,6 +21,10 @@
 declare(strict_types=1);
 return [
 	'resources' => [
-		'AuthSettings' => ['url' => '/authtokens' , 'root' => ''],
+        // Apparently has the convention calling AuthSettingsController.destroy() on DELETE
+        'AuthSettings' => ['url' => '/authtokens' , 'root' => ''],
 	],
+    'routes' => [
+        ['name' => 'AuthSettings#wipe', 'url' => '/authtokens/wipe/{id}', 'verb' => 'POST' , 'root' => ''],
+    ]
 ];

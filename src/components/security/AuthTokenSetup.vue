@@ -44,6 +44,7 @@
 
 <script lang="ts">
 import { showError } from '@nextcloud/dialogs'
+import { confirmPassword } from '@nextcloud/password-confirmation'
 import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
 import { useAuthTokenStore, type ITokenResponse } from '../../store/authtoken'
@@ -77,6 +78,7 @@ export default defineComponent({
 		async submit() {
 			try {
 				this.loading = true
+				await confirmPassword()
 				this.newToken = await this.authTokenStore.addToken(this.deviceName)
 			} catch (error) {
 				logger.error(error as Error)

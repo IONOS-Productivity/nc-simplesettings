@@ -350,7 +350,7 @@ export default defineComponent({
 		},
 		wipe() {
 			this.actionOpen = false
-			this.authTokenStore.wipeToken(this.token)
+			this.$emit('wipe', this.token)
 		},
 	},
 })
