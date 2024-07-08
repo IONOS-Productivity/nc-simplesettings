@@ -14,10 +14,8 @@
 	<dependencies>
 		<nextcloud min-version="29" max-version="30"/>
 	</dependencies>
-	<navigations>
-		<!--
-		- no navigations configured, we'll redirect from the /app/settings path
-		- the navigation would be "simplesettings.page.index"
-		-->
-	</navigations>
+	<!--
+	- no navigations configured, we'll redirect from the /app/settings path
+	- the navigation would be "simplesettings.page.index"
+	-->
 </info>
