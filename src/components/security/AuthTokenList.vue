@@ -40,6 +40,7 @@
 		<tbody class="token-list__body">
 			<AuthToken v-for="token in sortedTokens"
 				:key="token.id"
+				@wipe="$emit('wipe', ...arguments)"
 				:token="token" />
 		</tbody>
 	</table>

@@ -22,7 +22,6 @@
 import { showError } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { translate as t } from '@nextcloud/l10n'
-import { confirmPassword } from '@nextcloud/password-confirmation'
 import { generateUrl } from '@nextcloud/router'
 import { defineStore } from 'pinia'
 
@@ -30,17 +29,6 @@ import axios from '@nextcloud/axios'
 import logger from '../logger'
 
 const BASE_URL = generateUrl('/apps/simplesettings/authtokens')
-
-const confirm = () => {
-	return new Promise(resolve => {
-		window.OC.dialogs.confirm(
-			t('simplesettings', 'Do you really want to wipe your data from this device?'),
-			t('simplesettings', 'Confirm wipe'),
-			resolve,
-			true,
-		)
-	})
-}
 
 export enum TokenType {
 	TEMPORARY_TOKEN = 0,
@@ -101,8 +89,6 @@ export const useAuthTokenStore = defineStore('auth-token', {
 			logger.debug('Creating a new app token')
 
 			try {
-				await confirmPassword()
-
 				const { data } = await axios.post<ITokenResponse>(BASE_URL, { name })
 				this.tokens.push(data.deviceToken)
 				logger.debug('App token created')
@@ -142,13 +128,6 @@ export const useAuthTokenStore = defineStore('auth-token', {
 			logger.debug('Wiping app token', { token })
 
 			try {
-				await confirmPassword()
-
-				if (!(await confirm())) {
-					logger.debug('Wipe aborted by user')
-					return
-				}
-
 				await axios.post(`${BASE_URL}/wipe/${token.id}`)
 				logger.debug('App token marked for wipe', { token })
 
