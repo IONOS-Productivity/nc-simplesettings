@@ -42,6 +42,9 @@ use OCP\Session\Exceptions\SessionNotAvailableException;
  * @psalm-suppress UnusedClass
  */
 class PageController extends Controller {
+	/** @var IProvider */
+	private $tokenProvider;
+
 	/** @var IInitialState */
 	private $initialState;
 
