@@ -34,14 +34,27 @@ use OCP\AppFramework\Http\Attribute\OpenAPI;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\Authentication\Exceptions\InvalidTokenException;
+use OCP\IConfig;
 use OCP\ISession;
+use OCP\IUser;
+use OCP\IUserManager;
 use OCP\IUserSession;
+use OCP\L10N\IFactory;
 use OCP\Session\Exceptions\SessionNotAvailableException;
 
 /**
  * @psalm-suppress UnusedClass
  */
 class PageController extends Controller {
+	/** @var IConfig */
+	private $config;
+
+	/** @var IUserManager */
+	private $userManager;
+
+	/** @var IFactory */
+	private $l10nFactory;
+
 	/** @var IProvider */
 	private $tokenProvider;
 
@@ -58,12 +71,18 @@ class PageController extends Controller {
 	private $uid;
 
 	public function __construct(
+		IConfig $config,
+		IUserManager $userManager,
+		IFactory $l10nFactory,
 		IAuthTokenProvider $tokenProvider,
 		ISession $session,
 		IInitialState $initialState,
 		IUserSession $userSession,
 		?string $UserId
 	) {
+		$this->config = $config;
+		$this->userManager = $userManager;
+		$this->l10nFactory = $l10nFactory;
 		$this->tokenProvider = $tokenProvider;
 		$this->session = $session;
 		$this->initialState = $initialState;
@@ -84,6 +103,15 @@ class PageController extends Controller {
 		$this->initialState->provideInitialState(
 			'can_create_app_token',
 			$this->userSession->getImpersonatingUserID() === null
+		);
+
+		$user = $this->userManager->get($this->uid);
+
+		$this->initialState->provideInitialState(
+			'personalInfoParameters',
+			[
+				'languageMap' => $this->getLanguageMap($user),
+			]
 		);
 
 		return new TemplateResponse(
@@ -117,5 +145,49 @@ class PageController extends Controller {
 			}
 			return $data;
 		}, $tokens);
+	}
+
+	/**
+	 * returns the user's active language, common languages, and other languages in an
+	 * associative array
+	 */
+	private function getLanguageMap(IUser $user): array {
+		$forceLanguage = $this->config->getSystemValue('force_language', false);
+		if ($forceLanguage !== false) {
+			return [];
+		}
+
+		$uid = $user->getUID();
+
+		$userConfLang = $this->config->getUserValue($uid, 'core', 'lang', $this->l10nFactory->findLanguage());
+		$languages = $this->l10nFactory->getLanguages();
+
+		// associate the user language with the proper array
+		$userLangIndex = array_search($userConfLang, array_column($languages['commonLanguages'], 'code'));
+		$userLang = $languages['commonLanguages'][$userLangIndex];
+		// search in the other languages
+		if ($userLangIndex === false) {
+			$userLangIndex = array_search($userConfLang, array_column($languages['otherLanguages'], 'code'));
+			$userLang = $languages['otherLanguages'][$userLangIndex];
+		}
+		// if user language is not available but set somehow: show the actual code as name
+		if (!is_array($userLang)) {
+			$userLang = [
+				'code' => $userConfLang,
+				'name' => $userConfLang,
+			];
+		}
+
+		$combinedLanguages = array_merge(
+			$languages['commonLanguages'],
+			$languages['otherLanguages']
+		);
+
+		return array_merge(
+			['activeLanguage' => $userLang],
+			[
+				'allLanguages' => $combinedLanguages,
+			]
+		);
 	}
 }
