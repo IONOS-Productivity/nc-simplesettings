@@ -18,6 +18,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <template>
 	<content>
+		<LanguageSection />
+		<hr>
 		<AuthTokenSection />
 		<hr>
 		<WebDavUrl />
@@ -30,11 +32,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 import AuthTokenSection from './components/security/AuthTokenSection.vue'
 import WebDavUrl from './components/files/WebDavUrl.vue'
 import Software from './components/help/Software.vue'
+import LanguageSection from './components/account/LanguageSection.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
 	name: 'App',
 	components: {
+		LanguageSection,
 		AuthTokenSection,
 		WebDavUrl,
 		Software,
