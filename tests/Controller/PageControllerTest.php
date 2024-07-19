@@ -28,6 +28,7 @@ use OC\Authentication\Token\IToken;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\IConfig;
 use OCP\ISession;
+use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
 use OCP\L10N\IFactory;
@@ -119,6 +120,50 @@ class PageControllerTest extends TestCase {
 		$this->tokenProvider->expects($this->once())
 			->method('getToken')
 			->willReturn($mockSessionAppToken);
+
+		// Mocks for getLanguageMap()
+
+		$this->mockedForcedLanguage = false;
+
+		$this->mockUserUid = 'some-mock-uid';
+		$this->mockConfiguredUserLanguage = 'xx-XX';
+		$this->mockAvailableLanguages = [
+			'commonLanguages' => [
+				['code' => 'de-DE', 'name' => 'Deutsch'],
+			],
+			'otherLanguages' => [
+				['code' => 'ru-RU', 'name' => 'Русский'],
+			]
+		];
+
+		$mockUser = $this->createMock(IUser::class);
+
+		$mockUser->expects($this->atMost(1))
+			->method('getUID')
+			->willReturn($this->mockUserUid);
+
+		$this->userManager->expects($this->atMost(1))
+			->method('get')
+			->with($this->equalTo($this->uid))
+			->willReturn($mockUser);
+
+		$this->config->expects($this->atMost(1))
+			->method('getSystemValue')
+			->with('force_language', false)
+			->willReturnCallback(fn ($_propertyName, $_defaultValue) => $this->mockedForcedLanguage);
+
+		$this->l10nFactory->expects($this->atMost(1))
+			->method('findLanguage')
+			->willReturnCallback(fn () => $this->mockConfiguredUserLanguage);
+
+		$this->config->expects($this->atMost(1))
+			->method('getUserValue')
+			->with($this->mockUserUid, 'core', 'lang', $this->anything())
+			->willReturnCallback(fn ($userId, $_appName, $_properyName, $_defaultValue) => $this->mockConfiguredUserLanguage);
+
+		$this->l10nFactory->expects($this->atMost(1))
+			->method('getLanguages')
+			->willReturn($this->mockAvailableLanguages);
 	}
 
 	/**
@@ -167,9 +212,9 @@ class PageControllerTest extends TestCase {
 			],
 		];
 
-		$this->initialState->expects($this->exactly(2))
+		$this->initialState->expects($this->exactly(3))
 			->method('provideInitialState')
-			->willReturnCallback(function($stateName, $stateValue) use ($expectedAppTokensRegisteredAsInitialState) {
+			->willReturnCallback(function ($stateName, $stateValue) use ($expectedAppTokensRegisteredAsInitialState) {
 				if ($stateName == "app_tokens") {
 					$this->assertEquals($expectedAppTokensRegisteredAsInitialState, $stateValue);
 				}
@@ -188,7 +233,7 @@ class PageControllerTest extends TestCase {
 			->method('getImpersonatingUserID')
 			->willReturn("some-user-id-is-not-null");
 
-		$this->initialState->expects($this->exactly(2))
+		$this->initialState->expects($this->exactly(3))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
 				if ($stateName == "can_create_app_token") {
@@ -207,14 +252,70 @@ class PageControllerTest extends TestCase {
 			->method('getImpersonatingUserID')
 			->willReturn(null);
 
-		$this->initialState->expects($this->exactly(2))
+		$this->initialState->expects($this->exactly(3))
 			->method('provideInitialState')
-			->willReturnCallback(function($stateName, $stateValue) {
+			->willReturnCallback(function ($stateName, $stateValue) {
 				if ($stateName == "can_create_app_token") {
 					$this->assertEquals(true, $stateValue);
 				}
 			});
 
+		$this->controller->index();
+	}
+
+	private function configureInitialStateLanguageMock($expectedActiveLanguage) {
+		$mockAvailableLanguages = $this->mockAvailableLanguages;
+
+		$this->initialState->expects($this->exactly(3))
+			->method('provideInitialState')
+			->willReturnCallback(function ($stateName, $stateValue) use ($expectedActiveLanguage, $mockAvailableLanguages) {
+				if ($stateName == "personalInfoParameters") {
+					$this->assertEquals([
+						'languageMap' => [
+							'activeLanguage' => $expectedActiveLanguage,
+							'allLanguages' => array_merge(
+								$mockAvailableLanguages['commonLanguages'],
+								$mockAvailableLanguages['otherLanguages'],
+							)
+						]
+					], $stateValue);
+				}
+			});
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	public function testIndexProvidesInitialStateWithLanguagesLanguageForced() {
+		$this->mockedForcedLanguage = true;
+
+		$this->initialState->expects($this->exactly(3))
+			->method('provideInitialState')
+			->willReturnCallback(function ($stateName, $stateValue) {
+				if ($stateName == "personalInfoParameters") {
+					$this->assertEquals([
+						'languageMap' => []
+					], $stateValue);
+				}
+			});
+
+		$this->controller->index();
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	public function testIndexProvidesInitialStateWithLanguagesNoLanguageForcedAndConfiguredLanguageNotFound() {
+		$this->configureInitialStateLanguageMock(['code' => $this->mockConfiguredUserLanguage, 'name' => $this->mockConfiguredUserLanguage]);
+		$this->controller->index();
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	public function testIndexProvidesInitialStateWithLanguagesNoLanguageForcedAndConfiguredLanguageFound() {
+		$this->mockConfiguredUserLanguage = 'de-DE';
+		$this->configureInitialStateLanguageMock(['code' => $this->mockConfiguredUserLanguage, 'name' => 'Deutsch']);
 		$this->controller->index();
 	}
 }
