@@ -162,13 +162,17 @@ class PageController extends Controller {
 		$userConfLang = $this->config->getUserValue($uid, 'core', 'lang', $this->l10nFactory->findLanguage());
 		$languages = $this->l10nFactory->getLanguages();
 
+		$userLang = null;
 		// associate the user language with the proper array
 		$userLangIndex = array_search($userConfLang, array_column($languages['commonLanguages'], 'code'));
-		$userLang = $languages['commonLanguages'][$userLangIndex];
 		// search in the other languages
 		if ($userLangIndex === false) {
 			$userLangIndex = array_search($userConfLang, array_column($languages['otherLanguages'], 'code'));
-			$userLang = $languages['otherLanguages'][$userLangIndex];
+			if ($userLangIndex !== false) {
+				$userLang = $languages['otherLanguages'][$userLangIndex];
+			}
+		} else {
+			$userLang = $languages['commonLanguages'][$userLangIndex];
 		}
 		// if user language is not available but set somehow: show the actual code as name
 		if (!is_array($userLang)) {
