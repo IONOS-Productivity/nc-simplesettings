@@ -105,8 +105,6 @@ class PageController extends Controller {
 			$this->userSession->getImpersonatingUserID() === null
 		);
 
-
-		/*
 		$user = $this->userManager->get($this->uid);
 
 		$this->initialState->provideInitialState(
@@ -115,7 +113,6 @@ class PageController extends Controller {
 				'languageMap' => $this->getLanguageMap($user),
 			]
 		);
-		*/
 
 		return new TemplateResponse(
 			Application::APP_ID,
