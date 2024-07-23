@@ -187,11 +187,9 @@ class PageController extends Controller {
 			$languages['otherLanguages']
 		);
 
-		return array_merge(
-			['activeLanguage' => $userLang],
-			[
-				'allLanguages' => $combinedLanguages,
-			]
-		);
+		return [
+			'activeLanguage' => $userLang,
+			'allLanguages' => $combinedLanguages
+		];
 	}
 }
