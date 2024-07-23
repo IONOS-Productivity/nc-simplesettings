@@ -162,18 +162,18 @@ class PageController extends Controller {
 		$userConfLang = $this->config->getUserValue($uid, 'core', 'lang', $this->l10nFactory->findLanguage());
 		$languages = $this->l10nFactory->getLanguages();
 
+		$combinedLanguages = array_merge(
+			$languages['commonLanguages'],
+			$languages['otherLanguages']
+		);
+
+		$userLangIndex = array_search($userConfLang, array_column($combinedLanguages, 'code'));
 		$userLang = null;
-		// associate the user language with the proper array
-		$userLangIndex = array_search($userConfLang, array_column($languages['commonLanguages'], 'code'));
-		// search in the other languages
-		if ($userLangIndex === false) {
-			$userLangIndex = array_search($userConfLang, array_column($languages['otherLanguages'], 'code'));
-			if ($userLangIndex !== false) {
-				$userLang = $languages['otherLanguages'][$userLangIndex];
-			}
-		} else {
-			$userLang = $languages['commonLanguages'][$userLangIndex];
+
+		if ($userLangIndex !== false) {
+			$userLang = $combinedLanguages[$userLangIndex];
 		}
+
 		// if user language is not available but set somehow: show the actual code as name
 		if (!is_array($userLang)) {
 			$userLang = [
@@ -181,11 +181,6 @@ class PageController extends Controller {
 				'name' => $userConfLang,
 			];
 		}
-
-		$combinedLanguages = array_merge(
-			$languages['commonLanguages'],
-			$languages['otherLanguages']
-		);
 
 		return [
 			'activeLanguage' => $userLang,
