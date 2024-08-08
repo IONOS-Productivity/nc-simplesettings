@@ -66,12 +66,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<br>
 		<div class="desktop-apps">
 			<NcButton
+				class="desktop-app"
 				type="primary"
 				:href="macosUrl">
 				{{ t('simplesettings', 'Install desktop app for Mac') }}
 				<span class="symbol">&ensp;❯&ensp;</span>
 			</NcButton>
 			<NcButton
+				class="desktop-app"
 				type="primary"
 				:href="windowsUrl">
 				{{ t('simplesettings', 'Install desktop app for Windows') }}
@@ -126,8 +128,18 @@ export default defineComponent({
 
 #software {
 	--software-content-width: 40em;
+	--software-gap: 10px;
+	--software-qr-code-intrinsic-padding: 5px; /* padding within the image around the code (measured) */
 }
 
+.ios, .android {
+	width: 20em;
+
+	.qr-code {
+		flex: 0;
+		max-width: 150px /* px because of vue-qrcode */;
+	}
+}
 .mobile-apps {
 	display: flex;
 	justify-content: space-between;
@@ -139,23 +151,52 @@ export default defineComponent({
 		flex-direction: column;
 	}
 
-	.android {
-		padding-right: 8em;
-	}
-
 	.mobile-link {
 		padding-bottom: .6em;
+		padding-left: .4em;
 	}
 }
 
 .desktop-apps {
 	display: flex;
-	justify-content: space-between;
 	max-width: var(--software-content-width);
+}
+
+.mobile-apps, .desktop-apps {
+	gap: var(--software-gap);
 }
 
 .symbol {
 	font-size: 10px;
 	vertical-align: middle;
 }
+
+@media (min-width: 600px) {
+	.desktop-app {
+		max-width: calc(var(--software-content-width) / 2);
+	}
+}
+
+@media (max-width: 600px) {
+	.mobile-apps {
+		flex-flow: column wrap;
+		gap: 1em;
+		padding-bottom: 0;
+
+		.ios, .android {
+			max-width: 15em;
+		}
+	}
+
+	.desktop-apps {
+		flex-direction: column;
+		gap: 1em;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+		.mobile-link {
+			padding-left: 0; /* align with white outline of QR code */
+		}
+	}
 </style>
