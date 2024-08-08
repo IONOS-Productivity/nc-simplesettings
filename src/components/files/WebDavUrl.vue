@@ -28,12 +28,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			<li>
 				<em>
 					{{ t('simplesettings', 'Use this address to access your Files via WebDAV') }}
-					<a class="setting-link"
-						:href="webdavDocs"
-						target="_blank"
-						rel="noreferrer noopener">
-						{{ t('simplesettings', 'See our FAQ for details') }} ↗
-					</a>
 				</em>
 			</li>
 		</ol>
@@ -80,7 +74,6 @@ export default defineComponent({
 		return {
 			// Webdav infos
 			webdavUrl,
-			webdavDocs: 'https://www.ionos.com/help/',
 			webdavUrlCopied: false,
 		}
 	},
