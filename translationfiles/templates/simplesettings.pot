@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nextcloud 3.14159\n"
 "Report-Msgid-Bugs-To: translations\\@example.com\n"
-"POT-Creation-Date: 2024-07-04 12:12+0000\n"
+"POT-Creation-Date: 2024-08-08 12:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,261 +25,285 @@ msgstr ""
 msgid "Simplified Nextcloud settings"
 msgstr ""
 
-#. TRANSLATORS src/components/files/Software.vue:3
+#. TRANSLATORS src/components/account/Language.vue:22
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:2
-msgid "App & Software"
+msgid "Languages"
 msgstr ""
 
-#. TRANSLATORS src/components/files/Software.vue:5
+#. TRANSLATORS src/components/account/Language.vue:92
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:4
-msgid "Download app for your mobile device"
+msgid "Unable to update language"
 msgstr ""
 
-#. TRANSLATORS src/components/files/Software.vue:42
+#. TRANSLATORS src/components/account/LanguageSection.vue:22
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:6
-msgid "Download app for desktop clients"
+#: /var/www/html/apps-custom/simplesettings/src/constants/AccountPropertyConstants.js:37
+msgid "Language"
 msgstr ""
 
-#. TRANSLATORS src/components/files/Software.vue:49
+#. TRANSLATORS src/components/account/LanguageSection.vue:29
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:8
-msgid "Install desktop app for Mac"
-msgstr ""
-
-#. TRANSLATORS src/components/files/Software.vue:55
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:10
-msgid "Install desktop app for Windows"
+msgid "No language set"
 msgstr ""
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:26
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:12
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:10
 msgid "Create an app password in the section above."
 msgstr ""
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:30
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:14
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:12
 msgid "Use this address to access your Files via WebDAV"
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:35
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:16
-msgid "See our FAQ for details"
-msgstr ""
-
-#. TRANSLATORS src/components/files/WebDavUrl.vue:42
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:18
+#. TRANSLATORS src/components/files/WebDavUrl.vue:36
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:14
 msgid "WebDAV URL"
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:45
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:20
+#. TRANSLATORS src/components/files/WebDavUrl.vue:39
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:16
 msgid "Copy to clipboard"
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:93
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:22
+#. TRANSLATORS src/components/files/WebDavUrl.vue:50
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:18
+msgid ""
+"EasyStorage fully supports the WebDAV protocol and you can connect and "
+"synchronise with your EasyStorage files via WebDAV. Use this address to "
+"access your files via WebDAV."
+msgstr ""
+
+#. TRANSLATORS src/components/files/WebDavUrl.vue:90
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:20
 msgid "Clipboard is not available"
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:99
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:24
+#. TRANSLATORS src/components/files/WebDavUrl.vue:96
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:22
 msgid "WebDAV URL copied to clipboard"
 msgstr ""
 
-#. TRANSLATORS src/components/security/AuthToken.vue:33
+#. TRANSLATORS src/components/help/Software.vue:21
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:24
+msgid "App & Software"
+msgstr ""
+
+#. TRANSLATORS src/components/help/Software.vue:23
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:26
+msgid "Download app for your mobile device"
+msgstr ""
+
+#. TRANSLATORS src/components/help/Software.vue:64
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:28
+msgid "Download app for desktop clients"
+msgstr ""
+
+#. TRANSLATORS src/components/help/Software.vue:71
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:30
+msgid "Install desktop app for Mac"
+msgstr ""
+
+#. TRANSLATORS src/components/help/Software.vue:77
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:32
+msgid "Install desktop app for Windows"
+msgstr ""
+
+#. TRANSLATORS src/components/security/AuthToken.vue:33
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:34
 msgid "Device name"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:35
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:28
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:36
 msgid "Cancel renaming"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:38
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:30
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:38
 msgid "Save new name"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:45
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:32
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:40
 msgid "Marked for remote wipe"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:55
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:34
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:36
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:42
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
 msgid "Device settings"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:62
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:38
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:46
 msgid "Allow filesystem access"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:68
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:40
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:48
 msgid "Rename"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:77
 #. TRANSLATORS src/components/security/AuthToken.vue:86
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:42
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:46
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:50
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:54
 msgid "Revoke"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:81
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:52
 msgid "Wipe device"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:88
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:48
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:56
 msgid ""
 "Revoking this token might prevent the wiping of your device if it has not "
 "started the wipe yet."
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:171
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:50
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:58
 msgid "Google Chrome for Android"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:174
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:52
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:60
 msgid "{productName} iOS app"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:175
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:54
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:62
 msgid "{productName} Android app"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:176
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:56
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:64
 msgid "{productName} Talk for iOS"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:177
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:58
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:66
 msgid "{productName} Talk for Android"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:178
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:60
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:68
 msgid "Sync client"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:303
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:62
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:70
 msgid "This session"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:311
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:64
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:72
 msgid "{client} - {version} ({system})"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthToken.vue:313
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:66
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:74
 msgid "{client} - {version}"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenList.vue:28
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:68
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:76
 msgid "Device"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenList.vue:31
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:70
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:78
 msgid "Last activity"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenList.vue:35
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:72
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:80
 msgid "Actions"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSection.vue:25
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:74
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:82
 msgid "Devices & sessions"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSection.vue:27
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:76
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:84
 msgid "Web, desktop and mobile clients currently logged in to your account."
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetup.vue:33
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:78
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:80
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:86
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:88
 msgid "App name"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetup.vue:38
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:82
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:90
 msgid "Create new app password"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetup.vue:83
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:84
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:92
 msgid "Error while creating device token"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:24
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:86
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:94
 msgid "New app password"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:27
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:88
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:96
 msgid ""
 "Use the credentials below to configure your app or device. For security "
 "reasons this password will only be shown once."
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:30
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:90
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:98
 msgid "Login"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:42
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:92
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:100
 msgid "Password"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:56
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:94
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:102
 msgid "Show QR code for mobile apps"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:136
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:96
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:104
 msgid "App password copied!"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:138
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:98
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:106
 msgid "Copy app password"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:142
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:100
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:108
 msgid "Login name copied!"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:144
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:102
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:110
 msgid "Copy login name"
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:169
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:104
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:112
 msgid "Could not copy app password. Please copy it manually."
 msgstr ""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:183
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:106
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:114
 msgid "Could not copy login name. Please copy it manually."
 msgstr ""
 
@@ -305,4 +329,10 @@ msgstr ""
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:207
 msgid "Error while updating device token scope"
+msgstr ""
+
+#: /var/www/html/apps-custom/simplesettings/src/utils/handlers.js:40
+msgid ""
+"There were too many requests from your network. Retry later or contact your "
+"administrator if this is an error."
 msgstr ""

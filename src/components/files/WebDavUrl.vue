@@ -46,6 +46,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<Clipboard :size="20" />
 			</template>
 		</NcInputField>
+		<p id="webdav-info">
+			{{ t('simplesettings', 'EasyStorage fully supports the WebDAV protocol and you can connect and synchronise with your EasyStorage files via WebDAV. Use this address to access your files via WebDAV.') }}
+		</p>
 	</div>
 </template>
 
@@ -102,5 +105,9 @@ export default defineComponent({
 <style scoped>
 ol {
 	margin: 10px 30px;
+}
+
+p#webdav-info {
+	margin: 10px 0;
 }
 </style>
