@@ -12,6 +12,11 @@ msgstr ""
 msgid "Create new app password"
 msgstr "Neues App-Passwort hinzufügen"
 
+#. TRANSLATORS src/components/files/WebDavUrl.vue:50
+#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:18
+msgid "EasyStorage fully supports the WebDAV protocol and you can connect and synchronise with your EasyStorage files via WebDAV. Use this address to access your files via WebDAV."
+msgstr "EasyStorage unterstützt das WebDAV-Protokoll vollständig, und Sie können sich mit Ihren EasyStorage-Dateien über WebDAV verbinden und synchronisieren. Benutzen Sie diese Adresse, um via WebDAV auf Ihre Dateien zuzugreifen."
+
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:24
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:78
 msgid "New app password"
