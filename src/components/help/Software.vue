@@ -155,4 +155,25 @@ export default defineComponent({
 	font-size: 10px;
 	vertical-align: middle;
 }
+
+@media (max-width: 600px) {
+	.mobile-apps {
+		gap: 1em;
+		padding-bottom: 0;
+
+		.ios {
+			max-width: 15em;
+		}
+
+		.android {
+			max-width: 15em;
+			padding-right: 0;
+		}
+	}
+
+	.desktop-apps {
+		flex-direction: column;
+		gap: 1em;
+	}
+}
 </style>
