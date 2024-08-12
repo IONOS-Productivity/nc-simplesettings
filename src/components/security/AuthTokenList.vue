@@ -95,4 +95,14 @@ export default defineComponent({
 		text-align: start;
 	}
 }
+
+@media screen and (max-width: 660px) {
+	.token-list {
+		width: 100%;
+	}
+
+	.token-list__header-activity {
+		display: none;
+	}
+}
 </style>
