@@ -399,4 +399,17 @@ export default defineComponent({
 		color: var(--color-text-maxcontrast);
 	}
 }
+
+@media (max-width: 660px) {
+	.auth-token__name {
+		min-width: auto;
+	}
+
+	td:has(.auth-token__last-activity) {
+		display: block;
+		margin-top: -25px;
+		padding-inline-start: 40px;
+		color: var(--color-text-lighter);
+	}
+}
 </style>
