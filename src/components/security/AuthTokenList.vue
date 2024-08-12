@@ -27,7 +27,7 @@
 				<th class="token-list__header-device">
 					{{ t('simplesettings', 'Device') }}
 				</th>
-				<th class="toke-list__header-activity">
+				<th class="token-list__header-activity">
 					{{ t('simplesettings', 'Last activity') }}
 				</th>
 				<th>
