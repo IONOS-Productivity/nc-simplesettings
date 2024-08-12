@@ -74,21 +74,25 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .token-list {
-	width: 100%;
+	width: 66.6%;
 	min-height: 50px;
 	padding-top: 5px;
-	max-width: fit-content;
 
 	th {
 		padding-block: 10px;
 		padding-inline-start: 10px;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 24px;
 	}
 
 	#{&}__header-device {
-		padding-inline-start: 50px; // 44px icon + 6px padding
+		padding-inline-start: 0;
 	}
+
 	&__header-activity {
-		text-align: end;
+		text-align: start;
 	}
 }
 </style>
