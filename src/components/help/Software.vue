@@ -130,14 +130,12 @@ export default defineComponent({
 	padding-bottom: 2em;
 	max-width: 39em;
 
-	.ios {
+	.ios, .android {
 		display: flex;
 		flex-direction: column;
 	}
 
 	.android {
-		display: flex;
-		flex-direction: column;
 		padding-right: 8em;
 	}
 
@@ -162,12 +160,11 @@ export default defineComponent({
 		gap: 1em;
 		padding-bottom: 0;
 
-		.ios {
+		.ios, .android {
 			max-width: 15em;
 		}
 
 		.android {
-			max-width: 15em;
 			padding-right: 0;
 		}
 	}
