@@ -122,7 +122,8 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
 .mobile-apps {
 	display: flex;
 	justify-content: space-between;
