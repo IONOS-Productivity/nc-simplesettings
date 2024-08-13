@@ -66,12 +66,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<br>
 		<div class="desktop-apps">
 			<NcButton
+				class="desktop-app"
 				type="primary"
 				:href="macosUrl">
 				{{ t('simplesettings', 'Install desktop app for Mac') }}
 				<span class="symbol">&ensp;❯&ensp;</span>
 			</NcButton>
 			<NcButton
+				class="desktop-app"
 				type="primary"
 				:href="windowsUrl">
 				{{ t('simplesettings', 'Install desktop app for Windows') }}
@@ -126,6 +128,17 @@ export default defineComponent({
 
 #software {
 	--software-content-width: 39em;
+	--software-gap: 10px;
+	--software-qr-code-intrinsic-padding: 5px; /* padding within the image around the code (measured) */
+}
+
+.ios, .android {
+	width: 20em;
+
+	.qr-code {
+		flex: 0;
+		max-width: 150px; /* Using px because the image uses px */
+	}
 }
 
 .mobile-apps {
@@ -139,19 +152,19 @@ export default defineComponent({
 		flex-direction: column;
 	}
 
-	.android {
-		padding-right: 8em;
-	}
-
 	.mobile-link {
+		padding-left: .4em; /* align logo left edge with QR code left edge */
 		padding-bottom: .6em;
 	}
 }
 
 .desktop-apps {
 	display: flex;
-	justify-content: space-between;
 	max-width: var(--software-content-width);
+}
+
+.mobile-apps, .desktop-apps {
+	gap: var(--software-gap);
 }
 
 .symbol {
@@ -159,17 +172,25 @@ export default defineComponent({
 	vertical-align: middle;
 }
 
+@media (min-width: 600px) {
+	.desktop-apps {
+		gap: var(--software-gap);
+	}
+
+	.desktop-app {
+		max-width: calc(var(--software-content-width) / 2);
+	}
+}
+
 @media (max-width: 600px) {
 	.mobile-apps {
+		flex-flow: column wrap;
 		gap: 1em;
+
 		padding-bottom: 0;
 
 		.ios, .android {
 			max-width: 15em;
-		}
-
-		.android {
-			padding-right: 0;
 		}
 	}
 
