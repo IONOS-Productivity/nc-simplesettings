@@ -124,11 +124,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+#software {
+	--software-content-width: 40em;
+}
+
 .mobile-apps {
 	display: flex;
 	justify-content: space-between;
 	padding-bottom: 2em;
-	max-width: 39em;
+	max-width: var(--software-content-width);
 
 	.ios, .android {
 		display: flex;
@@ -147,7 +151,7 @@ export default defineComponent({
 .desktop-apps {
 	display: flex;
 	justify-content: space-between;
-	max-width: 40em;
+	max-width: var(--software-content-width);
 }
 
 .symbol {
