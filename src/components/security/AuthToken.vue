@@ -357,6 +357,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use '../../../../../core/css/variables.scss' as variables;
+
 .auth-token {
 	border-top: 2px solid var(--color-border);
 	max-width: 200px;
@@ -400,7 +402,7 @@ export default defineComponent({
 	}
 }
 
-@media (max-width: 660px) {
+@media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
 	.auth-token__name {
 		min-width: auto;
 	}
