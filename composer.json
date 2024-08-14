@@ -33,8 +33,15 @@
 	},
 	"require-dev": {
 		"nextcloud/ocp": "dev-stable29",
-		"roave/security-advisories": "dev-latest"
+		"roave/security-advisories": "dev-latest",
+		"nextcloud/openapi-extractor": "dev-main"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/nextcloud/openapi-extractor"
+		}
+	],
 	"config": {
 		"allow-plugins": {
 			"bamarni/composer-bin-plugin": true
