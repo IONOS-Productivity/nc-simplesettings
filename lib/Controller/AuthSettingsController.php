@@ -42,6 +42,9 @@ use OCA\Settings\Activity\Provider;
 use OCP\Activity\IManager;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
+use OCP\AppFramework\Http\Attribute\NoAdminRequired;
+use OCP\AppFramework\Http\Attribute\OpenAPI;
+use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\Authentication\Exceptions\ExpiredTokenException;
 use OCP\Authentication\Exceptions\InvalidTokenException;
@@ -117,7 +120,9 @@ class AuthSettingsController extends Controller {
 	 * A set of credentials is returned.
 	 * @param string $name a descriptive symbolic name for the application
 	 */
-	public function create($name) {
+	#[NoAdminRequired]
+	#[OpenAPI(scope: OpenAPI::SCOPE_DEFAULT)]
+	public function create($name): JSONResponse {
 		if ($this->checkAppToken()) {
 			return $this->getServiceNotAvailableResponse();
 		}
@@ -195,6 +200,8 @@ class AuthSettingsController extends Controller {
 	 *
 	 * @param int $id the app token ID
 	 */
+	#[NoAdminRequired]
+	#[OpenAPI(scope: OpenAPI::SCOPE_DEFAULT)]
 	public function destroy($id) {
 		if ($this->checkAppToken()) {
 			return new JSONResponse([], Http::STATUS_BAD_REQUEST);
@@ -220,6 +227,8 @@ class AuthSettingsController extends Controller {
 	 * @param array $scope the new scope
 	 * @param string $name the new name
 	 */
+	#[NoAdminRequired]
+	#[OpenAPI(scope: OpenAPI::SCOPE_DEFAULT)]
 	public function update($id, array $scope, string $name) {
 		if ($this->checkAppToken()) {
 			return new JSONResponse([], Http::STATUS_BAD_REQUEST);
@@ -297,21 +306,23 @@ class AuthSettingsController extends Controller {
 	 *
 	 * @param int $id the app token ID
 	 */
-	public function wipe(int $id): JSONResponse {
+	#[NoAdminRequired]
+	#[OpenAPI(scope: OpenAPI::SCOPE_DEFAULT)]
+	public function wipe(int $id): DataResponse {
 		if ($this->checkAppToken()) {
-			return new JSONResponse([], Http::STATUS_BAD_REQUEST);
+			return new DataResponse([], Http::STATUS_BAD_REQUEST);
 		}
 
 		try {
 			$token = $this->findTokenByIdAndUser($id);
 		} catch (InvalidTokenException $e) {
-			return new JSONResponse([], Http::STATUS_NOT_FOUND);
+			return new DataResponse([], Http::STATUS_NOT_FOUND);
 		}
 
 		if (!$this->remoteWipe->markTokenForWipe($token)) {
-			return new JSONResponse([], Http::STATUS_BAD_REQUEST);
+			return new DataResponse([], Http::STATUS_BAD_REQUEST);
 		}
 
-		return new JSONResponse([]);
+		return new DataResponse([]);
 	}
 }
