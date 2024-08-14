@@ -114,6 +114,11 @@ class PageController extends Controller {
 			]
 		);
 
+		$this->initialState->provideInitialState(
+			'customClientURL',
+			$this->getCustomClientURL()
+		);
+
 		return new TemplateResponse(
 			Application::APP_ID,
 			'index',
@@ -185,6 +190,19 @@ class PageController extends Controller {
 		return [
 			'activeLanguage' => $userLang,
 			'allLanguages' => $combinedLanguages
+		];
+	}
+
+	/**
+	 * returns the custom client URLs
+	 */
+	private function getCustomClientURL(): array {
+		return [
+			'apps.android.url' => $this->config->getSystemValue('ionos_customclient_android'),
+			'apps.ios.url' => $this->config->getSystemValue('ionos_customclient_ios'),
+			'apps.windows.url' => $this->config->getSystemValue('ionos_customclient_windows'),
+			'apps.macos.url' => $this->config->getSystemValue('ionos_customclient_macos'),
+			'apps.ios.id' => $this->config->getSystemValue('ionos_customclient_ios_appid'),
 		];
 	}
 }

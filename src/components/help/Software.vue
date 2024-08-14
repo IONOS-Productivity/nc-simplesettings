@@ -86,12 +86,11 @@ import { defineComponent } from 'vue'
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import { imagePath } from '@nextcloud/router'
-import links from '../../links.json'
 import { translate as t, getLanguage } from '@nextcloud/l10n'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
+import { loadState } from '@nextcloud/initial-state'
 
-const currentLanguage = getLanguage().substring(0, 2)
-const appLinks = links[currentLanguage]
+const appLinks = loadState('simplesettings', 'customClientURL', {})
 
 export default defineComponent({
 	name: 'Software',
