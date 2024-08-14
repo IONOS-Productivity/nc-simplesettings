@@ -46,6 +46,7 @@ use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\Attribute\OpenAPI;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Http\JSONResponse;
+use OCP\AppFramework\OCSController;
 use OCP\Authentication\Exceptions\ExpiredTokenException;
 use OCP\Authentication\Exceptions\InvalidTokenException;
 use OCP\Authentication\Exceptions\WipeTokenException;
@@ -57,7 +58,7 @@ use OCP\Security\ISecureRandom;
 use OCP\Session\Exceptions\SessionNotAvailableException;
 use Psr\Log\LoggerInterface;
 
-class AuthSettingsController extends Controller {
+class AuthSettingsController extends OCSController {
 	/** @var IProvider */
 	private $tokenProvider;
 
