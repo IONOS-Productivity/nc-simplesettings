@@ -113,12 +113,9 @@ class AuthSettingsController extends Controller {
 	}
 
 	/**
-	 * @NoAdminRequired
-	 * @NoSubAdminRequired
-	 * @PasswordConfirmationRequired
-	 *
-	 * @param string $name
-	 * @return JSONResponse
+	 * Create an app token with a name.
+	 * A set of credentials is returned.
+	 * @param string $name a descriptive symbolic name for the application
 	 */
 	public function create($name) {
 		if ($this->checkAppToken()) {
@@ -194,11 +191,9 @@ class AuthSettingsController extends Controller {
 	}
 
 	/**
-	 * @NoAdminRequired
-	 * @NoSubAdminRequired
+	 * Delete an app token by its numeric ID.
 	 *
-	 * @param int $id
-	 * @return array|JSONResponse
+	 * @param int $id the app token ID
 	 */
 	public function destroy($id) {
 		if ($this->checkAppToken()) {
@@ -220,13 +215,10 @@ class AuthSettingsController extends Controller {
 	}
 
 	/**
-	 * @NoAdminRequired
-	 * @NoSubAdminRequired
-	 *
-	 * @param int $id
-	 * @param array $scope
-	 * @param string $name
-	 * @return array|JSONResponse
+	 * Update an app token to set a new scope or name.
+	 * @param int $id the app token ID
+	 * @param array $scope the new scope
+	 * @param string $name the new name
 	 */
 	public function update($id, array $scope, string $name) {
 		if ($this->checkAppToken()) {
@@ -301,14 +293,9 @@ class AuthSettingsController extends Controller {
 	}
 
 	/**
-	 * @NoAdminRequired
-	 * @NoSubAdminRequired
-	 * @PasswordConfirmationRequired
+	 * Wipe the device using the app token.
 	 *
-	 * @param int $id
-	 * @return JSONResponse
-	 * @throws InvalidTokenException
-	 * @throws ExpiredTokenException
+	 * @param int $id the app token ID
 	 */
 	public function wipe(int $id): JSONResponse {
 		if ($this->checkAppToken()) {
