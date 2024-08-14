@@ -125,6 +125,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use '../../../../../core/css/variables.scss' as variables;
 
 #software {
 	--software-content-width: 40em;
@@ -171,13 +172,13 @@ export default defineComponent({
 	vertical-align: middle;
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: calc(variables.$breakpoint-mobile / 2)) {
 	.desktop-app {
 		max-width: calc(var(--software-content-width) / 2);
 	}
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
 	.mobile-apps {
 		flex-flow: column wrap;
 		gap: 1em;
