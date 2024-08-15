@@ -22,8 +22,10 @@
 
 <template>
 	<tr :class="['auth-token', { 'auth-token--wiping': wiping }]" :data-id="token.id">
-		<td class="auth-token__name">
+		<td>
 			<NcIconSvgWrapper :path="tokenIcon" />
+		</td>
+		<td class="auth-token__name">
 			<div class="auth-token__name-wrapper">
 				<form v-if="token.canRename && renaming"
 					class="auth-token__name-form"
@@ -405,13 +407,16 @@ export default defineComponent({
 @media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
 	.auth-token__name {
 		min-width: auto;
+		padding-bottom: 0;
 	}
 
 	td:has(.auth-token__last-activity) {
 		display: block;
-		margin-top: -25px;
-		padding-inline-start: 40px;
 		color: var(--color-text-lighter);
+
+		& .auth-token__last-activity {
+			padding-inline-start: 0;
+		}
 	}
 }
 </style>

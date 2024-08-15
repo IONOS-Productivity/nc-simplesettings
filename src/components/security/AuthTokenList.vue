@@ -27,6 +27,7 @@
 				<th class="token-list__header-device">
 					{{ t('simplesettings', 'Device') }}
 				</th>
+				<th class="hidden-visually" />
 				<th class="token-list__header-activity">
 					{{ t('simplesettings', 'Last activity') }}
 				</th>
