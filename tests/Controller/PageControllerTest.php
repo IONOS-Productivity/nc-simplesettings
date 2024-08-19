@@ -136,6 +136,15 @@ class PageControllerTest extends TestCase {
 			]
 		];
 
+		$this->mockConfigValues = [
+			'force_language' => $this->mockedForcedLanguage,
+			'ionos_customclient_android' => 'mocked-android-url',
+			'ionos_customclient_ios' => 'mocked-ios-url',
+			'ionos_customclient_ios_appid' => 'mocked-ios-appid',
+			'ionos_customclient_windows' => 'mocked-windows-url',
+			'ionos_customclient_macos' => 'mocked-macos-url',
+		];
+
 		$mockUser = $this->createMock(IUser::class);
 
 		$mockUser->expects($this->atMost(1))
@@ -147,10 +156,20 @@ class PageControllerTest extends TestCase {
 			->with($this->equalTo($this->uid))
 			->willReturn($mockUser);
 
-		$this->config->expects($this->atMost(1))
+		$this->config->expects($this->atMost(6))
 			->method('getSystemValue')
-			->with('force_language', false)
-			->willReturnCallback(fn ($_propertyName, $_defaultValue) => $this->mockedForcedLanguage);
+			->with(
+				$this->logicalOr(
+					$this->equalTo('force_language'),
+					$this->equalTo('ionos_customclient_android'),
+					$this->equalTo('ionos_customclient_ios'),
+					$this->equalTo('ionos_customclient_ios_appid'),
+					$this->equalTo('ionos_customclient_windows'),
+					$this->equalTo('ionos_customclient_macos'),
+				),
+				$this->anything() // This catches any default value passed
+			)
+			->willReturnCallback(fn ($_propertyName, $_defaultValue) => $this->mockConfigValues[$_propertyName] ?? $_defaultValue);
 
 		$this->l10nFactory->expects($this->atMost(1))
 			->method('findLanguage')
@@ -212,7 +231,7 @@ class PageControllerTest extends TestCase {
 			],
 		];
 
-		$this->initialState->expects($this->exactly(3))
+		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) use ($expectedAppTokensRegisteredAsInitialState) {
 				if ($stateName == "app_tokens") {
@@ -233,7 +252,7 @@ class PageControllerTest extends TestCase {
 			->method('getImpersonatingUserID')
 			->willReturn("some-user-id-is-not-null");
 
-		$this->initialState->expects($this->exactly(3))
+		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
 				if ($stateName == "can_create_app_token") {
@@ -252,7 +271,7 @@ class PageControllerTest extends TestCase {
 			->method('getImpersonatingUserID')
 			->willReturn(null);
 
-		$this->initialState->expects($this->exactly(3))
+		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
 				if ($stateName == "can_create_app_token") {
@@ -266,7 +285,7 @@ class PageControllerTest extends TestCase {
 	private function configureInitialStateLanguageMock($expectedActiveLanguage) {
 		$mockAvailableLanguages = $this->mockAvailableLanguages;
 
-		$this->initialState->expects($this->exactly(3))
+		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) use ($expectedActiveLanguage, $mockAvailableLanguages) {
 				if ($stateName == "personalInfoParameters") {
@@ -287,9 +306,9 @@ class PageControllerTest extends TestCase {
 	 * @throws Exception
 	 */
 	public function testIndexProvidesInitialStateWithLanguagesLanguageForced() {
-		$this->mockedForcedLanguage = true;
+		$this->mockConfigValues['force_language'] = true;
 
-		$this->initialState->expects($this->exactly(3))
+		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
 				if ($stateName == "personalInfoParameters") {
@@ -316,6 +335,29 @@ class PageControllerTest extends TestCase {
 	public function testIndexProvidesInitialStateWithLanguagesNoLanguageForcedAndConfiguredLanguageFound() {
 		$this->mockConfiguredUserLanguage = 'de-DE';
 		$this->configureInitialStateLanguageMock(['code' => $this->mockConfiguredUserLanguage, 'name' => 'Deutsch']);
+		$this->controller->index();
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	public function testIndexProvidesInitialStateWithCustomClientURLs() {
+		$expectedCustomClientsURLs = [
+			'apps.android.url' => 'mocked-android-url',
+			'apps.ios.url' => 'mocked-ios-url',
+			'apps.ios.id' => 'mocked-ios-appid',
+			'apps.windows.url' => 'mocked-windows-url',
+			'apps.macos.url' => 'mocked-macos-url',
+		];
+
+		$this->initialState->expects($this->exactly(4))
+			->method('provideInitialState')
+			->willReturnCallback(function ($stateName, $stateValue) use ($expectedCustomClientsURLs) {
+				if ($stateName == "customClientURL") {
+					$this->assertEquals($expectedCustomClientsURLs, $stateValue);
+				}
+			});
+
 		$this->controller->index();
 	}
 }
