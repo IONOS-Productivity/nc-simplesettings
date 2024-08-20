@@ -15,6 +15,18 @@
 			<directory name="vendor" />
 		</ignoreFiles>
 	</projectFiles>
+	<issueHandlers>
+		<UndefinedClass>
+			<errorLevel type="suppress">
+				<referencedClass name="OC\Authentication\Token\RemoteWipe"/>
+				<referencedClass name="OC\Authentication\Token\IProvider"/>
+				<referencedClass name="OC\Authentication\Exceptions\PasswordlessTokenException" />
+				<referencedClass name="OC\Authentication\Exceptions\InvalidTokenException" />
+				<referencedClass name="OCA\Settings\Activity\Provider" />
+				<referencedClass name="OC\Authentication\Token\INamedToken" />
+			</errorLevel>
+		</UndefinedClass>
+	</issueHandlers>
 	<extraFiles>
 		<directory name="vendor"/>
 	</extraFiles>
