@@ -119,7 +119,7 @@ class PageController extends Controller {
 			return [];
 		}
 
-		return array_map(function (IToken $token) use ($sessionToken) {
+		return array_map(function (IToken|INamedToken $token) use ($sessionToken) {
 			$data = $token->jsonSerialize();
 			$data['canDelete'] = true;
 			$data['canRename'] = $token instanceof INamedToken && $data['type'] !== IToken::WIPE_TOKEN;
