@@ -7,7 +7,7 @@
 	<description>Simplified Nextcloud settings</description>
 	<version>1.0.0</version>
 	<licence>agpl</licence>
-	<author mail="t.lehmann@strato.de" homepage="">IONOS</author>
+	<author mail="t.lehmann@strato.de" homepage="https://github.com/IONOS-Productivity/">IONOS</author>
 	<namespace>SimpleSettings</namespace>
 	<category>tools</category>
 	<bugs>https://github.com/IONOS-Productivity/nc-simple-settings</bugs>
