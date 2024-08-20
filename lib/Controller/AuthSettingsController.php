@@ -33,7 +33,6 @@
 namespace OCA\SimpleSettings\Controller;
 
 use BadMethodCallException;
-use OC\Authentication\Exceptions\InvalidTokenException as OcInvalidTokenException;
 use OC\Authentication\Exceptions\PasswordlessTokenException;
 use OC\Authentication\Token\INamedToken;
 use OC\Authentication\Token\IProvider;
@@ -280,7 +279,7 @@ class AuthSettingsController extends Controller {
 		}
 		if ($token->getUID() !== $this->uid) {
 			/** @psalm-suppress DeprecatedClass We have to throw the OC version so both OC and OCP catches catch it */
-			throw new OcInvalidTokenException('This token does not belong to you!');
+			throw new InvalidTokenException('This token does not belong to you!');
 		}
 		return $token;
 	}
