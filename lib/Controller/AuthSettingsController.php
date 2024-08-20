@@ -268,10 +268,10 @@ class AuthSettingsController extends Controller {
 	 * Find a token by given id and check if uid for current session belongs to this token
 	 *
 	 * @param int $id
-	 * @return IToken
+	 * @return IToken|INamedToken
 	 * @throws InvalidTokenException
 	 */
-	private function findTokenByIdAndUser(int $id): IToken {
+	private function findTokenByIdAndUser(int $id): IToken|INamedToken {
 		try {
 			$token = $this->tokenProvider->getTokenById($id);
 		} catch (ExpiredTokenException $e) {
