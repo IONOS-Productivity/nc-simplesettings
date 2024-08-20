@@ -55,29 +55,14 @@ use OCP\Session\Exceptions\SessionNotAvailableException;
 use Psr\Log\LoggerInterface;
 
 class AuthSettingsController extends Controller {
-	/** @var IProvider */
-	private $tokenProvider;
-
-	/** @var ISession */
-	private $session;
-
-	/** @var IUserSession */
-	private $userSession;
-
-	/** @var string */
-	private $uid;
-
-	/** @var ISecureRandom */
-	private $random;
-
-	/** @var IManager */
-	private $activityManager;
-
-	/** @var RemoteWipe */
-	private $remoteWipe;
-
-	/** @var LoggerInterface */
-	private $logger;
+	private IProvider $tokenProvider;
+	private ISession $session;
+	private IUserSession $userSession;
+	private string $uid;
+	private ISecureRandom $random;
+	private IManager $activityManager;
+	private RemoteWipe $remoteWipe;
+	private LoggerInterface $logger;
 
 	/**
 	 * @param string $appName
