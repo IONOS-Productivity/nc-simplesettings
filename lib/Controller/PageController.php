@@ -46,29 +46,14 @@ use OCP\Session\Exceptions\SessionNotAvailableException;
  * @psalm-suppress UnusedClass
  */
 class PageController extends Controller {
-	/** @var IConfig */
-	private $config;
-
-	/** @var IUserManager */
-	private $userManager;
-
-	/** @var IFactory */
-	private $l10nFactory;
-
-	/** @var IProvider */
-	private $tokenProvider;
-
-	/** @var IInitialState */
-	private $initialState;
-
-	/** @var IUserSession */
-	private $userSession;
-
-	/** @var ISession */
-	private $session;
-
-	/** @var string|null */
-	private $uid;
+	private IConfig $config;
+	private IUserManager $userManager;
+	private IFactory $l10nFactory;
+	private IProvider $tokenProvider;
+	private IInitialState $initialState;
+	private IUserSession $userSession;
+	private ISession $session;
+	private string|null $uid;
 
 	public function __construct(
 		IConfig $config,
