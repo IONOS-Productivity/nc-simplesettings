@@ -53,6 +53,10 @@ use OCP\Security\ISecureRandom;
 use OCP\Session\Exceptions\SessionNotAvailableException;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Controller to configure app tokens.
+ * @psalm-api
+ */
 class AuthSettingsController extends Controller {
 	private IProvider $tokenProvider;
 	private ISession $session;
