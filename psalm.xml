@@ -23,6 +23,7 @@
 				<referencedClass name="OC\Authentication\Exceptions\PasswordlessTokenException" />
 				<referencedClass name="OC\Authentication\Exceptions\InvalidTokenException" />
 				<referencedClass name="OCA\Settings\Activity\Provider" />
+				<referencedClass name="OC\Authentication\Token\IToken" />
 				<referencedClass name="OC\Authentication\Token\INamedToken" />
 			</errorLevel>
 		</UndefinedClass>
