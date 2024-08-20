@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace OCA\SimpleSettings\Controller;
 
 use OC\Authentication\Token\INamedToken;
-use OC\Authentication\Token\IProvider as IAuthTokenProvider;
+use OC\Authentication\Token\IProvider;
 use OC\Authentication\Token\IToken;
 use OCA\SimpleSettings\AppInfo\Application;
 use OCP\AppFramework\Controller;
@@ -59,7 +59,7 @@ class PageController extends Controller {
 		IConfig $config,
 		IUserManager $userManager,
 		IFactory $l10nFactory,
-		IAuthTokenProvider $tokenProvider,
+		IProvider $tokenProvider,
 		ISession $session,
 		IInitialState $initialState,
 		IUserSession $userSession,
