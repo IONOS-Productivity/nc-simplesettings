@@ -237,7 +237,7 @@ class AuthSettingsControllerTest extends TestCase {
 		$this->assertSame(\OCP\AppFramework\Http::STATUS_NOT_FOUND, $response->getStatus());
 	}
 
-	public function dataRenameToken(): array {
+	public static function dataRenameToken(): array {
 		return [
 			'App password => Other token name' => ['App password', 'Other token name'],
 			'Other token name => App password' => ['Other token name', 'App password'],
@@ -280,7 +280,7 @@ class AuthSettingsControllerTest extends TestCase {
 		$this->assertSame([], $this->controller->update($tokenId, ['filesystem' => true], $newName));
 	}
 
-	public function dataUpdateFilesystemScope(): array {
+	public static function dataUpdateFilesystemScope(): array {
 		return [
 			'Grant filesystem access' => [false, true],
 			'Revoke filesystem access' => [true, false],
