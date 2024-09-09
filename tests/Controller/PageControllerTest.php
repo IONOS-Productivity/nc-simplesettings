@@ -50,6 +50,9 @@ class PageControllerTest extends TestCase {
 		$this->initialState = $this->createMock(IInitialState::class);
 		$this->userSession = $this->createMock(IUserSession::class);
 		$this->uid = "mock-user-id-123";
+		$this->helper = $this->getMockBuilder(\OC_Helper::class)
+			->onlyMethods(['getStorageInfo', 'humanFileSize'])
+			->getMock();
 
 		$this->controller = new PageController(
 			$this->config,
@@ -59,7 +62,8 @@ class PageControllerTest extends TestCase {
 			$this->session,
 			$this->initialState,
 			$this->userSession,
-			$this->uid
+			$this->uid,
+			$this->helper
 		);
 
 		$mockCurrentSessionId = "mock-session-id-123";
