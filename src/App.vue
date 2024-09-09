@@ -18,6 +18,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <template>
 	<content>
+		<Quota />
+		<hr>
 		<LanguageSection />
 		<hr>
 		<AuthTokenSection />
@@ -33,6 +35,7 @@ import AuthTokenSection from './components/security/AuthTokenSection.vue'
 import WebDavUrl from './components/files/WebDavUrl.vue'
 import Software from './components/help/Software.vue'
 import LanguageSection from './components/account/LanguageSection.vue'
+import Quota from './components/account/Quota.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -42,6 +45,7 @@ export default defineComponent({
 		AuthTokenSection,
 		WebDavUrl,
 		Software,
+		Quota,
 	},
 })
 </script>
