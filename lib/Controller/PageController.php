@@ -34,6 +34,7 @@ use OCP\AppFramework\Http\Attribute\OpenAPI;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\Authentication\Exceptions\InvalidTokenException;
+use OCP\Files\FileInfo;
 use OCP\IConfig;
 use OCP\ISession;
 use OCP\IUser;
@@ -54,6 +55,7 @@ class PageController extends Controller {
 	private IUserSession $userSession;
 	private ISession $session;
 	private string|null $uid;
+	private $helper;
 
 	public function __construct(
 		IConfig $config,
@@ -63,7 +65,8 @@ class PageController extends Controller {
 		ISession $session,
 		IInitialState $initialState,
 		IUserSession $userSession,
-		?string $UserId
+		?string $UserId,
+		\OC_Helper $helper
 	) {
 		$this->config = $config;
 		$this->userManager = $userManager;
@@ -73,6 +76,7 @@ class PageController extends Controller {
 		$this->initialState = $initialState;
 		$this->userSession = $userSession;
 		$this->uid = $UserId;
+		$this->helper = $helper;
 	}
 
 	#[NoCSRFRequired]
@@ -92,10 +96,21 @@ class PageController extends Controller {
 
 		$user = $this->userManager->get($this->uid);
 
+		$storageInfo = $this->helper::getStorageInfo('/');
+		if ($storageInfo['quota'] === FileInfo::SPACE_UNLIMITED) {
+			$totalSpace = 'Unlimited';
+		} else {
+			$totalSpace = $this->helper::humanFileSize($storageInfo['total']);
+		}
+
 		$this->initialState->provideInitialState(
 			'personalInfoParameters',
 			[
 				'languageMap' => $this->getLanguageMap($user),
+				'totalSpace' => $totalSpace,
+				'freeSpace' => $this->helper::humanFileSize($storageInfo['free']),
+				'usage' => $this->helper::humanFileSize($storageInfo['used']),
+				'usageRelative' => round($storageInfo['relative']),
 			]
 		);
 
