@@ -50,21 +50,21 @@ class PageControllerTest extends TestCase {
 		$this->initialState = $this->createMock(IInitialState::class);
 		$this->userSession = $this->createMock(IUserSession::class);
 		$this->uid = "mock-user-id-123";
-		$this->helper = $this->getMockBuilder(\OC_Helper::class)
+		$this->helper = $this->createMock(\OC_Helper::class);
+		$this->controller = $this->getMockBuilder(PageController::class)
+			->setConstructorArgs([
+				$this->config,
+				$this->userManager,
+				$this->l10nFactory,
+				$this->tokenProvider,
+				$this->session,
+				$this->initialState,
+				$this->userSession,
+				$this->uid,
+				$this->helper
+			])
 			->onlyMethods(['getStorageInfo', 'humanFileSize'])
 			->getMock();
-
-		$this->controller = new PageController(
-			$this->config,
-			$this->userManager,
-			$this->l10nFactory,
-			$this->tokenProvider,
-			$this->session,
-			$this->initialState,
-			$this->userSession,
-			$this->uid,
-			$this->helper
-		);
 
 		$mockCurrentSessionId = "mock-session-id-123";
 
@@ -87,6 +87,23 @@ class PageControllerTest extends TestCase {
 		$this->session->expects($this->once())
 			->method('getId')
 			->willReturn($mockCurrentSessionId);
+
+		$this->controller->expects($this->once())
+			->method('getStorageInfo')
+			->willReturn([
+				'used' => 123,
+				'quota' => 100,
+				'total' => 100,
+				'relative' => 123,
+				'free' => 0,
+				'owner' => 'MyName',
+				'ownerDisplayName' => 'MyDisplayName',
+			]);
+
+		// mock humanFileSize
+		$this->controller->expects($this->any())
+			->method('humanFileSize')
+			->willReturn('mocked-human-file-size');
 
 		// Contains also the current session's token
 		$mockTokenList = [
@@ -300,7 +317,11 @@ class PageControllerTest extends TestCase {
 								$mockAvailableLanguages['commonLanguages'],
 								$mockAvailableLanguages['otherLanguages'],
 							)
-						]
+						],
+						'totalSpace' => 'mocked-human-file-size',
+						'freeSpace' => 'mocked-human-file-size',
+						'usage' => 'mocked-human-file-size',
+						'usageRelative' => 123.0,
 					], $stateValue);
 				}
 			});
@@ -317,7 +338,11 @@ class PageControllerTest extends TestCase {
 			->willReturnCallback(function ($stateName, $stateValue) {
 				if ($stateName == "personalInfoParameters") {
 					$this->assertEquals([
-						'languageMap' => []
+						'languageMap' => [],
+						'totalSpace' => 'mocked-human-file-size',
+						'freeSpace' => 'mocked-human-file-size',
+						'usage' => 'mocked-human-file-size',
+						'usageRelative' => 123.0,
 					], $stateValue);
 				}
 			});

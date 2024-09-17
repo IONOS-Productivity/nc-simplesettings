@@ -96,11 +96,11 @@ class PageController extends Controller {
 
 		$user = $this->userManager->get($this->uid);
 
-		$storageInfo = $this->helper::getStorageInfo('/');
+		$storageInfo = $this->getStorageInfo('/');
 		if ($storageInfo['quota'] === FileInfo::SPACE_UNLIMITED) {
 			$totalSpace = 'Unlimited';
 		} else {
-			$totalSpace = $this->helper::humanFileSize($storageInfo['total']);
+			$totalSpace = $this->humanFileSize($storageInfo['total']);
 		}
 
 		$this->initialState->provideInitialState(
@@ -108,8 +108,8 @@ class PageController extends Controller {
 			[
 				'languageMap' => $this->getLanguageMap($user),
 				'totalSpace' => $totalSpace,
-				'freeSpace' => $this->helper::humanFileSize($storageInfo['free']),
-				'usage' => $this->helper::humanFileSize($storageInfo['used']),
+				'freeSpace' => $this->humanFileSize($storageInfo['free']),
+				'usage' => $this->humanFileSize($storageInfo['used']),
 				'usageRelative' => round($storageInfo['relative']),
 			]
 		);
@@ -204,5 +204,18 @@ class PageController extends Controller {
 			'apps.macos.url' => $this->config->getSystemValue('ionos_customclient_macos'),
 			'apps.ios.id' => $this->config->getSystemValue('ionos_customclient_ios_appid'),
 		];
+	}
+
+	public function getStorageInfo(
+		$path,
+		$rootInfo = null,
+		$includeMountPoints = true,
+		$useCache = true
+	): array {
+		return $this->helper::getStorageInfo($path, $rootInfo, $includeMountPoints, $useCache);
+	}
+
+	public function humanFileSize(int $size): string {
+		return $this->helper::humanFileSize($size);
 	}
 }
