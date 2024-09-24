@@ -18,15 +18,36 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <template>
 	<content>
-		<Quota />
-		<hr>
-		<LanguageSection />
-		<hr>
-		<AuthTokenSection />
-		<hr>
-		<WebDavUrl />
-		<hr>
-		<Software />
+		<div class="navigation">
+			<a href="/">Previous</a>
+			<ul>
+				<li>
+					<a @click="scrollToElement('account')">Account Settings</a>
+				</li>
+				<li>
+					<a @click="scrollToElement('security')">Security & Privacy</a>
+				</li>
+				<li>
+					<a @click="scrollToElement('help')">Help & Support</a>
+				</li>
+			</ul>
+		</div>
+		<div class="settings">
+			<h2 ref="account">
+				Account Settings
+			</h2>
+			<Quota />
+			<LanguageSection />
+			<h2 ref="security">
+				Security & Privacy
+			</h2>
+			<AuthTokenSection />
+			<WebDavUrl />
+			<h2 ref="help">
+				Help & Support
+			</h2>
+			<Software />
+		</div>
 	</content>
 </template>
 
@@ -47,17 +68,38 @@ export default defineComponent({
 		Software,
 		Quota,
 	},
+
+	methods: {
+		scrollToElement(ref: string) {
+			const el = this.$refs[ref] as HTMLElement
+
+			el?.scrollIntoView({ behavior: 'smooth', inline: 'start' })
+		},
+	},
 })
 </script>
 
 <style scoped lang="scss">
 content {
+	display: flex;
+	align-items: stretch;
+	flex-direction: row;
 	width: 100%;
-	overflow-y: scroll;
 	background-color: var(--color-main-background);
 }
 
-hr {
-	margin: 0 30px;
+.settings {
+	width: 85%;
+	overflow-y: scroll;
+}
+
+.navigation {
+	background-color: var(--ion-color-cool-grey-c1);
+	width: 15%;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 24px;
 }
 </style>
