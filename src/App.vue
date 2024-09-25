@@ -91,6 +91,11 @@ content {
 .settings {
 	width: 85%;
 	overflow-y: scroll;
+
+	:deep(.section) {
+		padding-top: 16px;
+		margin-bottom: 0;
+	}
 }
 
 .navigation {
@@ -99,6 +104,9 @@ content {
 }
 
 h2 {
+	padding-top: 25px;
+	padding-left: 30px;
+	margin-bottom: 0;
 	font-weight: 700;
 	font-size: 24px;
 }
