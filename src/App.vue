@@ -33,6 +33,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			</ul>
 		</div>
 		<div class="settings">
+			<a id="close-icon" href="/">
+				<IconClose :size="24" />
+			</a>
 			<h2 ref="account">
 				Account Settings
 			</h2>
@@ -57,6 +60,7 @@ import WebDavUrl from './components/files/WebDavUrl.vue'
 import Software from './components/help/Software.vue'
 import LanguageSection from './components/account/LanguageSection.vue'
 import Quota from './components/account/Quota.vue'
+import IconClose from 'vue-material-design-icons/Close.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -67,6 +71,7 @@ export default defineComponent({
 		WebDavUrl,
 		Software,
 		Quota,
+		IconClose,
 	},
 
 	methods: {
@@ -80,6 +85,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@use '../../../core/css/variables.scss' as variables;
+
 content {
 	display: flex;
 	align-items: stretch;
@@ -103,11 +110,38 @@ content {
 	width: 15%;
 }
 
+#close-icon {
+	// Hide the close icon on desktop
+	display: none;
+}
+
 h2 {
 	padding-top: 25px;
 	padding-left: 30px;
 	margin-bottom: 0;
 	font-weight: 700;
 	font-size: 24px;
+}
+
+@media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
+	.settings {
+		position: relative;
+		width: 100%;
+	}
+
+	.navigation {
+		// Hide the navigation bar on mobile
+		display: none;
+	}
+
+	#close-icon {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+		font-size: 24px;
+		padding: 10px;
+	}
 }
 </style>
