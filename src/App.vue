@@ -19,21 +19,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <template>
 	<content>
 		<div class="navigation">
-			<a href="/">Previous</a>
-			<ul>
-				<li>
-					<a @click="scrollToElement('account')">Account Settings</a>
-				</li>
-				<li>
-					<a @click="scrollToElement('security')">Security & Privacy</a>
-				</li>
-				<li>
-					<a @click="scrollToElement('help')">Help & Support</a>
-				</li>
-			</ul>
+			<Navigation @scroll-to="scrollToElement" />
 		</div>
 		<div class="settings">
-			<a id="close-icon" href="/">
+			<a id="close-icon" href="/index.php/apps/files">
 				<IconClose :size="24" />
 			</a>
 			<h2 ref="account">
@@ -60,6 +49,7 @@ import WebDavUrl from './components/files/WebDavUrl.vue'
 import Software from './components/help/Software.vue'
 import LanguageSection from './components/account/LanguageSection.vue'
 import Quota from './components/account/Quota.vue'
+import Navigation from './components/navigation/Navigation.vue'
 import IconClose from 'vue-material-design-icons/Close.vue'
 import { defineComponent } from 'vue'
 
@@ -71,14 +61,13 @@ export default defineComponent({
 		WebDavUrl,
 		Software,
 		Quota,
+		Navigation,
 		IconClose,
 	},
-
 	methods: {
-		scrollToElement(ref: string) {
-			const el = this.$refs[ref] as HTMLElement
-
-			el?.scrollIntoView({ behavior: 'smooth', inline: 'start' })
+		scrollToElement(element: string) {
+			const el = this.$refs[element] as HTMLElement
+			el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 		},
 	},
 })
