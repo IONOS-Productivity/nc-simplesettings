@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nextcloud 3.14159\n"
 "Report-Msgid-Bugs-To: translations\\@example.com\n"
-"POT-Creation-Date: 2024-11-26 11:40+0000\n"
+"POT-Creation-Date: 2024-12-03 08:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,20 +81,20 @@ msgstr ""
 msgid "Copy to clipboard"
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:50
+#. TRANSLATORS src/components/files/WebDavUrl.vue:85
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:24
 msgid ""
-"EasyStorage fully supports the WebDAV protocol and you can connect and "
-"synchronise with your EasyStorage files via WebDAV. Use this address to "
+"{productName} fully supports the WebDAV protocol and you can connect and "
+"synchronise with your {productName} files via WebDAV. Use this address to "
 "access your files via WebDAV."
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:90
+#. TRANSLATORS src/components/files/WebDavUrl.vue:95
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:26
 msgid "Clipboard is not available"
 msgstr ""
 
-#. TRANSLATORS src/components/files/WebDavUrl.vue:96
+#. TRANSLATORS src/components/files/WebDavUrl.vue:101
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:28
 msgid "WebDAV URL copied to clipboard"
 msgstr ""
