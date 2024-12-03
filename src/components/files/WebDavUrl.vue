@@ -47,7 +47,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			</template>
 		</NcInputField>
 		<p id="webdav-info">
-			{{ t('simplesettings', 'EasyStorage fully supports the WebDAV protocol and you can connect and synchronise with your EasyStorage files via WebDAV. Use this address to access your files via WebDAV.') }}
+			{{ webdavInfo }}
 		</p>
 	</div>
 </template>
@@ -79,6 +79,11 @@ export default defineComponent({
 			webdavUrl,
 			webdavUrlCopied: false,
 		}
+	},
+	computed: {
+		webdavInfo() {
+			return t('simplesettings', '{productName} fully supports the WebDAV protocol and you can connect and synchronise with your {productName} files via WebDAV. Use this address to access your files via WebDAV.', { productName: window.oc_defaults.productName })
+		},
 	},
 	methods: {
 		t,
