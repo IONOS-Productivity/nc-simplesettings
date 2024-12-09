@@ -5,22 +5,22 @@
 				id="backButton"
 				:name="t('simplesettings', 'Back to Files')"
 				href="/index.php/apps/files">
-				<IconChevronLeft slot="icon" :size="24" />
+				<IconChevronLeft slot="icon" :size="16" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Account Settings')"
 				@click="scrollToElement('account')">
-				<IconAccount slot="icon" :size="20" />
+				<IconAccount slot="icon" :size="16" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Security & Privacy')"
 				@click="scrollToElement('security')">
-				<IconLock slot="icon" :size="20" />
+				<IconLock slot="icon" :size="16" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Help & Support')"
 				@click="scrollToElement('help')">
-				<IconHeadset slot="icon" :size="20" />
+				<IconHeadset slot="icon" :size="16" />
 			</NcAppNavigationItem>
 		</ul>
 	</div>
