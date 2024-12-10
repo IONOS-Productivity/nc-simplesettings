@@ -62,6 +62,8 @@ export default defineComponent({
 	margin-top: 24px;
 
 	ul {
+		font-weight: 600;
+
 		#backButton {
 			margin-top: -8px;
 			margin-left: -14px;
