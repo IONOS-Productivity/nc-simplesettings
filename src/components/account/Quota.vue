@@ -65,10 +65,10 @@ export default {
 
 	computed: {
 		quotaUsedPrefix() {
-			return t('settings', 'Used: ')
+			return t('simplesettings', 'Used: ')
 		},
 		quotaFreePrefix() {
-			return t('settings', 'Free: ')
+			return t('simplesettings', 'Free: ')
 		},
 	},
 

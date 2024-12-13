@@ -26,17 +26,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<IconClose :size="24" />
 			</a>
 			<h2 ref="account">
-				Account Settings
+				{{ t('simplesettings', 'Account Settings') }}
 			</h2>
 			<Quota />
 			<LanguageSection />
 			<h2 ref="security">
-				Security & Privacy
+				{{ t('simplesettings', 'Security & Privacy') }}
 			</h2>
 			<AuthTokenSection />
 			<WebDavUrl />
 			<h2 ref="help">
-				Help & Support
+				{{ t('simplesettings', 'Help & Support') }}
 			</h2>
 			<Software />
 		</div>
@@ -44,6 +44,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 </template>
 
 <script lang="ts">
+import { translate as t } from '@nextcloud/l10n'
 import AuthTokenSection from './components/security/AuthTokenSection.vue'
 import WebDavUrl from './components/files/WebDavUrl.vue'
 import Software from './components/help/Software.vue'
@@ -69,6 +70,7 @@ export default defineComponent({
 			const el = this.$refs[element] as HTMLElement
 			el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 		},
+		t,
 	},
 })
 </script>
