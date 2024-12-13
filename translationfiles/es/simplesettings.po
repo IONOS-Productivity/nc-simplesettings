@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Language: de-DE\n"
+"Language: es-ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,324 +20,324 @@ msgstr "{client} - {version} ({system})"
 #. TRANSLATORS src/components/security/AuthToken.vue:175
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:46
 msgid "{productName} Android app"
-msgstr "{productName} Android-App"
+msgstr "{productName} Android app"
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:85
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:24
 msgid "{productName} fully supports the WebDAV protocol and you can connect and synchronise with your {productName} files via WebDAV. Use this address to access your files via WebDAV."
-msgstr "{productName} unterstützt das WebDAV-Protokoll vollständig, und Sie können sich mit Ihren {productName}-Dateien über WebDAV verbinden und synchronisieren. Benutzen Sie diese Adresse, um via WebDAV auf Ihre Dateien zuzugreifen."
+msgstr "{productName} es totalmente compatible con el protocolo WebDAV y puede conectarse y sincronizar con sus archivos de {productName} a través de WebDAV. Utilice esta dirección para acceder a sus archivos a través de WebDAV."
 
 #. TRANSLATORS src/components/security/AuthToken.vue:174
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
 msgid "{productName} iOS app"
-msgstr "{productName} iOS-App"
+msgstr "{productName} iOS app"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:177
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:50
 msgid "{productName} Talk for Android"
-msgstr "{productName} Talk für Android"
+msgstr "{productName} Talk for Android"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:176
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:48
 msgid "{productName} Talk for iOS"
-msgstr "{productName} Talk für iOS"
+msgstr "{productName} Talk for iOS"
 
 #. TRANSLATORS src/components/navigation/Navigation.vue:11
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:42
 msgid "Account Settings"
-msgstr "Kontoeinstellungen"
+msgstr "Configuración de la cuenta"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/ActionNotSupportedException.php:43
 #, php-format
 msgid "Action \"%s\" not supported or implemented."
-msgstr "Aktion \"%s\" wird nicht unterstützt oder ist nicht implementiert."
+msgstr "La acción \"%s\" no está soportada o implementada."
 
 #. TRANSLATORS src/components/security/AuthTokenList.vue:35
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:64
 msgid "Actions"
-msgstr "Aktionen"
+msgstr "Acciones"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:62
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:30
 msgid "Allow filesystem access"
-msgstr "Erlaube Dateisystem-Zugriff"
+msgstr "Permitir acceso al sistema de archivos"
 
 #. TRANSLATORS src/components/files/Software.vue:3
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:2
 msgid "App & Software"
-msgstr "App & Software"
+msgstr "Aplicaciones y software"
 
 #. TRANSLATORS src/components/security/AuthTokenSetup.vue:33
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:70
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:72
 msgid "App name"
-msgstr "App-Name"
+msgstr "Nombre de la app"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:136
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:88
 msgid "App password copied!"
-msgstr "App-Passwort kopiert!"
+msgstr "¡Se copió la contraseña de aplicación!"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/AuthenticationFailedException.php:43
 msgid "Authentication failed, wrong token or provider ID given"
-msgstr "Authentifizierung ist fehlgeschlagen. Falsches Token oder falsche Provider-ID wurde übertragen."
+msgstr "La autentificación ha fallado. Se ha dado un token o una ID de proveedor erróneos."
 
 #. TRANSLATORS src/components/navigation/Navigation.vue:6
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:40
 msgid "Back to Files"
-msgstr "Zurück zu Dateien"
+msgstr "Volver a Archivos"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:35
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:20
 msgid "Cancel renaming"
-msgstr "Umbenennen abbrechen"
+msgstr "Cancelar renombrado"
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:100
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:14
 msgid "Clipboard is not available"
-msgstr "Zwischenablage ist nicht verfügbar"
+msgstr "El portapapeles no está disponible"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/ProviderDoesNotExistsException.php:44
 #, php-format
 msgid "Cloud Federation Provider with ID: \"%s\" does not exist."
-msgstr "Cloud-Federation-Provider mit ID: \"%s\" ist nicht vorhanden."
+msgstr "El proveedor de nube federada con ID \"%s\" no existe."
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:43
 msgid "Confirm wipe"
-msgstr "Löschen bestätigen"
+msgstr "Confirmar borrado"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:138
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:90
 msgid "Copy app password"
-msgstr "App-Passwort kopieren"
+msgstr "Copiar contraseña de aplicación"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:144
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:94
 msgid "Copy login name"
-msgstr "Anmeldename kopieren"
+msgstr "Copiar nombre de inicio de sesión"
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:45
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:12
 msgid "Copy to clipboard"
-msgstr "In die Zwischenablage kopieren"
+msgstr "Copiar al portapapeles"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:169
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:96
 msgid "Could not copy app password. Please copy it manually."
-msgstr "Das Passwort für die App konnte nicht kopiert werden. Bitte kopieren Sie es manuell."
+msgstr "No se ha podido copiar la contraseña de app. Por favor, cópiala manualmente."
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:183
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:98
 msgid "Could not copy login name. Please copy it manually."
-msgstr "Der Anmeldename konnte nicht kopiert werden. Bitte kopieren Sie ihn manuell."
+msgstr "No se pudo copiar el nombre de inicio de sesión. Por favor, cópielo manualmente."
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:135
 msgid "Could not delete the app token"
-msgstr "App-Token konnte nicht gelöscht werden"
+msgstr "No se pudo eliminar el token de aplicación"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Files/LockNotAcquiredException.php:46
 #, php-format
 msgid "Could not obtain lock type %d on \"%s\"."
-msgstr "Sperrtyp %d auf „%s“ konnte nicht ermittelt werden."
+msgstr "No se pudo realizar el bloqueo %d en \"%s\"."
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:26
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:4
 msgid "Create an app password in the section above."
-msgstr "Erstellen Sie im obigen Abschnitt ein App-Passwort."
+msgstr "Crea una contraseña para la aplicación en la sección anterior."
 
 #. TRANSLATORS src/components/security/AuthTokenSetup.vue:38
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:74
 msgid "Create new app password"
-msgstr "Neues App-Passwort hinzufügen"
+msgstr "Crear nueva contraseña de app"
 
 #. TRANSLATORS src/components/security/AuthTokenList.vue:28
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:60
 msgid "Device"
-msgstr "Gerät"
+msgstr "Dispositivo"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:33
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:18
 msgid "Device name"
-msgstr "Gerätename"
+msgstr "Nombre del dispositivo"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:55
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:26
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:28
 msgid "Device settings"
-msgstr "Geräteeinstellungen"
+msgstr "Configuración del dispositivo"
 
 #. TRANSLATORS src/components/security/AuthTokenSection.vue:25
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:66
 msgid "Devices & sessions"
-msgstr "Geräte & Sitzungen"
+msgstr "Dispositivos y sesiones"
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:42
 msgid "Do you really want to wipe your data from this device?"
-msgstr "Möchten Sie wirklich alle Daten von diesem Gerät löschen?"
+msgstr "¿Estás seguro de querer borrar tus datos de este dispositivo?"
 
 #. TRANSLATORS src/components/files/Software.vue:42
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:6
 msgid "Download app for desktop clients"
-msgstr "App für Desktop-Clients herunterladen"
+msgstr "Descargar aplicación para clientes de escritorio"
 
 #. TRANSLATORS src/components/files/Software.vue:5
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:4
 msgid "Download app for your mobile device"
-msgstr "App für Ihr mobiles Gerät herunterladen"
+msgstr "Descargue la aplicación para su dispositivo móvil"
 
 #. TRANSLATORS src/components/security/AuthTokenSetup.vue:83
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:76
 msgid "Error while creating device token"
-msgstr "Fehler beim Erstellen des Geräte-Tokens"
+msgstr "Error al crear \"token\" de dispositivo"
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:187
 msgid "Error while updating device token name"
-msgstr "Fehler bei der Aktualisierung des Geräte-Token-Namens"
+msgstr "Error al actualizar el nombre del token de dispositivo"
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:212
 msgid "Error while updating device token scope"
-msgstr "Fehler bei der Aktualisierung des Geräte-Token-Scope"
+msgstr "Error al actualizar el alcance del token de dispositivo"
 
 #: /var/www/html/apps-custom/simplesettings/src/store/authtoken.ts:165
 msgid "Error while wiping the device with the token"
-msgstr "Fehler während des Löschens des Geräts mit dem Token"
+msgstr "Error al borrar el dispositivo con el token"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/TopicsTaskType.php:56
 msgid "Extract topics"
-msgstr "Themen extrahieren"
+msgstr "Extraer tópicos"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/TopicsTaskType.php:64
 msgid "Extracts topics from a text and outputs them separated by commas."
-msgstr "Extrahiert Themen aus einem Text und gibt diese durch Kommas getrennt aus"
+msgstr "Extrae los tópicos de un texto y genera una salida separada por comas."
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/FreePromptTaskType.php:56
 msgid "Free prompt"
-msgstr "Freie Eingabeaufforderung"
+msgstr "Prompt libre"
 
 #. TRANSLATORS src/components/account/Quota.vue:71
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:14
 msgid "Free: "
-msgstr "Verfügbar:"
+msgstr "Disponible:"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/HeadlineTaskType.php:56
 msgid "Generate headline"
-msgstr "Überschrift erzeugen"
+msgstr "Generar titular"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/HeadlineTaskType.php:64
 msgid "Generates a possible headline for a text."
-msgstr "Erzeugt eine mögliche Überschrift für einen Text."
+msgstr "Genera un posible titular para un texto."
 
 #. TRANSLATORS src/components/security/AuthToken.vue:171
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:42
 msgid "Google Chrome for Android"
-msgstr "Google Chrome für Android"
+msgstr "Google Chrome para Android"
 
 #. TRANSLATORS src/components/navigation/Navigation.vue:21
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:46
 msgid "Help & Support"
-msgstr "Hilfe & Support"
+msgstr "Ayuda y soporte"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/ProviderAlreadyExistsException.php:47
 #, php-format
 msgid "ID \"%1$s\" already used by cloud federation provider \"%2$s\""
-msgstr "ID \"%1$s\" wird bereits von Cloud-Federation-Provider \"%2$s\" verwendet"
+msgstr "La ID  «%1$s» ya está siendo usada por el proveedor de federación en la nube  «%2$s»"
 
 #. TRANSLATORS src/components/files/Software.vue:49
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:8
 msgid "Install desktop app for Mac"
-msgstr "Desktop-Anwendung für macOS installieren"
+msgstr "Instalar la aplicación de escritorio para macOS"
 
 #. TRANSLATORS src/components/files/Software.vue:55
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:10
 msgid "Install desktop app for Windows"
-msgstr "Desktop-Anwendung für Windows installieren"
+msgstr "Instalar aplicación de escritorio para Windows"
 
 #. TRANSLATORS src/components/account/LanguageSection.vue:22
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:6
 #: /var/www/html/apps-custom/simplesettings/src/constants/AccountPropertyConstants.js:37
 msgid "Language"
-msgstr "Sprache"
+msgstr "Idioma"
 
 #. TRANSLATORS src/components/account/Language.vue:22
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:2
 msgid "Languages"
-msgstr "Sprachen"
+msgstr "Idiomas"
 
 #. TRANSLATORS src/components/security/AuthTokenList.vue:31
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:62
 msgid "Last activity"
-msgstr "Letzte Aktivität"
+msgstr "Última actividad"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:30
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:82
 msgid "Login"
-msgstr " Anmelden"
+msgstr "Iniciar sesión"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:142
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:92
 msgid "Login name copied!"
-msgstr "Anmeldename kopiert!"
+msgstr "¡Se copió el nombre de inicio de sesión!"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:45
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:24
 msgid "Marked for remote wipe"
-msgstr "Für Fernlöschung markiert"
+msgstr "Marcado para borrado remoto"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:24
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:78
 msgid "New app password"
-msgstr "Neues App-Passwort"
+msgstr "Nueva contraseña de aplicación"
 
 #. TRANSLATORS src/components/account/LanguageSection.vue:29
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:8
 msgid "No language set"
-msgstr "Keine Sprache eingestellt."
+msgstr "No se ha establecido ningún idioma"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/BadRequestException.php:52
 #, php-format
 msgid "Parameters missing in order to complete the request. Missing Parameters: \"%s\""
-msgstr "Es fehlen Parameter, um die Anfrage zu bearbeiten. Fehlende Parameter: \"%s\""
+msgstr "Faltan parámetros para completar la petición. Parámetros que faltan: \"%s\""
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:42
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:84
 msgid "Password"
-msgstr "Passwort"
+msgstr "Contraseña"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:68
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:32
 msgid "Rename"
-msgstr "Umbenennen"
+msgstr "Renombrar"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:77
 #. TRANSLATORS src/components/security/AuthToken.vue:86
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:34
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:38
 msgid "Revoke"
-msgstr "Widerrufen"
+msgstr "Anular"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:88
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:40
 msgid "Revoking this token might prevent the wiping of your device if it has not started the wipe yet."
-msgstr "Zurückziehen dieses Tokens könnte das Löschen von Ihrem Gerät verhindern, wenn die Löschung noch nicht gestartet wurde."
+msgstr "Anular este token podría evitar el borrado de tu dispositivo si no ha empezado todavía."
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/FreePromptTaskType.php:64
 msgid "Runs an arbitrary prompt through the language model."
-msgstr "Führt eine beliebige Eingabeaufforderung über das Sprachmodell aus."
+msgstr "Ejecuta un prompt arbitrario mediante el modelo de lenguaje integrado."
 
 #. TRANSLATORS src/components/security/AuthToken.vue:38
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:22
 msgid "Save new name"
-msgstr "Neuen Namen speichern"
+msgstr "Guardar nombre nuevo"
 
 #. TRANSLATORS src/components/navigation/Navigation.vue:16
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
 msgid "Security & Privacy"
-msgstr "Sicherheit & Datenschutz"
+msgstr "Seguridad y privacidad"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:56
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:86
 msgid "Show QR code for mobile apps"
-msgstr "QR-Code für mobile Apps anzeigen"
+msgstr "Mostrar código QR para apps móviles"
 
 #: /var/www/html/apps-custom/simplesettings/specialAppInfoFakeDummyForL10nScript.php:2
 msgid "Simple Settings"
@@ -350,78 +350,78 @@ msgstr "Simplified Nextcloud settings"
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Files/StorageConnectionException.php:40
 #, php-format
 msgid "Storage connection error. %s"
-msgstr "Verbindungsfehler zum Speicherplatz. %s"
+msgstr "Error de conexión de almacenamiento. %s"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Files/StorageTimeoutException.php:40
 #, php-format
 msgid "Storage connection timeout. %s"
-msgstr "Zeitüberschreitung der Verbindung zum Speicherplatz. %s"
+msgstr "Tiempo de conexión de almacenamiento agotado. %s"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Files/StorageBadConfigException.php:40
 #, php-format
 msgid "Storage incomplete configuration. %s"
-msgstr "Speicher-Konfiguration unvollständig. %s"
+msgstr "Configuración de almacenamiento incompleta. %s"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Files/StorageNotAvailableException.php:88
 msgid "Storage is temporarily not available"
-msgstr "Speicher ist vorübergehend nicht verfügbar"
+msgstr "El almacenamiento no esta disponible temporalmente"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Files/StorageAuthException.php:40
 #, php-format
 msgid "Storage unauthorized. %s"
-msgstr "Speicher nicht autorisiert. %s"
+msgstr "Almacenamiento no autorizado. %s"
 
 #. TRANSLATORS src/components/account/Quota.vue:9
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:10
 msgid "Storage usage"
-msgstr "Speicherverbrauch"
+msgstr "Uso del almacenamiento"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/SummaryTaskType.php:56
 msgid "Summarize"
-msgstr "Zusammenfassen"
+msgstr "Resumir"
 
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/TextProcessing/SummaryTaskType.php:64
 msgid "Summarizes text by reducing its length without losing key information."
-msgstr "Fasst Text zusammen, indem die Länge reduziert wird, ohne dass wichtige Informationen verloren gehen."
+msgstr "Resume el texto reduciendo su longitud sin perder información clave."
 
 #. TRANSLATORS src/components/security/AuthToken.vue:178
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:52
 msgid "Sync client"
-msgstr "Sync-Client"
+msgstr "Cliente de sincronización"
 
 #: /var/www/html/apps-custom/simplesettings/src/utils/handlers.js:40
 msgid "There were too many requests from your network. Retry later or contact your administrator if this is an error."
-msgstr "Zu viele Anfragen aus Ihrem Netzwerk. Versuchen Sie es später erneut oder wenden Sie sich an Ihre Administration, wenn dies ein Fehler sein sollte."
+msgstr "Hubo demasiadas peticiones desde su red. Vuelva a intentarlo más tarde o póngase en contacto con su administrador si se trata de un error."
 
 #. TRANSLATORS src/components/security/AuthToken.vue:297
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:54
 msgid "This session"
-msgstr "Diese Sitzung"
+msgstr "Esta sesión"
 
 #. TRANSLATORS src/components/account/Language.vue:92
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:4
 msgid "Unable to update language"
-msgstr "Sprache konnte nicht aktualisiert werden"
+msgstr "No se pudo actualizar tu idioma"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:27
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:80
 msgid "Use the credentials below to configure your app or device. For security reasons this password will only be shown once."
-msgstr "Verwenden Sie die untenstehenden Zugangsdaten um Ihre App oder Ihr Gerät einzurichten. Aus Sicherheitsgründen wird das Passwort nur ein Mal angezeigt."
+msgstr "Utilice las credenciales a continuación para configurar su app o dispositivo. Por razones de seguridad, esta contraseña se mostrará sólo una vez."
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:30
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:6
 msgid "Use this address to access your Files via WebDAV"
-msgstr "Diese Adresse benutzen, um über WebDAV auf Ihre Dateien zuzugreifen"
+msgstr "Use esta dirección para acceder a tus archivos vía WebDAV"
 
 #. TRANSLATORS src/components/account/Quota.vue:68
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:12
 msgid "Used: "
-msgstr "Verwendet:"
+msgstr "Utilizado:"
 
 #. TRANSLATORS src/components/security/AuthTokenSection.vue:27
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:68
 msgid "Web, desktop and mobile clients currently logged in to your account."
-msgstr "Aktuell in Ihrem Konto angemeldete Web-, Desktop- und Mobil-Clients."
+msgstr "Clientes web, móviles y de escritorio actualmente conectados a su cuenta."
 
 #. TRANSLATORS src/components/files/WebDavUrl.vue:42
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:10
@@ -431,9 +431,9 @@ msgstr "WebDAV URL"
 #. TRANSLATORS src/components/files/WebDavUrl.vue:106
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:16
 msgid "WebDAV URL copied to clipboard"
-msgstr "WebDAV-URL in die Zwischenablage kopiert"
+msgstr "El URL Webdav URL fue copiado al portapapeles"
 
 #. TRANSLATORS src/components/security/AuthToken.vue:81
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:36
 msgid "Wipe device"
-msgstr "Gerät löschen"
+msgstr "Borrar dispositivo"
