@@ -97,7 +97,7 @@ content {
 }
 
 .navigation {
-	background-color: var(--ion-color-cool-grey-c1);
+	background-color: var(--ion-surface-secondary);
 	width: 15%;
 }
 

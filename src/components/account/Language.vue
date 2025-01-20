@@ -108,9 +108,17 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .language {
 	display: grid;
 	max-width: 500px;
 }
+
+li.vs__dropdown-option{
+		background-color: var(--ion-button-sidebar-background);
+		color: var(--ion-button-sidebar-text);
+		&.vs__dropdown-option--highlight {
+			background-color: var(--ion-button-sidebar-background-hover);
+		}
+	}
 </style>

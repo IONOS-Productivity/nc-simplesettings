@@ -56,7 +56,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style>
 .settings-navigation {
 	margin-left: 14px;
 	margin-top: 24px;
@@ -69,5 +69,21 @@ export default defineComponent({
 			margin-left: -14px;
 		}
 	}
+
+	.app-navigation-entry {
+		li div.app-navigation-entry{
+			background-color: var(--ion-button-sidebar-background);
+			color: var(--ion-button-sidebar-text);
+			border-radius: 100px;
+			width: 95%;
+			&:hover {
+				background-color: var(--ion-button-sidebar-background-hover);
+			}
+			&:active {
+				background-color: var(--ion-button-sidebar-background-active);
+			}
+		}
+	}
 }
+
 </style>

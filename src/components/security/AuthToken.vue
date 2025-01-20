@@ -361,6 +361,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 @use '../../../../../core/css/variables.scss' as variables;
 
+tr.auth-token {
+	&:hover {
+		background-color: var(--ion-button-sidebar-background-hover);
+		color: var(--ion-button-sidebar-text);
+	}
+}
+
 .auth-token {
 	border-top: 2px solid var(--color-border);
 	max-width: 200px;
