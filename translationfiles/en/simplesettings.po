@@ -245,12 +245,12 @@ msgstr "ID \"%1$s\" already used by cloud federation provider \"%2$s\""
 #. TRANSLATORS src/components/files/Software.vue:49
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:8
 msgid "Install desktop app for Mac"
-msgstr "Install desktop app for macOS"
+msgstr "macOS 12+ Software"
 
 #. TRANSLATORS src/components/files/Software.vue:55
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:10
 msgid "Install desktop app for Windows"
-msgstr "Install desktop app for Windows"
+msgstr "Windows 10+ (64bit)"
 
 #. TRANSLATORS src/components/account/LanguageSection.vue:22
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:6
@@ -332,7 +332,7 @@ msgstr "Save new name"
 #. TRANSLATORS src/components/navigation/Navigation.vue:16
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
 msgid "Security & Privacy"
-msgstr "Security & Privacy"
+msgstr "Device access"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:56
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:86
