@@ -245,12 +245,12 @@ msgstr "L'identifiant \"%1$s\" est déjà utilisé par l'instance de Cloud Féd�
 #. TRANSLATORS src/components/files/Software.vue:49
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:8
 msgid "Install desktop app for Mac"
-msgstr "Installer l'application de bureau pour macOS"
+msgstr "Logiciel macOS 12+"
 
 #. TRANSLATORS src/components/files/Software.vue:55
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:10
 msgid "Install desktop app for Windows"
-msgstr "Installer l'application de bureau pour Windows"
+msgstr "Windows 10+ (64bit)"
 
 #. TRANSLATORS src/components/account/LanguageSection.vue:22
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:6
@@ -332,7 +332,7 @@ msgstr "Enregistrer un nouveau nom"
 #. TRANSLATORS src/components/navigation/Navigation.vue:16
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
 msgid "Security & Privacy"
-msgstr "Sécurité et vie privée"
+msgstr "Accès aux appareils"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:56
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:86
