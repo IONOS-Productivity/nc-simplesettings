@@ -376,7 +376,8 @@ tr.auth-token {
 	position: relative;
 
 	&--wiping {
-		background-color: var(--color-background-dark);
+		background-color: var(--ion-button-sidebar-background-hover);
+		color: var(--ion-button-sidebar-text);
 	}
 
 	&__name {
