@@ -25,20 +25,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			<a id="close-icon" href="/index.php/apps/files">
 				<IconClose :size="24" />
 			</a>
-			<h2 ref="account">
-				{{ t('simplesettings', 'Account Settings') }}
-			</h2>
-			<Quota />
-			<LanguageSection />
-			<h2 ref="security">
-				{{ t('simplesettings', 'Security & Privacy') }}
-			</h2>
-			<AuthTokenSection />
-			<WebDavUrl />
-			<h2 ref="help">
-				{{ t('simplesettings', 'Help & Support') }}
-			</h2>
-			<Software />
+			<Quota ref="storage" />
+			<LanguageSection ref="language" />
+			<AuthTokenSection ref="devices" />
+			<WebDavUrl ref="webDAV" />
+			<Software ref="software" />
 		</div>
 	</content>
 </template>
@@ -67,8 +58,10 @@ export default defineComponent({
 	},
 	methods: {
 		scrollToElement(element: string) {
-			const el = this.$refs[element] as HTMLElement
-			el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+			const el = this.$refs[element]
+			if (el && '$el' in el) {
+				el.$el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+			}
 		},
 		t,
 	},

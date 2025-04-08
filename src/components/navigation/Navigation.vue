@@ -8,19 +8,29 @@
 				<IconChevronLeft slot="icon" :size="16" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
-				:name="t('simplesettings', 'Account Settings')"
-				@click="scrollToElement('account')">
-				<IconAccount slot="icon" :size="16" />
+				:name="t('simplesettings', 'Storage usage')"
+				@click="scrollToElement('storage')">
+				<IconStorage slot="icon" :size="16" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
-				:name="t('simplesettings', 'Security & Privacy')"
-				@click="scrollToElement('security')">
-				<IconLock slot="icon" :size="16" />
+				:name="t('simplesettings', 'Language')"
+				@click="scrollToElement('language')">
+				<IconTranslate slot="icon" :size="16" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
-				:name="t('simplesettings', 'Help & Support')"
-				@click="scrollToElement('help')">
-				<IconHeadset slot="icon" :size="16" />
+				:name="t('simplesettings', 'Devices & sessions', {}, undefined, {sanitize: false})"
+				@click="scrollToElement('devices')">
+				<IconDevices slot="icon" :size="16" />
+			</NcAppNavigationItem>
+			<NcAppNavigationItem
+				:name="t('simplesettings', 'WebDAV')"
+				@click="scrollToElement('webDAV')">
+				<IconEarth slot="icon" :size="16" />
+			</NcAppNavigationItem>
+			<NcAppNavigationItem
+				:name="t('simplesettings', 'App & Software')"
+				@click="scrollToElement('software')">
+				<IconDisplay slot="icon" :size="16" />
 			</NcAppNavigationItem>
 		</ul>
 	</div>
@@ -30,10 +40,12 @@
 import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
 
-import IconAccount from 'vue-material-design-icons/Account.vue'
-import IconLock from 'vue-material-design-icons/Lock.vue'
-import IconHeadset from 'vue-material-design-icons/Headset.vue'
 import IconChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
+import IconStorage from 'vue-material-design-icons/CloudOutline.vue'
+import IconTranslate from 'vue-material-design-icons/Translate.vue'
+import IconDevices from 'vue-material-design-icons/TabletCellphone.vue'
+import IconEarth from 'vue-material-design-icons/Earth.vue'
+import IconDisplay from 'vue-material-design-icons/DesktopClassic.vue'
 
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcAppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationItem.js'
@@ -41,10 +53,12 @@ import NcAppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationI
 export default defineComponent({
 	name: 'Navigation',
 	components: {
-		IconAccount,
-		IconLock,
-		IconHeadset,
 		IconChevronLeft,
+		IconStorage,
+		IconTranslate,
+		IconDevices,
+		IconEarth,
+		IconDisplay,
 		NcAppNavigationItem,
 	},
 	methods: {
