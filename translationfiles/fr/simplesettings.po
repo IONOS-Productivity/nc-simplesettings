@@ -42,11 +42,6 @@ msgstr " {productName} Talk pour Android"
 msgid "{productName} Talk for iOS"
 msgstr " {productName} Talk pour iOS"
 
-#. TRANSLATORS src/components/navigation/Navigation.vue:11
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:42
-msgid "Account Settings"
-msgstr "Paramètres du compte"
-
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/ActionNotSupportedException.php:43
 #, php-format
 msgid "Action \"%s\" not supported or implemented."
@@ -232,11 +227,6 @@ msgstr "Génère un titre possible pour un texte."
 msgid "Google Chrome for Android"
 msgstr "Google Chrome pour Android"
 
-#. TRANSLATORS src/components/navigation/Navigation.vue:21
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:46
-msgid "Help & Support"
-msgstr "Aide et assistance"
-
 #: /var/www/html/apps-custom/simplesettings/vendor/nextcloud/ocp/OCP/Federation/Exceptions/ProviderAlreadyExistsException.php:47
 #, php-format
 msgid "ID \"%1$s\" already used by cloud federation provider \"%2$s\""
@@ -328,11 +318,6 @@ msgstr "Exécute une commande arbitraire via le modèle de langage."
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:22
 msgid "Save new name"
 msgstr "Enregistrer un nouveau nom"
-
-#. TRANSLATORS src/components/navigation/Navigation.vue:16
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:44
-msgid "Security & Privacy"
-msgstr "Accès aux appareils"
 
 #. TRANSLATORS src/components/security/AuthTokenSetupDialog.vue:56
 #: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:86
