@@ -172,6 +172,13 @@ class PageController extends Controller {
 			$languages['otherLanguages']
 		);
 
+		// remove any (...) part from language name
+		foreach ($combinedLanguages as &$language) {
+			if (isset($language['name'])) {
+				$language['name'] = preg_replace('/\s*\(.*?\)\s*/', '', $language['name']);
+		 	}
+		}
+
 		$userLangIndex = array_search($userConfLang, array_column($combinedLanguages, 'code'));
 		$userLang = null;
 
