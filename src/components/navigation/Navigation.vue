@@ -10,27 +10,27 @@
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Storage usage')"
 				@click="scrollToElement('storage')">
-				<IconStorage slot="icon" :size="16" />
+				<IconStorage slot="icon" :size="18" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Language')"
 				@click="scrollToElement('language')">
-				<IconTranslate slot="icon" :size="16" />
+				<IconTranslate slot="icon" :size="18" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Devices & sessions', {}, undefined, {sanitize: false})"
 				@click="scrollToElement('devices')">
-				<IconDevices slot="icon" :size="16" />
+				<IconDevices slot="icon" :size="18" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'WebDAV')"
 				@click="scrollToElement('webDAV')">
-				<IconEarth slot="icon" :size="16" />
+				<IconEarth slot="icon" :size="18" />
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'App & Software')"
 				@click="scrollToElement('software')">
-				<IconDisplay slot="icon" :size="16" />
+				<IconDisplay slot="icon" :size="18" />
 			</NcAppNavigationItem>
 		</ul>
 	</div>
