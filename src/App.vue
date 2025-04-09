@@ -107,14 +107,14 @@ h2 {
 	font-size: 24px;
 }
 
-@media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
+@media screen and (max-width: calc(variables.$breakpoint-mobile)) {
 	.settings {
 		position: relative;
 		width: 100%;
 	}
 
 	.navigation {
-		// Hide the navigation bar on mobile
+		// Hide the navigation bar on mobile and tablet
 		display: none;
 	}
 
