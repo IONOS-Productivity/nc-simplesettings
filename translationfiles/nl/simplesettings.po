@@ -52,11 +52,6 @@ msgstr "Actie \"%s\" niet ondersteund of geïmplementeerd."
 msgid "Actions"
 msgstr "Acties"
 
-#. TRANSLATORS src/components/security/AuthToken.vue:62
-#: /var/www/html/apps-custom/simplesettings/specialVueFakeDummyForL10nScript.js:30
-msgid "Allow filesystem access"
-msgstr "Toestaan toegang bestandssysteem"
-
 #. TRANSLATORS src/components/files/Software.vue:3
 #: /var/www/html/.ionos_apps/nc-simplesettings/specialVueFakeDummyForL10nScript.js:2
 msgid "App & Software"
