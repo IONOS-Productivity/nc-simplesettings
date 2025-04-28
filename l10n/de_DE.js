@@ -10,7 +10,6 @@ OC.L10N.register(
     "{productName} Talk for iOS" : "{productName} Talk für iOS",
     "Action \"%s\" not supported or implemented." : "Aktion \"%s\" wird nicht unterstützt oder ist nicht implementiert.",
     "Actions" : "Aktionen",
-    "Allow filesystem access" : "Erlaube Dateisystem-Zugriff",
     "App & Software" : "App & Software",
     "App name" : "App-Name",
     "App password copied!" : "App-Passwort kopiert!",

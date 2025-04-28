@@ -57,12 +57,6 @@
 				:title="t('simplesettings', 'Device settings')"
 				:aria-label="t('simplesettings', 'Device settings')"
 				:open.sync="actionOpen">
-				<NcActionCheckbox v-if="canChangeScope"
-					:checked="token.scope.filesystem"
-					@update:checked="updateFileSystemScope">
-					<!-- TODO: add text/longtext with some description -->
-					{{ t('simplesettings', 'Allow filesystem access') }}
-				</NcActionCheckbox>
 				<NcActionButton v-if="token.canRename"
 					icon="icon-rename"
 					@click.stop.prevent="startRename">
@@ -108,8 +102,6 @@ import { TokenType, useAuthTokenStore } from '../../store/authtoken'
 import NcActions from '@nextcloud/vue/dist/Components/NcActions.js'
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcActionButton from '@nextcloud/vue/dist/Components/NcActionButton.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcActionCheckbox from '@nextcloud/vue/dist/Components/NcActionCheckbox.js'
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 // @ts-expect-error: Cannot find module or its corresponding type declarations.
@@ -189,7 +181,6 @@ export default defineComponent({
 	components: {
 		NcActions,
 		NcActionButton,
-		NcActionCheckbox,
 		NcButton,
 		NcDateTime,
 		NcIconSvgWrapper,

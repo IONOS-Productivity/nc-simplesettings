@@ -10,7 +10,6 @@ OC.L10N.register(
     "{productName} Talk for iOS" : "{productName} Talk för iOS",
     "Action \"%s\" not supported or implemented." : "Åtgärd \"%s\" stöds inte eller är inte implementerad.",
     "Actions" : "Funktioner",
-    "Allow filesystem access" : "Tillåt åtkomst till filsystemet",
     "App & Software" : "App & programvara",
     "App name" : "Appnamn",
     "App password copied!" : "Applösenordet har kopierats!",

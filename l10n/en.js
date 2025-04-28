@@ -10,7 +10,6 @@ OC.L10N.register(
     "{productName} Talk for iOS" : "{productName} Talk for iOS",
     "Action \"%s\" not supported or implemented." : "Action \"%s\" not supported or implemented.",
     "Actions" : "Actions",
-    "Allow filesystem access" : "Allow filesystem access",
     "App & Software" : "App & Software",
     "App name" : "App name",
     "App password copied!" : "App password copied!",
