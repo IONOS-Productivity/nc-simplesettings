@@ -42,13 +42,4 @@ class OC_Helper {
 	 */
 	public static function getStorageInfo($path, $rootInfo = null, $includeMountPoints = true, $useCache = true) {
 	}
-	/**
-	 * Make a human file size
-	 * @param int|float $bytes file size in bytes
-	 * @return string a human readable file size
-	 *
-	 * Makes 2048 to 2 kB.
-	 */
-	public static function humanFileSize(int|float $bytes): string {
-	}
 }
