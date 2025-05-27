@@ -26,6 +26,7 @@ namespace OCA\SimpleSettings\Controller;
 use OC\Authentication\Token\INamedToken;
 use OC\Authentication\Token\IProvider;
 use OC\Authentication\Token\IToken;
+use OC_Helper;
 use OCA\SimpleSettings\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\Attribute\FrontpageRoute;
@@ -43,6 +44,7 @@ use OCP\IUserManager;
 use OCP\IUserSession;
 use OCP\L10N\IFactory;
 use OCP\Session\Exceptions\SessionNotAvailableException;
+use OCP\Util;
 
 /**
  * @psalm-suppress UnusedClass
@@ -57,7 +59,7 @@ class PageController extends Controller {
 		private readonly IInitialState $initialState,
 		private readonly IUserSession $userSession,
 		private readonly ?string $userId,
-		private readonly \OC_Helper $helper,
+		private readonly Util $util,
 	) {
 	}
 
@@ -201,10 +203,10 @@ class PageController extends Controller {
 		$includeMountPoints = true,
 		$useCache = true,
 	): array {
-		return $this->helper::getStorageInfo($path, $rootInfo, $includeMountPoints, $useCache);
+		return OC_Helper::getStorageInfo($path, $rootInfo, $includeMountPoints, $useCache);
 	}
 
 	public function humanFileSize(int $size): string {
-		return $this->helper::humanFileSize($size);
+		return $this->util->humanFileSize($size);
 	}
 }
