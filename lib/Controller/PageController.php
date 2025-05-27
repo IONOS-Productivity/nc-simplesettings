@@ -176,7 +176,7 @@ class PageController extends Controller {
 		foreach ($combinedLanguages as &$language) {
 			if (isset($language['name'])) {
 				$language['name'] = preg_replace('/\s*\(.*?\)\s*/', '', $language['name']);
-		 	}
+			}
 		}
 
 		$userLangIndex = array_search($userConfLang, array_column($combinedLanguages, 'code'));
