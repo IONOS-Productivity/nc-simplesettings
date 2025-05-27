@@ -1,5 +1,4 @@
 <?php
-
 /**
  * SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de>
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -33,6 +32,7 @@ use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
 use OCP\L10N\IFactory;
+use OCP\Util;
 use PHPUnit\Framework\MockObject\Exception;
 use Test\TestCase;
 
@@ -51,7 +51,7 @@ class PageControllerTest extends TestCase {
 		$this->initialState = $this->createMock(IInitialState::class);
 		$this->userSession = $this->createMock(IUserSession::class);
 		$this->uid = 'mock-user-id-123';
-		$this->helper = $this->createMock(\OC_Helper::class);
+		$this->util = $this->createMock(Util::class);
 		$this->controller = $this->getMockBuilder(PageController::class)
 			->setConstructorArgs([
 				$this->config,
@@ -62,7 +62,7 @@ class PageControllerTest extends TestCase {
 				$this->initialState,
 				$this->userSession,
 				$this->uid,
-				$this->helper
+				$this->util
 			])
 			->onlyMethods(['getStorageInfo', 'humanFileSize'])
 			->getMock();
