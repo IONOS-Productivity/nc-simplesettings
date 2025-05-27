@@ -65,7 +65,7 @@ class PageController extends Controller {
 		ISession $session,
 		IInitialState $initialState,
 		IUserSession $userSession,
-		?string $UserId,
+		?string $uid,
 		\OC_Helper $helper
 	) {
 		$this->config = $config;
@@ -75,7 +75,7 @@ class PageController extends Controller {
 		$this->session = $session;
 		$this->initialState = $initialState;
 		$this->userSession = $userSession;
-		$this->uid = $UserId;
+		$this->uid = $uid;
 		$this->helper = $helper;
 	}
 
