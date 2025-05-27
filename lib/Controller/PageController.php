@@ -47,36 +47,17 @@ use OCP\Session\Exceptions\SessionNotAvailableException;
  * @psalm-suppress UnusedClass
  */
 class PageController extends Controller {
-	private IConfig $config;
-	private IUserManager $userManager;
-	private IFactory $l10nFactory;
-	private IProvider $tokenProvider;
-	private IInitialState $initialState;
-	private IUserSession $userSession;
-	private ISession $session;
-	private string|null $uid;
-	private $helper;
-
 	public function __construct(
-		IConfig $config,
-		IUserManager $userManager,
-		IFactory $l10nFactory,
-		IProvider $tokenProvider,
-		ISession $session,
-		IInitialState $initialState,
-		IUserSession $userSession,
-		?string $uid,
-		\OC_Helper $helper
+		private readonly IConfig $config,
+		private readonly IUserManager $userManager,
+		private readonly IFactory $l10nFactory,
+		private readonly IProvider $tokenProvider,
+		private readonly ISession $session,
+		private readonly IInitialState $initialState,
+		private readonly IUserSession $userSession,
+		private ?string $uid,
+		private readonly \OC_Helper $helper
 	) {
-		$this->config = $config;
-		$this->userManager = $userManager;
-		$this->l10nFactory = $l10nFactory;
-		$this->tokenProvider = $tokenProvider;
-		$this->session = $session;
-		$this->initialState = $initialState;
-		$this->userSession = $userSession;
-		$this->uid = $uid;
-		$this->helper = $helper;
 	}
 
 	#[NoCSRFRequired]
