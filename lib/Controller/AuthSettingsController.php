@@ -59,46 +59,19 @@ use Psr\Log\LoggerInterface;
  * @psalm-api
  */
 class AuthSettingsController extends Controller {
-	private IProvider $tokenProvider;
-	private ISession $session;
-	private IUserSession $userSession;
-	private string $userId;
-	private ISecureRandom $random;
-	private IManager $activityManager;
-	private RemoteWipe $remoteWipe;
-	private LoggerInterface $logger;
-
-	/**
-	 * @param string $appName
-	 * @param IRequest $request
-	 * @param IProvider $tokenProvider
-	 * @param ISession $session
-	 * @param ISecureRandom $random
-	 * @param string|null $userId
-	 * @param IUserSession $userSession
-	 * @param IManager $activityManager
-	 * @param RemoteWipe $remoteWipe
-	 * @param LoggerInterface $logger
-	 */
-	public function __construct(string $appName,
+	public function __construct(
+		string $appName,
 		IRequest $request,
-		IProvider $tokenProvider,
-		ISession $session,
-		ISecureRandom $random,
-		?string $userId,
-		IUserSession $userSession,
-		IManager $activityManager,
-		RemoteWipe $remoteWipe,
-		LoggerInterface $logger) {
+		private readonly IProvider $tokenProvider,
+		private readonly ISession $session,
+		private readonly ISecureRandom $random,
+		private readonly ?string $userId,
+		private readonly IUserSession $userSession,
+		private readonly IManager $activityManager,
+		private readonly RemoteWipe $remoteWipe,
+		private readonly LoggerInterface $logger,
+	) {
 		parent::__construct($appName, $request);
-		$this->tokenProvider = $tokenProvider;
-		$this->userId = $userId;
-		$this->userSession = $userSession;
-		$this->session = $session;
-		$this->random = $random;
-		$this->activityManager = $activityManager;
-		$this->remoteWipe = $remoteWipe;
-		$this->logger = $logger;
 	}
 
 	/**
