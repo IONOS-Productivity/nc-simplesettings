@@ -55,7 +55,7 @@ class PageController extends Controller {
 	private IInitialState $initialState;
 	private IUserSession $userSession;
 	private ISession $session;
-	private ?string $uid;
+	private ?string $userId;
 	private $helper;
 
 	public function __construct(
@@ -66,7 +66,7 @@ class PageController extends Controller {
 		ISession $session,
 		IInitialState $initialState,
 		IUserSession $userSession,
-		?string $UserId,
+		?string $userId,
 		\OC_Helper $helper,
 	) {
 		$this->config = $config;
@@ -76,7 +76,7 @@ class PageController extends Controller {
 		$this->session = $session;
 		$this->initialState = $initialState;
 		$this->userSession = $userSession;
-		$this->uid = $UserId;
+		$this->userId = $userId;
 		$this->helper = $helper;
 	}
 
@@ -95,7 +95,7 @@ class PageController extends Controller {
 			$this->userSession->getImpersonatingUserID() === null
 		);
 
-		$user = $this->userManager->get($this->uid);
+		$user = $this->userManager->get($this->userId);
 
 		$storageInfo = $this->getStorageInfo('/');
 		if ($storageInfo['quota'] === FileInfo::SPACE_UNLIMITED) {
@@ -127,7 +127,7 @@ class PageController extends Controller {
 	}
 
 	private function getAppTokens(): array {
-		$tokens = $this->tokenProvider->getTokenByUser($this->uid);
+		$tokens = $this->tokenProvider->getTokenByUser($this->userId);
 
 		try {
 			$sessionId = $this->session->getId();
