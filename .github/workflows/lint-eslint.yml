@@ -76,6 +76,15 @@ jobs:
           PUPPETEER_SKIP_DOWNLOAD: true
         run: npm ci
 
+      - name: Install dependencies
+        env:
+            CYPRESS_INSTALL_BINARY: 0
+            PUPPETEER_SKIP_DOWNLOAD: true
+        # Replace locally linked npm packages with the ones from the Nextcloud server repository
+        # in order to ensure linting works with the same versions as in the server repository.
+        # https://github.com/nextcloud/server/blob/stable30/package.json
+        run: npm install @mdi/js@^7.4.47 @nextcloud/vue@^8.26.1 vue-material-design-icons@5.3.1
+
       - name: Lint
         run: npm run lint
 
