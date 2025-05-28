@@ -74,7 +74,7 @@ class AuthSettingsController extends Controller {
 	 * @param IProvider $tokenProvider
 	 * @param ISession $session
 	 * @param ISecureRandom $random
-	 * @param string|null $userId
+	 * @param string|null $uid
 	 * @param IUserSession $userSession
 	 * @param IManager $activityManager
 	 * @param RemoteWipe $remoteWipe
@@ -85,14 +85,14 @@ class AuthSettingsController extends Controller {
 		IProvider $tokenProvider,
 		ISession $session,
 		ISecureRandom $random,
-		?string $userId,
+		?string $uid,
 		IUserSession $userSession,
 		IManager $activityManager,
 		RemoteWipe $remoteWipe,
 		LoggerInterface $logger) {
 		parent::__construct($appName, $request);
 		$this->tokenProvider = $tokenProvider;
-		$this->uid = $userId;
+		$this->uid = $uid;
 		$this->userSession = $userSession;
 		$this->session = $session;
 		$this->random = $random;
