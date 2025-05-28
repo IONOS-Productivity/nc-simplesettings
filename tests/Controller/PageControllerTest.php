@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de>
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -49,7 +50,7 @@ class PageControllerTest extends TestCase {
 		$this->session = $this->createMock(ISession::class);
 		$this->initialState = $this->createMock(IInitialState::class);
 		$this->userSession = $this->createMock(IUserSession::class);
-		$this->uid = "mock-user-id-123";
+		$this->uid = 'mock-user-id-123';
 		$this->helper = $this->createMock(\OC_Helper::class);
 		$this->controller = $this->getMockBuilder(PageController::class)
 			->setConstructorArgs([
@@ -66,7 +67,7 @@ class PageControllerTest extends TestCase {
 			->onlyMethods(['getStorageInfo', 'humanFileSize'])
 			->getMock();
 
-		$mockCurrentSessionId = "mock-session-id-123";
+		$mockCurrentSessionId = 'mock-session-id-123';
 
 		$mockCurrentSessionTokenId = 1;
 		$mockOtherSessionTokenIdNotWiped = 2;
@@ -76,11 +77,11 @@ class PageControllerTest extends TestCase {
 			$mockCurrentSessionTokenId,
 			[
 				// true to detect change to false
-				"canDelete" => true,
-				"canRename" => true,
-				"type" => IToken::TEMPORARY_TOKEN,
+				'canDelete' => true,
+				'canRename' => true,
+				'type' => IToken::TEMPORARY_TOKEN,
 				// false to detect change to true
-				"current" => false,
+				'current' => false,
 			]
 		);
 
@@ -111,24 +112,24 @@ class PageControllerTest extends TestCase {
 			$this->createMockAppToken(
 				$mockOtherSessionTokenIdNotWiped,
 				[
-					"canDelete" => false,
+					'canDelete' => false,
 					// Wiped sessions can not be renamed; expect true, make false to detect change
-					"canRename" => false,
-					"type" => IToken::TEMPORARY_TOKEN,
+					'canRename' => false,
+					'type' => IToken::TEMPORARY_TOKEN,
 					// Would not change, expect false too
-					"current" => false,
+					'current' => false,
 				]
 			),
 			$this->createMockAppToken(
 				$mockOtherSessionTokenIdWiped,
 				[
 					// Other sessions can be deleted; expect true, make false to detect change
-					"canDelete" => false,
+					'canDelete' => false,
 					// Wiped sessions can not be renamed; expect false, make true to detect change
-					"canRename" => true,
-					"type" => IToken::WIPE_TOKEN,
+					'canRename' => true,
+					'type' => IToken::WIPE_TOKEN,
 					// Would not change, expect true too
-					"current" => true,
+					'current' => true,
 				]
 			),
 		];
@@ -233,29 +234,29 @@ class PageControllerTest extends TestCase {
 	public function testIndexProvidesInitialStateWithAppTokens() {
 		$expectedAppTokensRegisteredAsInitialState = [
 			[
-				"canDelete" => false,
-				"canRename" => false,
-				"type" => IToken::TEMPORARY_TOKEN,
-				"current" => true,
+				'canDelete' => false,
+				'canRename' => false,
+				'type' => IToken::TEMPORARY_TOKEN,
+				'current' => true,
 			],
 			[
-				"canDelete" => true,
-				"canRename" => true,
-				"type" => IToken::TEMPORARY_TOKEN,
-				"current" => false,
+				'canDelete' => true,
+				'canRename' => true,
+				'type' => IToken::TEMPORARY_TOKEN,
+				'current' => false,
 			],
 			[
-				"canDelete" => true,
-				"canRename" => false,
-				"type" => IToken::WIPE_TOKEN,
-				"current" => true,
+				'canDelete' => true,
+				'canRename' => false,
+				'type' => IToken::WIPE_TOKEN,
+				'current' => true,
 			],
 		];
 
 		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) use ($expectedAppTokensRegisteredAsInitialState) {
-				if ($stateName == "app_tokens") {
+				if ($stateName == 'app_tokens') {
 					$this->assertEquals($expectedAppTokensRegisteredAsInitialState, $stateValue);
 				}
 			});
@@ -271,12 +272,12 @@ class PageControllerTest extends TestCase {
 
 		$this->userSession->expects($this->exactly(1))
 			->method('getImpersonatingUserID')
-			->willReturn("some-user-id-is-not-null");
+			->willReturn('some-user-id-is-not-null');
 
 		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
-				if ($stateName == "can_create_app_token") {
+				if ($stateName == 'can_create_app_token') {
 					$this->assertEquals(false, $stateValue);
 				}
 			});
@@ -295,7 +296,7 @@ class PageControllerTest extends TestCase {
 		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
-				if ($stateName == "can_create_app_token") {
+				if ($stateName == 'can_create_app_token') {
 					$this->assertEquals(true, $stateValue);
 				}
 			});
@@ -309,7 +310,7 @@ class PageControllerTest extends TestCase {
 		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) use ($expectedActiveLanguage, $mockAvailableLanguages) {
-				if ($stateName == "personalInfoParameters") {
+				if ($stateName == 'personalInfoParameters') {
 					$this->assertEquals([
 						'languageMap' => [
 							'activeLanguage' => $expectedActiveLanguage,
@@ -336,7 +337,7 @@ class PageControllerTest extends TestCase {
 		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) {
-				if ($stateName == "personalInfoParameters") {
+				if ($stateName == 'personalInfoParameters') {
 					$this->assertEquals([
 						'languageMap' => [],
 						'totalSpace' => 'mocked-human-file-size',
@@ -382,7 +383,7 @@ class PageControllerTest extends TestCase {
 		$this->initialState->expects($this->exactly(4))
 			->method('provideInitialState')
 			->willReturnCallback(function ($stateName, $stateValue) use ($expectedCustomClientsURLs) {
-				if ($stateName == "customClientURL") {
+				if ($stateName == 'customClientURL') {
 					$this->assertEquals($expectedCustomClientsURLs, $stateValue);
 				}
 			});

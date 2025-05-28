@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (c) 2016, ownCloud, Inc.
  *
@@ -60,7 +61,7 @@ class AuthSettingsControllerTest extends TestCase {
 	private $tokenProvider;
 	/** @var ISession|MockObject */
 	private $session;
-	/**@var IUserSession|MockObject */
+	/** @var IUserSession|MockObject */
 	private $userSession;
 	/** @var ISecureRandom|MockObject */
 	private $secureRandom;
