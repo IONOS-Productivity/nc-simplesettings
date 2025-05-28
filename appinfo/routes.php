@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de>
  * SPDX-License-Identifier: AGPL-3.0-or-later

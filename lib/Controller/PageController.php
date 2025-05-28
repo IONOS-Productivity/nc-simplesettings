@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de>
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -54,7 +55,7 @@ class PageController extends Controller {
 	private IInitialState $initialState;
 	private IUserSession $userSession;
 	private ISession $session;
-	private string|null $uid;
+	private ?string $uid;
 	private $helper;
 
 	public function __construct(
@@ -66,7 +67,7 @@ class PageController extends Controller {
 		IInitialState $initialState,
 		IUserSession $userSession,
 		?string $UserId,
-		\OC_Helper $helper
+		\OC_Helper $helper,
 	) {
 		$this->config = $config;
 		$this->userManager = $userManager;
@@ -176,7 +177,7 @@ class PageController extends Controller {
 		foreach ($combinedLanguages as &$language) {
 			if (isset($language['name'])) {
 				$language['name'] = preg_replace('/\s*\(.*?\)\s*/', '', $language['name']);
-		 	}
+			}
 		}
 
 		$userLangIndex = array_search($userConfLang, array_column($combinedLanguages, 'code'));
@@ -217,7 +218,7 @@ class PageController extends Controller {
 		$path,
 		$rootInfo = null,
 		$includeMountPoints = true,
-		$useCache = true
+		$useCache = true,
 	): array {
 		return $this->helper::getStorageInfo($path, $rootInfo, $includeMountPoints, $useCache);
 	}
