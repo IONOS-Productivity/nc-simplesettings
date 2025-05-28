@@ -38,6 +38,7 @@ use OCP\AppFramework\Services\IInitialState;
 use OCP\Authentication\Exceptions\InvalidTokenException;
 use OCP\Files\FileInfo;
 use OCP\IConfig;
+use OCP\IRequest;
 use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
@@ -51,6 +52,8 @@ use OCP\Util;
  */
 class PageController extends Controller {
 	public function __construct(
+		string $appName,
+		IRequest $request,
 		private readonly IConfig $config,
 		private readonly IUserManager $userManager,
 		private readonly IFactory $l10nFactory,
@@ -61,6 +64,7 @@ class PageController extends Controller {
 		private readonly ?string $userId,
 		private readonly Util $util,
 	) {
+		parent::__construct($appName, $request);
 	}
 
 	#[NoCSRFRequired]

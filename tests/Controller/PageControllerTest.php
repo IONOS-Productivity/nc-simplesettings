@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileLicenseText: 2024 Thomas Lehmann <t.lehmann@strato.de>
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -27,6 +28,7 @@ use OC\Authentication\Token\IProvider as IAuthTokenProvider;
 use OC\Authentication\Token\IToken;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\IConfig;
+use OCP\IRequest;
 use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
@@ -43,6 +45,7 @@ class PageControllerTest extends TestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->request = $this->createMock(IRequest::class);
 		$this->config = $this->createMock(IConfig::class);
 		$this->userManager = $this->createMock(IUserManager::class);
 		$this->l10nFactory = $this->createMock(IFactory::class);
@@ -54,6 +57,8 @@ class PageControllerTest extends TestCase {
 		$this->util = $this->createMock(Util::class);
 		$this->controller = $this->getMockBuilder(PageController::class)
 			->setConstructorArgs([
+				'core',
+				$this->request,
 				$this->config,
 				$this->userManager,
 				$this->l10nFactory,
