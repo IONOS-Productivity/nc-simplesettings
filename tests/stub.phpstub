@@ -1,0 +1,54 @@
+<?php
+
+declare(strict_types=1);
+/**
+ * SPDX-FileCopyrightText: 2022 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/**
+ * Collection of useful functions
+ *
+ * @psalm-type StorageInfo = array{
+ *     free: float|int,
+ *     mountPoint: string,
+ *     mountType: string,
+ *     owner: string,
+ *     ownerDisplayName: string,
+ *     quota: float|int,
+ *     relative: float|int,
+ *     total: float|int,
+ *     used: float|int,
+ * }
+ */
+/**
+ * Methods copy of the OC_Helper class from the core.
+ * https://github.com/nextcloud/server/blob/stable30/lib/private/legacy/OC_Helper.php
+ */
+class OC_Helper {
+	/**
+	 * Calculate the disc space for the given path
+	 *
+	 * BEWARE: this requires that Util::setupFS() was called
+	 * already !
+	 *
+	 * @param string $path
+	 * @param \OCP\Files\FileInfo $rootInfo (optional)
+	 * @param bool $includeMountPoints whether to include mount points in the size calculation
+	 * @param bool $useCache whether to use the cached quota values
+	 * @psalm-suppress LessSpecificReturnStatement Legacy code outputs weird types - manually validated that they are correct
+	 * @return StorageInfo
+	 * @throws \OCP\Files\NotFoundException
+	 */
+	public static function getStorageInfo($path, $rootInfo = null, $includeMountPoints = true, $useCache = true) {
+	}
+	/**
+	 * Make a human file size
+	 * @param int|float $bytes file size in bytes
+	 * @return string a human readable file size
+	 *
+	 * Makes 2048 to 2 kB.
+	 */
+	public static function humanFileSize(int|float $bytes): string {
+	}
+}
