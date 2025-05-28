@@ -62,7 +62,7 @@ class AuthSettingsController extends Controller {
 	private IProvider $tokenProvider;
 	private ISession $session;
 	private IUserSession $userSession;
-	private string $uid;
+	private string $userId;
 	private ISecureRandom $random;
 	private IManager $activityManager;
 	private RemoteWipe $remoteWipe;
@@ -92,7 +92,7 @@ class AuthSettingsController extends Controller {
 		LoggerInterface $logger) {
 		parent::__construct($appName, $request);
 		$this->tokenProvider = $tokenProvider;
-		$this->uid = $userId;
+		$this->userId = $userId;
 		$this->userSession = $userSession;
 		$this->session = $session;
 		$this->random = $random;
@@ -140,7 +140,7 @@ class AuthSettingsController extends Controller {
 		}
 
 		$token = $this->generateRandomDeviceToken();
-		$deviceToken = $this->tokenProvider->generateToken($token, $this->uid, $loginName, $password, $name, IToken::PERMANENT_TOKEN);
+		$deviceToken = $this->tokenProvider->generateToken($token, $this->userId, $loginName, $password, $name, IToken::PERMANENT_TOKEN);
 		$tokenData = $deviceToken->jsonSerialize();
 		$tokenData['canDelete'] = true;
 		$tokenData['canRename'] = true;
@@ -203,7 +203,7 @@ class AuthSettingsController extends Controller {
 			return new JSONResponse([], Http::STATUS_NOT_FOUND);
 		}
 
-		$this->tokenProvider->invalidateTokenById($this->uid, $token->getId());
+		$this->tokenProvider->invalidateTokenById($this->userId, $token->getId());
 		$this->publishActivity(Provider::APP_TOKEN_DELETED, $token->getId(), ['name' => $token->getName()]);
 		return [];
 	}
@@ -257,8 +257,8 @@ class AuthSettingsController extends Controller {
 		$event = $this->activityManager->generateEvent();
 		$event->setApp('settings')
 			->setType('security')
-			->setAffectedUser($this->uid)
-			->setAuthor($this->uid)
+			->setAffectedUser($this->userId)
+			->setAuthor($this->userId)
 			->setSubject($subject, $parameters)
 			->setObject('app_token', $id, 'App Password');
 
@@ -282,7 +282,7 @@ class AuthSettingsController extends Controller {
 		} catch (ExpiredTokenException $e) {
 			$token = $e->getToken();
 		}
-		if ($token->getUID() !== $this->uid) {
+		if ($token->getUID() !== $this->userId) {
 			/** @psalm-suppress DeprecatedClass We have to throw the OC version so both OC and OCP catches catch it */
 			throw new InvalidTokenException('This token does not belong to you!');
 		}
