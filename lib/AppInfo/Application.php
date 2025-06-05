@@ -34,6 +34,7 @@ class Application extends App implements IBootstrap {
 	/** @psalm-suppress PossiblyUnusedMethod */
 	public function __construct() {
 		parent::__construct(self::APP_ID);
+		\OCP\Util::addScript('files', 'search');
 	}
 
 	public function register(IRegistrationContext $context): void {
