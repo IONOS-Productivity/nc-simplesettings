@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a611dda3c3d41c7344ffc6c0aafa385",
+    "content-hash": "c43699eb13688bda00527f9d670d5946",
     "packages": [
         {
             "name": "bamarni/composer-bin-plugin",
@@ -67,16 +67,16 @@
     "packages-dev": [
         {
             "name": "nextcloud/ocp",
-            "version": "v31.0.5",
+            "version": "v31.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nextcloud-deps/ocp.git",
-                "reference": "a6103c4f1f65ef53dded3af4b8f2fdfcb51beb56"
+                "reference": "bec55048b46eadbd2c564f2b26c9486a43f958c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/a6103c4f1f65ef53dded3af4b8f2fdfcb51beb56",
-                "reference": "a6103c4f1f65ef53dded3af4b8f2fdfcb51beb56",
+                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/bec55048b46eadbd2c564f2b26c9486a43f958c2",
+                "reference": "bec55048b46eadbd2c564f2b26c9486a43f958c2",
                 "shasum": ""
             },
             "require": {
@@ -109,9 +109,9 @@
             "description": "Composer package containing Nextcloud's public OCP API and the unstable NCU API",
             "support": {
                 "issues": "https://github.com/nextcloud-deps/ocp/issues",
-                "source": "https://github.com/nextcloud-deps/ocp/tree/v31.0.5"
+                "source": "https://github.com/nextcloud-deps/ocp/tree/v31.0.6"
             },
-            "time": "2025-05-07T00:51:25+00:00"
+            "time": "2025-05-28T00:52:27+00:00"
         },
         {
             "name": "psr/clock",
@@ -1271,5 +1271,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
