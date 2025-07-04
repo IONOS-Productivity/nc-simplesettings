@@ -19,16 +19,16 @@
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^1.0.2",
     "@mdi/js": "file:../../custom-npms/nc-mdi-js",
-    "@nextcloud/auth": "^2.3.0",
-    "@nextcloud/axios": "^2.3.0",
-    "@nextcloud/dialogs": "^5.2.0",
-    "@nextcloud/initial-state": "^2.0.0",
-    "@nextcloud/l10n": "^2.1.0",
-    "@nextcloud/logger": "^2.5.0",
-    "@nextcloud/password-confirmation": "^5.0.1",
-    "@nextcloud/router": "^3.0.0",
+    "@nextcloud/auth": "^2.5.1",
+    "@nextcloud/axios": "^2.5.1",
+    "@nextcloud/dialogs": "^6.3.0",
+    "@nextcloud/initial-state": "^2.2.0",
+    "@nextcloud/l10n": "^3.1.0",
+    "@nextcloud/logger": "^3.0.2",
+    "@nextcloud/password-confirmation": "^5.3.1",
+    "@nextcloud/router": "^3.0.1",
     "@nextcloud/vue": "file:../../custom-npms/nc-nextcloud-vue",
-    "pinia": "^2.1.7",
+    "pinia": "^2.3.1",
     "vue": "^2.7.16",
     "vue-material-design-icons": "file:../../custom-npms/nc-vue-material-design-icons/dist"
   },
@@ -43,6 +43,7 @@
     "@typescript-eslint/parser": "^6.18.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
+    "typescript": "^5.3.3",
     "eslint": "^8.53.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-import-resolver-exports": "^1.0.0-beta.5",
@@ -53,10 +54,11 @@
     "eslint-plugin-promise": "^6.4.0",
     "eslint-plugin-vue": "^9.27.0",
     "eslint-webpack-plugin": "^4.2.0",
-    "stylelint": "^16.2.0",
+    "stylelint": "^16.20.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-webpack-plugin": "^5.0.1",
     "vue-eslint-parser": "^9.4.3",
-    "webpack": "^5.92.1"
+    "vue-template-compiler": "^2.7.16",
+    "webpack": "^5.99.9"
   }
 }
