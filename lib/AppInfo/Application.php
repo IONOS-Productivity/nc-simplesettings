@@ -34,12 +34,21 @@ class Application extends App implements IBootstrap {
 	/** @psalm-suppress PossiblyUnusedMethod */
 	public function __construct() {
 		parent::__construct(self::APP_ID);
-		\OCP\Util::addScript('files', 'search');
 	}
 
 	public function register(IRegistrationContext $context): void {
 	}
 
 	public function boot(IBootContext $context): void {
+		// Only add the files search script when we're actually in the simplesettings context
+		// This prevents interference with language detection on other pages
+		$container = $context->getAppContainer();
+		$request = $container->get(\OCP\IRequest::class);
+		$requestUri = $request->getRequestUri();
+
+		// Only load files search script if we're in simplesettings context
+		if (str_starts_with($requestUri, '/simplesettings')) {
+			\OCP\Util::addScript('files', 'search');
+		}
 	}
 }
