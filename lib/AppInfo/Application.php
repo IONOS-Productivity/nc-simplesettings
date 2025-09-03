@@ -41,6 +41,16 @@ class Application extends App implements IBootstrap {
 	public function register(IRegistrationContext $context): void {
 	}
 
+	/**
+	 * Check if the current request is for a simplesettings page
+	 *
+	 * @param string $requestUri The request URI to check
+	 * @return bool True if the request is for a simplesettings page
+	 */
+	private function isSimplesettingsPage(string $requestUri): bool {
+		return str_starts_with($requestUri, '/apps/' . self::APP_ID . '/');
+	}
+
 	public function boot(IBootContext $context): void {
 		$context->injectFn(function (IRequest $request): void {
 			// Only add the files search script when we're actually in the simplesettings context
@@ -48,7 +58,7 @@ class Application extends App implements IBootstrap {
 			$requestUri = $request->getPathInfo();
 
 			// Only load files search script if we're in simplesettings context
-			if (str_starts_with($requestUri, '/apps/' . self::APP_ID . '/')) {
+			if ($this->isSimplesettingsPage($requestUri)) {
 				Util::addScript('files', 'search');
 			}
 		});
