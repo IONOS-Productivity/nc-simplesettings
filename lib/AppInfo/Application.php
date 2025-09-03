@@ -51,16 +51,26 @@ class Application extends App implements IBootstrap {
 		return str_starts_with($requestUri, '/apps/' . self::APP_ID . '/');
 	}
 
-	public function boot(IBootContext $context): void {
-		$context->injectFn(function (IRequest $request): void {
-			// Only add the files search script when we're actually in the simplesettings context
-			// This prevents interference with language detection on other pages
+	/**
+	 * Handle request injection for simplesettings context
+	 *
+	 * @param IRequest $request The request object
+	 * @return void
+	 */
+	private function handleRequestInjection(IRequest $request): void {
+		// Only add the files search script when we're actually in the simplesettings context
+		// This prevents interference with language detection on other pages
+		try {
 			$requestUri = $request->getPathInfo();
-
 			// Only load files search script if we're in simplesettings context
 			if ($this->isSimplesettingsPage($requestUri)) {
 				Util::addScript('files', 'search');
 			}
-		});
+		} catch (\Exception) {
+		}
+	}
+
+	public function boot(IBootContext $context): void {
+		$context->injectFn(\Closure::fromCallable([$this, 'handleRequestInjection']));
 	}
 }
