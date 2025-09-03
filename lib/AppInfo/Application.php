@@ -27,6 +27,7 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\IRequest;
 use OCP\Util;
 
 class Application extends App implements IBootstrap {
@@ -41,15 +42,15 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function boot(IBootContext $context): void {
-		// Only add the files search script when we're actually in the simplesettings context
-		// This prevents interference with language detection on other pages
-		$container = $context->getAppContainer();
-		$request = $container->get(\OCP\IRequest::class);
-		$requestUri = $request->getPathInfo();
+		$context->injectFn(function (IRequest $request): void {
+			// Only add the files search script when we're actually in the simplesettings context
+			// This prevents interference with language detection on other pages
+			$requestUri = $request->getPathInfo();
 
-		// Only load files search script if we're in simplesettings context
-		if (str_starts_with($requestUri, '/apps/' . self::APP_ID . '/')) {
-			Util::addScript('files', 'search');
-		}
+			// Only load files search script if we're in simplesettings context
+			if (str_starts_with($requestUri, '/apps/' . self::APP_ID . '/')) {
+				Util::addScript('files', 'search');
+			}
+		});
 	}
 }
