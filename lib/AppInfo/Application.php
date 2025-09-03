@@ -27,6 +27,7 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\Util;
 
 class Application extends App implements IBootstrap {
 	public const APP_ID = 'simplesettings';
@@ -44,11 +45,11 @@ class Application extends App implements IBootstrap {
 		// This prevents interference with language detection on other pages
 		$container = $context->getAppContainer();
 		$request = $container->get(\OCP\IRequest::class);
-		$requestUri = $request->getRequestUri();
+		$requestUri = $request->getPathInfo();
 
 		// Only load files search script if we're in simplesettings context
-		if (str_starts_with($requestUri, '/simplesettings')) {
-			\OCP\Util::addScript('files', 'search');
+		if (str_starts_with($requestUri, '/apps/' . self::APP_ID . '/')) {
+			Util::addScript('files', 'search');
 		}
 	}
 }
