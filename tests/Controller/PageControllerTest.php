@@ -210,6 +210,23 @@ class PageControllerTest extends TestCase {
 		$this->l10nFactory->expects($this->atMost(1))
 			->method('getLanguages')
 			->willReturn($this->mockAvailableLanguages);
+
+		$this->resetUtilState();
+	}
+
+	protected function tearDown(): void {
+		$this->resetUtilState();
+		parent::tearDown();
+	}
+
+	/**
+	 * Reset Util script and style state for clean test isolation
+	 */
+	private function resetUtilState(): void {
+		\OC_Util::$scripts = [];
+		\OC_Util::$styles = [];
+		self::invokePrivate(\OCP\Util::class, 'scripts', [[]]);
+		self::invokePrivate(\OCP\Util::class, 'scriptDeps', [[]]);
 	}
 
 	/**
@@ -394,5 +411,18 @@ class PageControllerTest extends TestCase {
 			});
 
 		$this->controller->index();
+	}
+
+	public function testFileSearchScriptInjection(): void {
+		$scripts = Util::getScripts();
+
+		$this->assertNotContains('files/js/search', $scripts, 'File search script should NOT be injected');
+
+		$this->controller->index();
+
+		$scripts = Util::getScripts();
+
+		$this->assertContains('files/l10n/en', $scripts, 'File search script i18n should be injected');
+		$this->assertContains('files/js/search', $scripts, 'File search script should be injected');
 	}
 }
