@@ -107,6 +107,8 @@ class PageController extends Controller {
 			$this->getCustomClientURL()
 		);
 
+		Util::addScript('files', 'search');
+
 		return new TemplateResponse(
 			Application::APP_ID,
 			'index',
