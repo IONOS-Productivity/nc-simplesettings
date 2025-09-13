@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c43699eb13688bda00527f9d670d5946",
+    "content-hash": "a1c5cf764b067d7e9dc3c0c3255dfaac",
     "packages": [
         {
             "name": "bamarni/composer-bin-plugin",
@@ -67,16 +67,16 @@
     "packages-dev": [
         {
             "name": "nextcloud/ocp",
-            "version": "v31.0.6",
+            "version": "v31.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nextcloud-deps/ocp.git",
-                "reference": "bec55048b46eadbd2c564f2b26c9486a43f958c2"
+                "reference": "abd32429d794ede1d92b7b0a88a1070371c907b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/bec55048b46eadbd2c564f2b26c9486a43f958c2",
-                "reference": "bec55048b46eadbd2c564f2b26c9486a43f958c2",
+                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/abd32429d794ede1d92b7b0a88a1070371c907b5",
+                "reference": "abd32429d794ede1d92b7b0a88a1070371c907b5",
                 "shasum": ""
             },
             "require": {
@@ -109,9 +109,9 @@
             "description": "Composer package containing Nextcloud's public OCP API and the unstable NCU API",
             "support": {
                 "issues": "https://github.com/nextcloud-deps/ocp/issues",
-                "source": "https://github.com/nextcloud-deps/ocp/tree/v31.0.6"
+                "source": "https://github.com/nextcloud-deps/ocp/tree/v31.0.9"
             },
-            "time": "2025-05-28T00:52:27+00:00"
+            "time": "2025-07-31T00:57:37+00:00"
         },
         {
             "name": "psr/clock",
@@ -1267,9 +1267,9 @@
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
