@@ -1,6 +1,6 @@
 {
   "name": "simplesettings",
-  "version": "1.0.0",
+  "version": "32.0.6",
   "license": "AGPL-3.0-or-later",
   "engines": {
     "node": "^20.0.0",
@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^1.0.2",
-    "@mdi/js": "file:../../custom-npms/nc-mdi-js",
+    "@mdi/js": "7.4.47",
     "@nextcloud/auth": "^2.5.1",
     "@nextcloud/axios": "^2.5.1",
     "@nextcloud/dialogs": "^6.3.0",
@@ -27,10 +27,10 @@
     "@nextcloud/logger": "^3.0.2",
     "@nextcloud/password-confirmation": "^5.3.1",
     "@nextcloud/router": "^3.0.1",
-    "@nextcloud/vue": "file:../../custom-npms/nc-nextcloud-vue",
+    "@nextcloud/vue": "8.35.3",
     "pinia": "^2.3.1",
     "vue": "^2.7.16",
-    "vue-material-design-icons": "file:../../custom-npms/nc-vue-material-design-icons/dist"
+    "vue-material-design-icons": "5.3.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.24.7",
@@ -58,6 +58,7 @@
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-webpack-plugin": "^5.0.1",
     "vue-eslint-parser": "^9.4.3",
+    "vue-loader": "^15.11.1",
     "vue-template-compiler": "^2.7.16",
     "webpack": "^5.99.9"
   }
