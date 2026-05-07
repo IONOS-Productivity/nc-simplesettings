@@ -34,7 +34,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <script>
 import { loadState } from '@nextcloud/initial-state'
-import NcProgressBar from '@nextcloud/vue/dist/Components/NcProgressBar.js'
+import NcProgressBar from '@nextcloud/vue/components/NcProgressBar'
 
 const { totalSpace, freeSpace, usage, usageRelative } = loadState('simplesettings', 'personalInfoParameters', {})
 const hasLimitedSpace = totalSpace !== 'Unlimited'

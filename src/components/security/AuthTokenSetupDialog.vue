@@ -20,14 +20,14 @@
 	-
 -->
 <template>
-	<NcDialog :open.sync="open"
+	<NcDialog v-model:open="open"
 		:name="t('simplesettings', 'New app password')"
 		content-classes="token-dialog">
 		<p>
 			{{ t('simplesettings', 'Use the credentials below to configure your app or device. For security reasons this password will only be shown once.') }}
 		</p>
 		<div class="token-dialog__name">
-			<NcTextField :label="t('simplesettings', 'Login')" :value="loginName" readonly />
+			<NcTextField :label="t('simplesettings', 'Login')" :model-value="loginName" readonly />
 			<NcButton type="tertiary"
 				:title="copyLoginNameLabel"
 				:aria-label="copyLoginNameLabel"
@@ -40,7 +40,7 @@
 		<div class="token-dialog__password">
 			<NcTextField ref="appPassword"
 				:label="t('simplesettings', 'Password')"
-				:value="appPassword"
+				:model-value="appPassword"
 				readonly />
 			<NcButton type="tertiary"
 				:title="copyPasswordLabel"
@@ -70,14 +70,10 @@ import { getRootUrl } from '@nextcloud/router'
 import { defineComponent, type PropType } from 'vue'
 
 import QR from '@chenfengyuan/vue-qrcode'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcDialog from '@nextcloud/vue/dist/Components/NcDialog.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcIconSvgWrapper from '@nextcloud/vue/dist/Components/NcIconSvgWrapper.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
+import NcButton from '@nextcloud/vue/components/NcButton'
+import NcDialog from '@nextcloud/vue/components/NcDialog'
+import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
 
 import logger from '../../logger'
 
@@ -90,6 +86,7 @@ export default defineComponent({
 		NcTextField,
 		QR,
 	},
+	emits: ['close'],
 	props: {
 		token: {
 			type: Object as PropType<ITokenResponse|null>,

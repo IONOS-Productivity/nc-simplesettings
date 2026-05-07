@@ -16,16 +16,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Vue from 'vue'
+import { createApp } from 'vue'
 import { translate as t, translatePlural as n } from '@nextcloud/l10n'
-import { PiniaVuePlugin, createPinia } from 'pinia'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
+const app = createApp(App)
 const pinia = createPinia()
 
-Vue.use(PiniaVuePlugin)
+// Make t() and n() available in all component templates without per-component import
+app.config.globalProperties.t = t
+app.config.globalProperties.n = n
 
-Vue.mixin({ methods: { t, n } })
-
-const View = Vue.extend(App)
-new View({ pinia }).$mount('#simplesettings')
+app.use(pinia)
+app.mount('#simplesettings')
