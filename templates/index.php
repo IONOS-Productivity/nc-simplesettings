@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+use OCA\SimpleSettings\AppInfo\Application;
 use OCP\Util;
 
-Util::addScript(OCA\SimpleSettings\AppInfo\Application::APP_ID, 'main');
+Util::addScript(Application::APP_ID, Application::APP_ID . '-main');
+Util::addStyle(Application::APP_ID, Application::APP_ID . '-main');
 
 ?>
 

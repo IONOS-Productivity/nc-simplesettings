@@ -53,8 +53,8 @@ all: build
 # is present, the npm step is skipped
 .PHONY: build
 build:
-	# Avoid eslint/tsc accidentally complaining about files in dist
-	rm -rf dist/*
+	# Avoid eslint/tsc accidentally complaining about compiled files
+	rm -rf js/*
 ifneq (,$(wildcard $(CURDIR)/composer.json))
 	make composer
 endif
@@ -130,12 +130,12 @@ appstore:
 	--exclude="../$(app_name)/phpunit*xml" \
 	--exclude="../$(app_name)/composer.*" \
 	--exclude="../$(app_name)/node_modules" \
-	--exclude="../$(app_name)/dist/*.js" \
+	--exclude="../$(app_name)/tsconfig.json" \
 	--exclude="../$(app_name)/package*.json" \
 	--exclude="../$(app_name)/l10n/*.js" \
 	--exclude="../$(app_name)/.*" \
-	--exclude="../$(app_name)/webpack.js" \
-	--exclude="../$(app_name)/stylelint.config.js" \
+	--exclude="../$(app_name)/vite.config.ts" \
+	--exclude="../$(app_name)/stylelint.config.cjs" \
 	--exclude="../$(app_name)/CHANGELOG.md" \
 	--exclude="../$(app_name)/README.md" \
 	--exclude="../$(app_name)/package-lock.json" \
