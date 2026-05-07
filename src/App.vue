@@ -71,16 +71,23 @@ export default defineComponent({
 <style scoped lang="scss">
 @use '../../../core/css/variables.scss' as variables;
 
+:global(#simplesettings) {
+	height: 100%;
+	width: 100%;
+}
+
 content {
 	display: flex;
 	align-items: stretch;
 	flex-direction: row;
 	width: 100%;
+	height: 100%;
 	background-color: var(--color-main-background);
 }
 
 .settings {
-	width: 85%;
+	flex: 1;
+	min-width: 0;
 	overflow-y: scroll;
 
 	:deep(.section) {
@@ -91,7 +98,7 @@ content {
 
 .navigation {
 	background-color: var(--ion-surface-secondary);
-	width: 15%;
+	flex: 0 0 15%;
 }
 
 #close-icon {

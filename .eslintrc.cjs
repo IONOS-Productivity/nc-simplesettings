@@ -1,7 +1,6 @@
 module.exports = {
 	extends: [
-		'@nextcloud',
-		'@nextcloud/eslint-config/typescript',
+		'@nextcloud/eslint-config/vue3',
 	],
 	rules: {
 		'jsdoc/require-jsdoc': 'off',
@@ -10,6 +9,6 @@ module.exports = {
 		// does not exist", which is clearly present
 		// See https://github.com/vuejs/vue/issues/12628#issuecomment-1283730746
 		'vue/order-in-components': 'off',
-		'quotes': ['error', 'single'],
+		quotes: ['error', 'single'],
 	},
 }

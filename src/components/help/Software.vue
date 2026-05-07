@@ -85,8 +85,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+import NcButton from '@nextcloud/vue/components/NcButton'
 import { imagePath } from '@nextcloud/router'
 import { translate as t } from '@nextcloud/l10n'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
