@@ -146,7 +146,7 @@ export default defineComponent({
 
 #software {
 	--software-content-width: 40em;
-	--software-gap: 10px;
+	--software-gap: 1em;
 	--software-qr-code-intrinsic-padding: 5px; /* padding within the image around the code (measured) */
 }
 
@@ -180,7 +180,7 @@ export default defineComponent({
 	display: flex;
 	flex-wrap: wrap;
 	flex: 0 0 auto;
-	gap: 1em;
+	gap: var(--software-gap);
 }
 
 .symbol {
