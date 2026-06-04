@@ -163,6 +163,7 @@ export default defineComponent({
 	justify-content: space-between;
 	padding-bottom: 2em;
 	max-width: var(--software-content-width);
+	gap: var(--software-gap);
 
 	.ios, .android {
 		display: flex;
@@ -177,22 +178,14 @@ export default defineComponent({
 
 .desktop-apps {
 	display: flex;
-	max-width: var(--software-content-width);
-}
-
-.mobile-apps, .desktop-apps {
-	gap: var(--software-gap);
+	flex-wrap: wrap;
+	flex: 0 0 auto;
+	gap: 1em;
 }
 
 .symbol {
 	font-size: 10px;
 	vertical-align: middle;
-}
-
-@media screen and (min-width: calc(variables.$breakpoint-mobile / 2)) {
-	.desktop-app {
-		max-width: calc(var(--software-content-width) / 2);
-	}
 }
 
 @media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
@@ -208,7 +201,6 @@ export default defineComponent({
 
 	.desktop-apps {
 		flex-direction: column;
-		gap: 1em;
 	}
 }
 
