@@ -49,6 +49,8 @@ webpackConfig.module.rules.push({
 	type: 'asset/source',
 })
 
+webpackConfig.devtool = false
+
 webpackConfig.plugins.push(new webpack.SourceMapDevToolPlugin({
 	filename: '[file].map',
 }))
