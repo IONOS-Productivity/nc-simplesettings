@@ -404,6 +404,8 @@ class PageControllerTest extends TestCase {
 			'apps.ios.id' => 'mocked-ios-appid',
 			'apps.windows.url' => 'mocked-windows-url',
 			'apps.macos.url' => 'mocked-macos-url',
+			'apps.linux.url' => 'mocked-linux-url',
+			'apps.nautilus.url' => 'mocked-nautilus-url',
 		];
 
 		$this->initialState->expects($this->exactly(4))
