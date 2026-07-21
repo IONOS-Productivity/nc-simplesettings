@@ -31,7 +31,7 @@
 					class="auth-token__name-form"
 					@submit.prevent.stop="rename">
 					<NcTextField ref="input"
-						:value.sync="newName"
+						v-model="newName"
 						:label="t('simplesettings', 'Device name')"
 						:show-trailing-button="true"
 						:trailing-button-label="t('simplesettings', 'Cancel renaming')"
@@ -54,9 +54,9 @@
 		</td>
 		<td class="auth-token__actions">
 			<NcActions v-if="!token.current"
+				v-model:open="actionOpen"
 				:title="t('simplesettings', 'Device settings')"
-				:aria-label="t('simplesettings', 'Device settings')"
-				:open.sync="actionOpen">
+				:aria-label="t('simplesettings', 'Device settings')">
 				<NcActionButton v-if="token.canRename"
 					icon="icon-rename"
 					@click.stop.prevent="startRename">
@@ -98,18 +98,7 @@ import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
 import { TokenType, useAuthTokenStore } from '../../store/authtoken'
 
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcActions from '@nextcloud/vue/dist/Components/NcActions.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcActionButton from '@nextcloud/vue/dist/Components/NcActionButton.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcDateTime from '@nextcloud/vue/dist/Components/NcDateTime.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcIconSvgWrapper from '@nextcloud/vue/dist/Components/NcIconSvgWrapper.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
+import { NcActions, NcActionButton, NcButton, NcDateTime, NcIconSvgWrapper, NcTextField } from '@nextcloud/vue'
 
 declare global {
 	interface Window {

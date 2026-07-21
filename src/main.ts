@@ -16,16 +16,14 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Vue from 'vue'
-import { translate as t, translatePlural as n } from '@nextcloud/l10n'
-import { PiniaVuePlugin, createPinia } from 'pinia'
+import { createApp } from 'vue'
+import { translate as t } from '@nextcloud/l10n'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
 const pinia = createPinia()
 
-Vue.use(PiniaVuePlugin)
-
-Vue.mixin({ methods: { t, n } })
-
-const View = Vue.extend(App)
-new View({ pinia }).$mount('#simplesettings')
+const app = createApp(App)
+app.config.globalProperties.t = t
+app.use(pinia)
+app.mount('#simplesettings')

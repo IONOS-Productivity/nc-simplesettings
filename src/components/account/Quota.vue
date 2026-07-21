@@ -12,19 +12,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 				v-if="hasLimitedSpace"
 				size="medium"
 				:value="usageRelative"
-				:color="barColor"
-				:style="{'background-color': backgroundColor}" />
+				:color="barColor" />
 			<div class="quota-info">
 				<p>
 					<span v-if="hasLimitedSpace" :style="quotaPillStyles(barColor)" />
 					<span>
-						{{ quotaUsedPrefix }}<strong>{{ usage }}</strong>
+						{{ quotaUsedPrefix }} <strong>{{ usage }}</strong>
 					</span>
 				</p>
 				<p v-if="hasLimitedSpace">
 					<span :style="quotaPillStyles(backgroundColor)" />
 					<span>
-						{{ quotaFreePrefix }}<strong>{{ freeSpace }}</strong>
+						{{ quotaFreePrefix }} <strong>{{ freeSpace }}</strong>
 					</span>
 				</p>
 			</div>
@@ -34,7 +33,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <script>
 import { loadState } from '@nextcloud/initial-state'
-import NcProgressBar from '@nextcloud/vue/dist/Components/NcProgressBar.js'
+import { NcProgressBar } from '@nextcloud/vue'
 
 const { totalSpace, freeSpace, usage, usageRelative } = loadState('simplesettings', 'personalInfoParameters', {})
 const hasLimitedSpace = totalSpace !== 'Unlimited'
@@ -46,22 +45,28 @@ export default {
 		NcProgressBar,
 	},
 
-	data() {
-		return {
-			usageRelative,
-			barColor: null,
-			backgroundColor: null,
-			hasLimitedSpace,
-			freeSpace,
-			usage,
-		}
-	},
+data() {
+	return {
+		usageRelative,
+		barColor: 'var(--color-primary-element)',
+		backgroundColor: 'var(--color-background-dark)',
+		hasLimitedSpace,
+		freeSpace,
+		usage,
+	}
+},
 
-	mounted() {
-		const styles = getComputedStyle(document.documentElement)
-		this.barColor = styles.getPropertyValue('--ion-color-blue-b4')
-		this.backgroundColor = styles.getPropertyValue('--ion-color-cool-grey-c2')
-	},
+mounted() {
+	const styles = getComputedStyle(document.documentElement)
+	const barColor = styles.getPropertyValue('--ion-color-blue-b4').trim()
+	const backgroundColor = styles.getPropertyValue('--ion-color-cool-grey-c2').trim()
+	if (barColor) {
+		this.barColor = barColor
+	}
+	if (backgroundColor) {
+		this.backgroundColor = backgroundColor
+	}
+},
 
 	computed: {
 		quotaUsedPrefix() {

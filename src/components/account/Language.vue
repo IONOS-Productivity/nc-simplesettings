@@ -26,7 +26,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			label="name"
 			label-outside
 			:options="allLanguages"
-			:value="language"
+			:model-value="language"
 			@option:selected="onLanguageChange" />
 	</div>
 </template>
@@ -36,7 +36,7 @@ import { ACCOUNT_SETTING_PROPERTY_ENUM } from '../../constants/AccountPropertyCo
 import { savePrimaryAccountProperty } from '../../service/PersonalInfo/PersonalInfoService.js'
 import { handleError } from '../../utils/handlers.js'
 
-import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
+import { NcSelect } from '@nextcloud/vue'
 
 export default {
 	name: 'Language',
