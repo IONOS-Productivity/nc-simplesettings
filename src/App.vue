@@ -76,6 +76,8 @@ content {
 	align-items: stretch;
 	flex-direction: row;
 	width: 100%;
+	height: calc(100vh - var(--header-height));
+	overflow: hidden;
 	background-color: var(--color-main-background);
 }
 
