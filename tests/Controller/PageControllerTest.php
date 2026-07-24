@@ -227,8 +227,8 @@ class PageControllerTest extends TestCase {
 	 * Reset Util script and style state for clean test isolation
 	 */
 	private function resetUtilState(): void {
-		\OC_Util::$scripts = [];
 		\OC_Util::$styles = [];
+		self::invokePrivate(\OCP\Util::class, 'scriptsInit', [[]]);
 		self::invokePrivate(\OCP\Util::class, 'scripts', [[]]);
 		self::invokePrivate(\OCP\Util::class, 'scriptDeps', [[]]);
 	}
