@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "vite build",
-    "dev": "vite --mode development build",
-    "watch": "vite --mode development build --watch",
+    "dev": "vite build --mode development",
+    "watch": "vite build --mode development --watch",
     "lint": "eslint src",
     "stylelint": "stylelint src/**/*.vue src/**/*.scss src/**/*.css"
   },
