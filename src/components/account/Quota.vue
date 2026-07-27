@@ -45,28 +45,28 @@ export default {
 		NcProgressBar,
 	},
 
-data() {
-	return {
-		usageRelative,
-		barColor: 'var(--color-primary-element)',
-		backgroundColor: 'var(--color-background-dark)',
-		hasLimitedSpace,
-		freeSpace,
-		usage,
-	}
-},
+	data() {
+		return {
+			usageRelative,
+			barColor: 'var(--color-primary-element)',
+			backgroundColor: 'var(--color-background-dark)',
+			hasLimitedSpace,
+			freeSpace,
+			usage,
+		}
+	},
 
-mounted() {
-	const styles = getComputedStyle(document.documentElement)
-	const barColor = styles.getPropertyValue('--ion-color-blue-b4').trim()
-	const backgroundColor = styles.getPropertyValue('--ion-color-cool-grey-c2').trim()
-	if (barColor) {
-		this.barColor = barColor
-	}
-	if (backgroundColor) {
-		this.backgroundColor = backgroundColor
-	}
-},
+	mounted() {
+		const styles = getComputedStyle(document.documentElement)
+		const barColor = styles.getPropertyValue('--ion-color-blue-b4').trim()
+		const backgroundColor = styles.getPropertyValue('--ion-color-cool-grey-c2').trim()
+		if (barColor) {
+			this.barColor = barColor
+		}
+		if (backgroundColor) {
+			this.backgroundColor = backgroundColor
+		}
+	},
 
 	computed: {
 		quotaUsedPrefix() {
