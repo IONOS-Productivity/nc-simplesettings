@@ -141,7 +141,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use '../../../../../core/css/variables.scss' as variables;
+@use '@nc-core-variables' as variables;
 
 #software {
 	--software-content-width: 40em;

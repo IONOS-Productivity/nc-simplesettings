@@ -1,0 +1,18 @@
+/*
+ * SPDX-FileCopyrightText: 2026 STRATO AG
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/*
+ * Fallback mirror of the values this app consumes from the Nextcloud core
+ * stylesheet core/css/variables.scss. Only used when the app is built outside
+ * a server tree (e.g. standalone CI checkouts), where that file is not
+ * available; vite.config.ts prefers the real one whenever it is present, and
+ * warns when it falls back to here.
+ *
+ * Keep in sync with:
+ * https://github.com/IONOS-Productivity/nc-server/blob/ionos-dev/core/css/variables.scss
+ */
+
+/* mobile */
+$breakpoint-mobile: 1024px;
