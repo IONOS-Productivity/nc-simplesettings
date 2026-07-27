@@ -69,7 +69,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@use '../../../core/css/variables.scss' as variables;
+@use '@nc-core-variables' as variables;
 
 content {
 	display: flex;
