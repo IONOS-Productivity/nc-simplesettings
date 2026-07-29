@@ -170,8 +170,6 @@ class PageControllerTest extends TestCase {
 			'ionos_customclient_ios_appid' => 'mocked-ios-appid',
 			'ionos_customclient_windows' => 'mocked-windows-url',
 			'ionos_customclient_macos' => 'mocked-macos-url',
-			'ionos_customclient_linux' => 'mocked-linux-url',
-			'ionos_customclient_nautilus' => 'mocked-nautilus-url',
 		];
 
 		$mockUser = $this->createMock(IUser::class);
@@ -185,7 +183,7 @@ class PageControllerTest extends TestCase {
 			->with($this->equalTo($this->uid))
 			->willReturn($mockUser);
 
-		$this->config->expects($this->atMost(8))
+		$this->config->expects($this->atMost(6))
 			->method('getSystemValue')
 			->with(
 				$this->logicalOr(
@@ -195,8 +193,6 @@ class PageControllerTest extends TestCase {
 					$this->equalTo('ionos_customclient_ios_appid'),
 					$this->equalTo('ionos_customclient_windows'),
 					$this->equalTo('ionos_customclient_macos'),
-					$this->equalTo('ionos_customclient_linux'),
-					$this->equalTo('ionos_customclient_nautilus'),
 				),
 				$this->anything() // This catches any default value passed
 			)
