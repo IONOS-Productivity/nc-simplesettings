@@ -170,6 +170,8 @@ class PageControllerTest extends TestCase {
 			'ionos_customclient_ios_appid' => 'mocked-ios-appid',
 			'ionos_customclient_windows' => 'mocked-windows-url',
 			'ionos_customclient_macos' => 'mocked-macos-url',
+			'ionos_customclient_linux' => 'mocked-linux-url',
+			'ionos_customclient_nautilus' => 'mocked-nautilus-url',
 		];
 
 		$mockUser = $this->createMock(IUser::class);
@@ -183,7 +185,7 @@ class PageControllerTest extends TestCase {
 			->with($this->equalTo($this->uid))
 			->willReturn($mockUser);
 
-		$this->config->expects($this->atMost(6))
+		$this->config->expects($this->atMost(8))
 			->method('getSystemValue')
 			->with(
 				$this->logicalOr(
@@ -193,6 +195,8 @@ class PageControllerTest extends TestCase {
 					$this->equalTo('ionos_customclient_ios_appid'),
 					$this->equalTo('ionos_customclient_windows'),
 					$this->equalTo('ionos_customclient_macos'),
+					$this->equalTo('ionos_customclient_linux'),
+					$this->equalTo('ionos_customclient_nautilus'),
 				),
 				$this->anything() // This catches any default value passed
 			)
@@ -223,6 +227,8 @@ class PageControllerTest extends TestCase {
 	 * Reset Util script and style state for clean test isolation
 	 */
 	private function resetUtilState(): void {
+		\OC_Util::$styles = [];
+		self::invokePrivate(\OCP\Util::class, 'scriptsInit', [[]]);
 		self::invokePrivate(\OCP\Util::class, 'scripts', [[]]);
 		self::invokePrivate(\OCP\Util::class, 'scriptDeps', [[]]);
 	}
@@ -398,6 +404,8 @@ class PageControllerTest extends TestCase {
 			'apps.ios.id' => 'mocked-ios-appid',
 			'apps.windows.url' => 'mocked-windows-url',
 			'apps.macos.url' => 'mocked-macos-url',
+			'apps.linux.url' => 'mocked-linux-url',
+			'apps.nautilus.url' => 'mocked-nautilus-url',
 		];
 
 		$this->initialState->expects($this->exactly(4))

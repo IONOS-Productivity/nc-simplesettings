@@ -199,6 +199,8 @@ class PageController extends Controller {
 			'apps.ios.url' => $this->config->getSystemValue('ionos_customclient_ios'),
 			'apps.windows.url' => $this->config->getSystemValue('ionos_customclient_windows'),
 			'apps.macos.url' => $this->config->getSystemValue('ionos_customclient_macos'),
+			'apps.linux.url' => $this->config->getSystemValue('ionos_customclient_linux'),
+			'apps.nautilus.url' => $this->config->getSystemValue('ionos_customclient_nautilus'),
 			'apps.ios.id' => $this->config->getSystemValue('ionos_customclient_ios_appid'),
 		];
 	}
