@@ -79,14 +79,27 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				{{ t('simplesettings', 'Install desktop app for Windows') }}
 				<span class="symbol">&ensp;❯&ensp;</span>
 			</NcButton>
+			<NcButton
+				class="desktop-app"
+				type="primary"
+				:href="linuxUrl">
+				{{ t('simplesettings', 'Linux App Image') }}
+				<span class="symbol">&ensp;❯&ensp;</span>
+			</NcButton>
+			<NcButton
+				class="desktop-app"
+				type="primary"
+				:href="nautilusUrl">
+				{{ t('simplesettings', 'Nautilus Integration') }}
+				<span class="symbol">&ensp;❯&ensp;</span>
+			</NcButton>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+import { NcButton } from '@nextcloud/vue'
 import { imagePath } from '@nextcloud/router'
 import { translate as t } from '@nextcloud/l10n'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
@@ -107,12 +120,16 @@ export default defineComponent({
 		const iosUrl = appLinks['apps.ios.url']
 		const macosUrl = appLinks['apps.macos.url']
 		const windowsUrl = appLinks['apps.windows.url']
+		const linuxUrl = appLinks['apps.linux.url']
+		const nautilusUrl = appLinks['apps.nautilus.url']
 
 		return {
 			androidUrl,
 			iosUrl,
 			macosUrl,
 			windowsUrl,
+			linuxUrl,
+			nautilusUrl,
 			androidSVG,
 			iosSVG,
 		}
@@ -124,11 +141,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use '../../../../../core/css/variables.scss' as variables;
+@use '@nc-core-variables' as variables;
 
 #software {
 	--software-content-width: 40em;
-	--software-gap: 10px;
+	--software-gap: 1em;
 	--software-qr-code-intrinsic-padding: 5px; /* padding within the image around the code (measured) */
 }
 
@@ -145,6 +162,7 @@ export default defineComponent({
 	justify-content: space-between;
 	padding-bottom: 2em;
 	max-width: var(--software-content-width);
+	gap: var(--software-gap);
 
 	.ios, .android {
 		display: flex;
@@ -159,22 +177,14 @@ export default defineComponent({
 
 .desktop-apps {
 	display: flex;
-	max-width: var(--software-content-width);
-}
-
-.mobile-apps, .desktop-apps {
+	flex-wrap: wrap;
+	flex: 0 0 auto;
 	gap: var(--software-gap);
 }
 
 .symbol {
 	font-size: 10px;
 	vertical-align: middle;
-}
-
-@media screen and (min-width: calc(variables.$breakpoint-mobile / 2)) {
-	.desktop-app {
-		max-width: calc(var(--software-content-width) / 2);
-	}
 }
 
 @media screen and (max-width: calc(variables.$breakpoint-mobile / 2)) {
@@ -190,7 +200,6 @@ export default defineComponent({
 
 	.desktop-apps {
 		flex-direction: column;
-		gap: 1em;
 	}
 }
 

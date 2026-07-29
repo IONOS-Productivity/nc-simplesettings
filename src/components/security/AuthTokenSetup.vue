@@ -25,7 +25,7 @@
 		class="row spacing"
 		@submit.prevent="submit">
 		<!-- Port to TextField component when available -->
-		<NcTextField :value.sync="deviceName"
+		<NcTextField v-model="deviceName"
 			type="text"
 			:maxlength="120"
 			:disabled="loading"
@@ -48,10 +48,7 @@ import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
 import { useAuthTokenStore, type ITokenResponse } from '../../store/authtoken'
 
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
+import { NcButton, NcTextField } from '@nextcloud/vue'
 
 import AuthTokenSetupDialog from './AuthTokenSetupDialog.vue'
 import logger from '../../logger'

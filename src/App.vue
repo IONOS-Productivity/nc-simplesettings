@@ -69,13 +69,15 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@use '../../../core/css/variables.scss' as variables;
+@use '@nc-core-variables' as variables;
 
 content {
 	display: flex;
 	align-items: stretch;
 	flex-direction: row;
 	width: 100%;
+	height: calc(100vh - var(--header-height));
+	overflow: hidden;
 	background-color: var(--color-main-background);
 }
 

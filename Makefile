@@ -134,8 +134,8 @@ appstore:
 	--exclude="../$(app_name)/package*.json" \
 	--exclude="../$(app_name)/l10n/*.js" \
 	--exclude="../$(app_name)/.*" \
-	--exclude="../$(app_name)/webpack.js" \
-	--exclude="../$(app_name)/stylelint.config.js" \
+	--exclude="../$(app_name)/vite.config.ts" \
+	--exclude="../$(app_name)/stylelint.config.cjs" \
 	--exclude="../$(app_name)/CHANGELOG.md" \
 	--exclude="../$(app_name)/README.md" \
 	--exclude="../$(app_name)/package-lock.json" \

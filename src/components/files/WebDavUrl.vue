@@ -37,8 +37,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			:show-trailing-button="true"
 			:success="webdavUrlCopied"
 			:trailing-button-label="t('simplesettings', 'Copy to clipboard')"
-			:value="webdavUrl"
-			readonly="readonly"
+			:model-value="webdavUrl"
+			:readonly="true"
 			type="url"
 			@focus="$event.target.select()"
 			@trailing-button-click="copyCloudId">
@@ -55,8 +55,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <script lang="ts">
 import type { NextcloudUser } from '@nextcloud/auth'
 import { defineComponent } from 'vue'
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcInputField from '@nextcloud/vue/dist/Components/NcInputField.js'
+import { NcInputField } from '@nextcloud/vue'
 import Clipboard from 'vue-material-design-icons/Clipboard.vue'
 import { generateRemoteUrl } from '@nextcloud/router'
 import { getCurrentUser } from '@nextcloud/auth'

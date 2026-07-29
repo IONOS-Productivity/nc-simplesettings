@@ -74,7 +74,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use '../../../../../core/css/variables.scss' as variables;
+@use '@nc-core-variables' as variables;
 
 .token-list {
 	width: 66.6%;

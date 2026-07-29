@@ -5,32 +5,44 @@
 				id="backButton"
 				:name="t('simplesettings', 'Back to Files')"
 				href="/index.php/apps/files">
-				<IconChevronLeft slot="icon" :size="16" />
+				<template #icon>
+					<IconChevronLeft :size="16" />
+				</template>
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Storage usage')"
 				@click="scrollToElement('storage')">
-				<IconStorage slot="icon" :size="18" />
+				<template #icon>
+					<IconStorage :size="18" />
+				</template>
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Language')"
 				@click="scrollToElement('language')">
-				<IconTranslate slot="icon" :size="18" />
+				<template #icon>
+					<IconTranslate :size="18" />
+				</template>
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'Devices & sessions', {}, undefined, {sanitize: false})"
 				@click="scrollToElement('devices')">
-				<IconDevices slot="icon" :size="18" />
+				<template #icon>
+					<IconDevices :size="18" />
+				</template>
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'WebDAV')"
 				@click="scrollToElement('webDAV')">
-				<IconEarth slot="icon" :size="18" />
+				<template #icon>
+					<IconEarth :size="18" />
+				</template>
 			</NcAppNavigationItem>
 			<NcAppNavigationItem
 				:name="t('simplesettings', 'App & Software')"
 				@click="scrollToElement('software')">
-				<IconDisplay slot="icon" :size="18" />
+				<template #icon>
+					<IconDisplay :size="18" />
+				</template>
 			</NcAppNavigationItem>
 		</ul>
 	</div>
@@ -47,8 +59,7 @@ import IconDevices from 'vue-material-design-icons/TabletCellphone.vue'
 import IconEarth from 'vue-material-design-icons/Earth.vue'
 import IconDisplay from 'vue-material-design-icons/DesktopClassic.vue'
 
-// @ts-expect-error: Cannot find module or its corresponding type declarations.
-import NcAppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationItem.js'
+import { NcAppNavigationItem } from '@nextcloud/vue'
 
 export default defineComponent({
 	name: 'Navigation',
