@@ -32,7 +32,7 @@
 		"php": "^8.1"
 	},
 	"require-dev": {
-		"nextcloud/ocp": "^v33.0.0",
+		"nextcloud/ocp": "^v34.0.0",
 		"roave/security-advisories": "dev-latest"
 	},
 	"config": {
