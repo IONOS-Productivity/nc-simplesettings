@@ -21,9 +21,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<section class="section">
 		<h2>{{ t('simplesettings', 'Language') }}</h2>
 		<Language v-if="isEditable"
+			v-model:language="language"
 			:input-id="inputId"
-			:available-languages="availableLanguages"
-			:language.sync="language" />
+			:available-languages="availableLanguages" />
 
 		<span v-else>
 			{{ t('simplesettings', 'No language set') }}
@@ -36,7 +36,7 @@ import { loadState } from '@nextcloud/initial-state'
 import Language from './Language.vue'
 import { ACCOUNT_SETTING_PROPERTY_ENUM, ACCOUNT_SETTING_PROPERTY_READABLE_ENUM } from '../../constants/AccountPropertyConstants.js'
 
-const { languageMap: { activeLanguage, allLanguages } } = loadState('simplesettings', 'personalInfoParameters', {})
+const { languageMap: { activeLanguage = null, allLanguages = [] } = {} } = loadState('simplesettings', 'personalInfoParameters', {})
 
 export default {
 	name: 'LanguageSection',
